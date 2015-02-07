@@ -1,0 +1,28 @@
+Deborah Binag
+IT111
+
+WEEK 4 (February 2-7, 2015)
+
+A. Tasks accomplished
+- Installed Tortoise Git Version Control
+- Repository created
+- Documentation of Meeting Minutes
+- Introduction to our Wiki Site
+- Approval of our Project Advisers(Ms. Valbuena and Mr. Boydon)
+
+B. Problems encountered
+- Lack of details and information about the project because the group are still waiting for the response of the client
+- Project Panelists Approval from Ms. Lalusin and Mr. Vicente
+- Final project proposal is still for approval
+
+C. Possible solutions
+- Communication and coordination with the client
+- Have all the documents ready for Sir Joe Gene's approval and signature
+
+D. Next steps to accomplish
+- Wiki page of the project
+- Continous update of the repository
+- Start translating the existing project to Yii2
+- Begin the implementation of the project
+
+

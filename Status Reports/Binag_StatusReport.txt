@@ -1,0 +1,11 @@
+A. Tasks accomplished
+- Documentation of Meeting Minutes and Introduction to our Wiki Site
+
+B. Problems encountered
+- Lack of details and information about the project because the group are still waiting for the response of the client
+
+C. Possible solutions
+- Communication and coordination with the client
+
+D. Next steps to accomplish
+- Begin the implementation of the project

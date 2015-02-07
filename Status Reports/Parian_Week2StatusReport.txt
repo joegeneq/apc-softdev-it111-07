@@ -1,0 +1,15 @@
+WEEK 2 (January 19-24, 2015)
+
+A. Task accomplished
+- Introduction to Yii 2.0
+
+B. Problems encountered
+- Previous projects to continue were limited
+
+C. Possible solutions
+- Find other projects from other batches
+- Find other projects based from internship
+
+D. Next steps to accomplish
+- Look for an interested client from the previous projects
+- Come up with a final project for the group

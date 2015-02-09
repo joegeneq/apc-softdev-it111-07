@@ -1,17 +1,13 @@
 WEEK 3 (January 26-31, 2015)
 
 A. Tasks accomplished
-- Found an available project to continue
-- 1st group meeting
-- Submitted the final project proposal 
+We found an available project to continue and had our first meeting regarding the project. I have also submitted our final project proposal in Moodle.
 
 B. Problems encountered
-- Some sections in the proposal are still incomplete
-- Lack of enough information from the client and the business
+Some sections in the proposal are still incomplete due to lack of enough information from the client and the business. Since we still cannot meet the client, we only based the document from its project's wiki.
 
 C. Possible solutions
-- Set a meeting with the client
+We should set a meeting with the client as soon as possible.
 
 D. Next steps to accomplish
-- Gather needed data
-- Installation of Yii resources
+Before meeting the client, we should prepare necessary questions for the client for the meeting to go smoothly. Also, we should also start installing Yii resources.

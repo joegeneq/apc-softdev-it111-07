@@ -1,11 +1,8 @@
-Deborah Binag
-IT111
+Deborah Binag IT111
 
 WEEK 2 (January 19-24, 2015)
-
 A. Task accomplished
-- Formed a group
-- Introduction to Yii 2.0(framework) and TortoiseGit(Version Control)
+- Formed a group and had an overview to Yii 2.0 framework and Tortoise Git Version Control
 
 B. Problems encountered
 - Hard time to get an existing project from previous projects
@@ -14,6 +11,5 @@ C. Possible solutions
 - Find other projects from other batch
 
 D. Next steps to accomplish
-- Look for an interested client from the previous projects
-- Come up with a final project for the group
+- Look for an interested client from the previous projects and come up with a final project for the group
 

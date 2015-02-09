@@ -2,17 +2,14 @@ Deborah Binag
 IT111
 
 WEEK 3 (January 26-31, 2015)
-
 A. Tasks accomplished
-- Final Project Proposal
-- 1st group meeting
+- We already have our Project Proposal and had our 1st group meeting
 
 B. Problems encountered
-- Lack of enough information from the client and the business
+- There are lack of enough information from the client and the business
 
 C. Possible solutions
-- Set a meeting with the client
+- We should set a meeting with the client
 
 D. Next steps to accomplish
-- Gather needed data
-- Installation of the needed tools
+- We should gather needed data and should start the installation of the needed tools such as Yii and tortoiseGit

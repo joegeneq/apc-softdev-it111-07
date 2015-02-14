@@ -1,0 +1,15 @@
+Deborah Binag
+IT111
+
+WEEK 5 (February 9-14, 2015)
+A. Tasks accomplished
+- I have already installed Yii2 framework and updated the repository in my local. We already started doing the documentation and the needed logical and physical design.
+
+B. Problems encountered
+- We have just completed getting all the files from the student who implement the existing project. 
+
+C. Possible solutions
+- We should be able to understand the documents and analyze the program and start translating it to Yii.
+
+D. Next steps to accomplish
+- We should start translating the PHP codes to Yii version.

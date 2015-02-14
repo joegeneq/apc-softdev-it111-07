@@ -1,0 +1,13 @@
+WEEK 4 (February 2-7, 2015)
+
+A. Tasks accomplished
+I have finished installing Yii 2.0 on my local. We have also updated our repository and updated our wiki page as well.
+
+B. Problems encountered
+We had a hard time meeting up with the client due to her unavailability. Also, the documents needed such as Request for Adviser and Panelist Form are yet to be approved as well as the proposed final project. With this, we still cannot start with the project.
+
+C. Possible solutions
+We should consider meeting online with the client (through Skype). For the documents, have them all ready for Sir Joe Gene's approval and signature when he returns.
+
+D. Next steps to accomplish
+We should continuously update the repository and the wiki page of the project. After gathering all the needed resources from the client, we should start translating the existing codes to Yii2.

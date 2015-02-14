@@ -1,0 +1,15 @@
+Deborah Binag
+IT111
+
+WEEK 4 (February 2-7, 2015)
+A. Tasks accomplished
+- I have already installed Tortoise Git Version Control and created a repository in my local. I was able to document all the Meeting minutes for the past 3 weeks. Also, we started creating our Wiki site. And last, we got the approval of our project advisers.
+
+B. Problems encountered
+- The group are still waiting for the response of the client because there are still details and information that are lacking. We still need to request for approval to our chosen Project panelists.
+
+C. Possible solutions
+- With the problems encountered, we should communicate and coordinate with the client regarding all our concerns. And we should have all the documents ready for Sir Joe Gene's approval and signature.
+
+D. Next steps to accomplish
+- We should continue to work on the Wiki page of the project and updating the repository. Also, we should start translating the existing project to Yii2 framework and should be able to analyze and implement the project.

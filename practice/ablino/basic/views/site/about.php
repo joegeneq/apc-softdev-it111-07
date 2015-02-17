@@ -12,5 +12,13 @@ $this->params['breadcrumbs'][] = $this->title;
         This is the About page. You may modify the following file to customize its content:
     </p>
 
+    <p>
+    	This is just a sample page<br>
+    	Members:<br>
+    	Binag, Deborah<br>
+    	Lino, Alyssa Jane<br>
+    	Parian, Danica Faith
+    </p>
+
     <code><?= __FILE__ ?></code>
 </div>

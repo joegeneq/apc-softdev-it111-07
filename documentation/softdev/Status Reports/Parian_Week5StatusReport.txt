@@ -1,0 +1,13 @@
+WEEK 5 (February 9-14, 2015)
+
+A. Tasks accomplished
+All the needed resources for our project to start developing were already given by the previous batch who started the project. Also, we have already identified the final scope of the project, ERD and Use Case Diagram for the project.
+
+B. Problems encountered
+The documentation especially the processes were not clear when the resources were handed over to us. Also, I had a hard time installing the Yii 2.0 on my local machine.
+
+C. Possible solutions
+We met the client and the previous batch who made the documentation and asked them for clarifications. We revised some documents like the ERD and flowchart so we can also include the added feature that will be done by our group.
+
+D. Next steps to accomplish
+Finish installing Yii 2.0 on my local. Another thing that is very important to accomplish is to start learning and coding using Yii 2.0.

@@ -28,7 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'province_code',
             'province_description',
-            'region.region_description',
+             [
+                'attribute'=>'province_id',
+                'value'=>'province.province_code',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

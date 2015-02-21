@@ -8,6 +8,7 @@ use app\modelsProvinceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\html;
 
 /**
  * ProvinceController implements the CRUD actions for Province model.
@@ -53,6 +54,7 @@ class ProvinceController extends Controller
             'model' => $this->findModel($id, $region_id),
         ]);
     }
+
 
     /**
      * Creates a new Province model.

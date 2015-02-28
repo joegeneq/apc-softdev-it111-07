@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2015 at 04:15 AM
+-- Generation Time: Feb 28, 2015 at 04:21 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -37,7 +37,15 @@ CREATE TABLE IF NOT EXISTS `myaddress` (
   `landline` varchar(20) DEFAULT NULL,
   `cellphone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `myaddress`
+--
+
+INSERT INTO `myaddress` (`id`, `firstname`, `middlename`, `lastname`, `gender`, `created_at`, `home_address`, `landline`, `cellphone`) VALUES
+(1, 'Danica', 'Magsino', 'Parian', 'F', '2015-02-28 03:20:10', 'Comembo, Makati City', '7991744', '09176314169'),
+(2, 'Danica', 'Magsino', 'Parian', 'F', '2015-02-28 03:20:15', 'Comembo, Makati City', '7991744', '09176314169');
 
 -- --------------------------------------------------------
 
@@ -53,7 +61,15 @@ CREATE TABLE IF NOT EXISTS `mycomment` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `mycomment_ibfk_1` (`myaddress_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `mycomment`
+--
+
+INSERT INTO `mycomment` (`id`, `myaddress_id`, `author`, `body`, `created_at`) VALUES
+(1, 1, 'Danica Parian', 'Midterm in SOFTDEV.\r\n\r\nHi, hello. Thanks!\r\n', '2015-02-28 03:20:56'),
+(2, 1, 'Danica Parian', 'Midterm in SOFTDEV.\r\n\r\nHi, hello. Thanks!\r\n', '2015-02-28 03:21:00');
 
 --
 -- Constraints for dumped tables

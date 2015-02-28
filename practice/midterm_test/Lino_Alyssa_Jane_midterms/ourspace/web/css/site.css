@@ -89,3 +89,38 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+/*!
+* CSS FOR WEB PAGES OF OURSPACE
+* The following code is manually coded by Alyssa Jane Lino for midterm
+* Software Development Class under
+* Mr. Eugenio "Joe Gene" Quesada
+*!/
+
+/*navigation bar*/
+.navbar {
+  position: relative;
+  min-height: 70px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.navbar-inverse {
+  background-color: #1877BA;
+  border-color: #1877BA;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 25px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+}

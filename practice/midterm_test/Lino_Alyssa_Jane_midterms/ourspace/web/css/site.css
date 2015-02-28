@@ -1,6 +1,8 @@
 html,
 body {
     height: 100%;
+    background-color: #A3B8C7;
+    font-family: georgia;
 }
 
 .wrap {
@@ -124,3 +126,4 @@ a.desc:after {
 .navbar-inverse .navbar-nav > li > a {
   color: #fff;
 }
+

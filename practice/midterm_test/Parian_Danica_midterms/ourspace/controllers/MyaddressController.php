@@ -3,14 +3,14 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\myaddress;
+use app\models\Myaddress;
 use app\models\MyaddressSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * MyaddressController implements the CRUD actions for myaddress model.
+ * MyaddressController implements the CRUD actions for Myaddress model.
  */
 class MyaddressController extends Controller
 {
@@ -27,7 +27,7 @@ class MyaddressController extends Controller
     }
 
     /**
-     * Lists all myaddress models.
+     * Lists all Myaddress models.
      * @return mixed
      */
     public function actionIndex()
@@ -42,7 +42,7 @@ class MyaddressController extends Controller
     }
 
     /**
-     * Displays a single myaddress model.
+     * Displays a single Myaddress model.
      * @param integer $id
      * @return mixed
      */
@@ -54,13 +54,13 @@ class MyaddressController extends Controller
     }
 
     /**
-     * Creates a new myaddress model.
+     * Creates a new Myaddress model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new myaddress();
+        $model = new Myaddress();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -72,7 +72,7 @@ class MyaddressController extends Controller
     }
 
     /**
-     * Updates an existing myaddress model.
+     * Updates an existing Myaddress model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -91,7 +91,7 @@ class MyaddressController extends Controller
     }
 
     /**
-     * Deletes an existing myaddress model.
+     * Deletes an existing Myaddress model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -104,15 +104,15 @@ class MyaddressController extends Controller
     }
 
     /**
-     * Finds the myaddress model based on its primary key value.
+     * Finds the Myaddress model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return myaddress the loaded model
+     * @return Myaddress the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = myaddress::findOne($id)) !== null) {
+        if (($model = Myaddress::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -21,17 +21,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'middlename') ?>
 
-    <?= $form->field($model, 'lastname') ?>
-
     <?= $form->field($model, 'gender') ?>
 
-    <?php // echo $form->field($model, 'created_at') ?>
-
-    <?php // echo $form->field($model, 'home_address') ?>
-
-    <?php // echo $form->field($model, 'landline') ?>
-
-    <?php // echo $form->field($model, 'cellphone') ?>
+    <?= $form->field($model, 'created_at') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -16,19 +16,24 @@ body {
 
 .footer {
     height: 60px;
-    background-color: #f5f5f5;
+    background-color: #6495ed;
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
 
 .jumbotron {
     text-align: center;
-    background-color: transparent;
+    background-color: #696969;
+	font-family: 'Georgia';
+	font-style: italic;
 }
 
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
+	background-color: #FF1493;
+	font-family: 'Georgia';
+	font-style: normal;
 }
 
 .not-set {
@@ -41,8 +46,8 @@ a.asc:after, a.desc:after {
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
+    font-family: 'Georgia';
+    font-style: italic; 
     font-weight: normal;
     line-height: 1;
     padding-left: 5px;

@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\mycomment;
+use app\models\Mycomment;
 
 /**
- * MycommentSearch represents the model behind the search form about `app\models\mycomment`.
+ * MycommentSearch represents the model behind the search form about `app\models\Mycomment`.
  */
-class MycommentSearch extends mycomment
+class MycommentSearch extends Mycomment
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class MycommentSearch extends mycomment
     public function rules()
     {
         return [
-            [['id', 'myaddress_id'], 'integer'],
-            [['author', 'body', 'created_at'], 'safe'],
+            [['id'], 'integer'],
+            [['author', 'body', 'myaddress_id', 'created_at'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class MycommentSearch extends mycomment
      */
     public function search($params)
     {
-        $query = mycomment::find();
+        $query = Mycomment::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -54,15 +54,17 @@ class MycommentSearch extends mycomment
             // $query->where('0=1');
             return $dataProvider;
         }
+        $query->joinWith('myaddress');
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'myaddress_id' => $this->myaddress_id,
+            
             'created_at' => $this->created_at,
         ]);
 
         $query->andFilterWhere(['like', 'author', $this->author])
-            ->andFilterWhere(['like', 'body', $this->body]);
+            ->andFilterWhere(['like', 'body', $this->body])
+            ->andFilterWhere(['like', 'myaddress.lastname', $this->myaddress_id]);
 
         return $dataProvider;
     }

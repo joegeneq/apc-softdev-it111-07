@@ -1,0 +1,242 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+CREATE SCHEMA IF NOT EXISTS `AMPAPhil` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+USE `AMPAPhil` ;
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`EMPLOYEE`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`EMPLOYEE` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `EMP_LName` VARCHAR(45) NOT NULL ,
+  `EMP_FName` VARCHAR(45) NOT NULL ,
+  `EMP_MName` VARCHAR(45) NULL ,
+  `EMP_Gender` VARCHAR(10) NOT NULL ,
+  `EMP_BDate` DATE NOT NULL ,
+  `EMP_BlkOrAreaNo` VARCHAR(10) NOT NULL ,
+  `EMP_Street` VARCHAR(45) NULL ,
+  `EMP_Brgy` VARCHAR(45) NULL ,
+  `EMP_City` VARCHAR(45) NULL ,
+  `EMP_ZipCode` INT NULL ,
+  `EMP_ContactNo` VARCHAR(20) NOT NULL ,
+  `EMP_EmailAdd` VARCHAR(45) NOT NULL ,
+  `EMP_Position` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`SCREENING_SCHED`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`SCREENING_SCHED` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `SCR_Date` DATE NOT NULL ,
+  `SCR_Time` TIME NOT NULL ,
+  `APP_Status` VARCHAR(10) NOT NULL ,
+  `EMPLOYEE_id` INT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_SCREENING_SCHED_EMPLOYEE1` (`EMPLOYEE_id` ASC) ,
+  CONSTRAINT `fk_SCREENING_SCHED_EMPLOYEE1`
+    FOREIGN KEY (`EMPLOYEE_id` )
+    REFERENCES `AMPAPhil`.`EMPLOYEE` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`APPLICANT`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`APPLICANT` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `APP_LName` VARCHAR(45) NOT NULL ,
+  `APP_FName` VARCHAR(45) NOT NULL ,
+  `APP_MName` VARCHAR(45) NULL ,
+  `APP_Gender` VARCHAR(10) NOT NULL ,
+  `APP_BDate` DATE NOT NULL ,
+  `APP_BlkOrAreaNo` VARCHAR(10) NOT NULL ,
+  `APP_Street` VARCHAR(45) NOT NULL ,
+  `APP_Brgy` VARCHAR(45) NOT NULL ,
+  `APP_City` VARCHAR(45) NOT NULL ,
+  `APP_ZipCode` INT NULL ,
+  `APP_ContactNo` VARCHAR(20) NOT NULL ,
+  `APP_EmailAdd` VARCHAR(45) NULL ,
+  `APP_RegDate` DATE NOT NULL ,
+  `APP_RegTime` TIME NOT NULL ,
+  `APP_Talent` VARCHAR(45) NOT NULL ,
+  `SCREENING_SCHED_id` INT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_APPLICANT_SCREENING_SCHED1` (`SCREENING_SCHED_id` ASC) ,
+  CONSTRAINT `fk_APPLICANT_SCREENING_SCHED1`
+    FOREIGN KEY (`SCREENING_SCHED_id` )
+    REFERENCES `AMPAPhil`.`SCREENING_SCHED` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`TALENT_LINE`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`TALENT_LINE` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `TALENT_Type` VARCHAR(45) NOT NULL ,
+  `TALENT_Specialization` VARCHAR(45) NOT NULL ,
+  `APPLICANT_id` INT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_TALENT_LINE_APPLICANT1` (`APPLICANT_id` ASC) ,
+  CONSTRAINT `fk_TALENT_LINE_APPLICANT1`
+    FOREIGN KEY (`APPLICANT_id` )
+    REFERENCES `AMPAPhil`.`APPLICANT` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`MANAGER`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`MANAGER` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `MGR_LName` VARCHAR(45) NOT NULL ,
+  `MGR_FName` VARCHAR(45) NOT NULL ,
+  `MGR_MName` VARCHAR(45) NULL ,
+  `MGR_Gender` VARCHAR(10) NOT NULL ,
+  `MGR_BDate` DATE NOT NULL ,
+  `MGR_BlkOrAreaNo` VARCHAR(10) NOT NULL ,
+  `MGR_Street` VARCHAR(45) NOT NULL ,
+  `MGR_Brgy` VARCHAR(45) NOT NULL ,
+  `MGR_City` VARCHAR(45) NOT NULL ,
+  `MGR_ZipCode` INT NULL ,
+  `MGR_ContactNo` VARCHAR(20) NOT NULL ,
+  `MGR_EmailAdd` VARCHAR(45) NOT NULL ,
+  `MGR_Expertise` VARCHAR(20) NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`TALENT`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`TALENT` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `MANAGER_id` INT NOT NULL ,
+  `TALENT_ManagedStartDate` DATE NOT NULL ,
+  `TALENT_ManagedEndDate` DATE NOT NULL ,
+  `SCREENING_SCHED_id` INT NULL ,
+  `APPLICANT_id` INT NULL ,
+  PRIMARY KEY (`id`, `MANAGER_id`) ,
+  INDEX `fk_TALENT_MANAGER1` (`MANAGER_id` ASC) ,
+  INDEX `fk_TALENT_SCREENING_SCHED1` (`SCREENING_SCHED_id` ASC) ,
+  INDEX `fk_TALENT_APPLICANT1` (`APPLICANT_id` ASC) ,
+  CONSTRAINT `fk_TALENT_MANAGER1`
+    FOREIGN KEY (`MANAGER_id` )
+    REFERENCES `AMPAPhil`.`MANAGER` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TALENT_SCREENING_SCHED1`
+    FOREIGN KEY (`SCREENING_SCHED_id` )
+    REFERENCES `AMPAPhil`.`SCREENING_SCHED` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TALENT_APPLICANT1`
+    FOREIGN KEY (`APPLICANT_id` )
+    REFERENCES `AMPAPhil`.`APPLICANT` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`CLIENT`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`CLIENT` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `CLIENT_LName` VARCHAR(45) NOT NULL ,
+  `CLIENT_FName` VARCHAR(45) NOT NULL ,
+  `CLIENT_MName` VARCHAR(45) NULL ,
+  `CLIENT_Company` VARCHAR(45) NULL ,
+  `CLIENT_CompanyBlkOrAreaNo` VARCHAR(10) NOT NULL ,
+  `CLIENT_CompanyBrgy` VARCHAR(45) NOT NULL ,
+  `CLIENT_ContactNo` VARCHAR(20) NOT NULL ,
+  `CLIENT_CompanyCity` VARCHAR(45) NOT NULL ,
+  `CLIENT_EmailAdd` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`PAYMENTS`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`PAYMENTS` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `TRANS_Date` DATE NOT NULL ,
+  `TRANS_Time` TIME NOT NULL ,
+  `TRANS_Rate` DOUBLE NOT NULL ,
+  `REG_Percentage` DECIMAL NOT NULL ,
+  `AGENCY_Percentage` DECIMAL NOT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`EVENT_DETAILS`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`EVENT_DETAILS` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `EVENT_Name` VARCHAR(45) NOT NULL ,
+  `EVENT_Location` VARCHAR(45) NOT NULL ,
+  `EVENT_Type` VARCHAR(45) NOT NULL ,
+  `EVENT_DateFrom` DATE NOT NULL ,
+  `EVENT_DateTo` DATE NOT NULL ,
+  `EVENT_TimeFrom` TIME NOT NULL ,
+  `EVENT_TimeTo` TIME NOT NULL ,
+  `TRANSACTION_id` INT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_EVENTS_TRANSACTION1` (`TRANSACTION_id` ASC) ,
+  CONSTRAINT `fk_EVENTS_TRANSACTION1`
+    FOREIGN KEY (`TRANSACTION_id` )
+    REFERENCES `AMPAPhil`.`PAYMENTS` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `AMPAPhil`.`EVENTS`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`EVENTS` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `TALENT_id` INT NOT NULL ,
+  `TALENT_MANAGER_id` INT NOT NULL ,
+  `EVENTS_DETAILS_id` INT NOT NULL ,
+  `CLIENT_id` INT NOT NULL ,
+  PRIMARY KEY (`id`, `TALENT_id`, `TALENT_MANAGER_id`, `EVENTS_DETAILS_id`, `CLIENT_id`) ,
+  INDEX `fk_TALENT_has_EVENTS_DETAILS_TALENT1` (`TALENT_id` ASC, `TALENT_MANAGER_id` ASC) ,
+  INDEX `fk_TALENT_has_EVENTS_DETAILS_EVENTS_DETAILS1` (`EVENTS_DETAILS_id` ASC) ,
+  INDEX `fk_EVENT_CLIENT1` (`CLIENT_id` ASC) ,
+  CONSTRAINT `fk_TALENT_has_EVENTS_DETAILS_TALENT1`
+    FOREIGN KEY (`TALENT_id` , `TALENT_MANAGER_id` )
+    REFERENCES `AMPAPhil`.`TALENT` (`id` , `MANAGER_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TALENT_has_EVENTS_DETAILS_EVENTS_DETAILS1`
+    FOREIGN KEY (`EVENTS_DETAILS_id` )
+    REFERENCES `AMPAPhil`.`EVENT_DETAILS` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_EVENT_CLIENT1`
+    FOREIGN KEY (`CLIENT_id` )
+    REFERENCES `AMPAPhil`.`CLIENT` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+USE `AMPAPhil` ;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

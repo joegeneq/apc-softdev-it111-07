@@ -18,8 +18,8 @@ class MycommentSearch extends Mycomment
     public function rules()
     {
         return [
-            [['id', 'myaddress_id'], 'integer'],
-            [['author', 'body', 'created_at'], 'safe'],
+            [['id'], 'integer'],
+            [['author', 'body', 'myaddress_id' , 'created_at'], 'safe'],
         ];
     }
 
@@ -55,6 +55,7 @@ class MycommentSearch extends Mycomment
             return $dataProvider;
         }
 
+        $query->joinWith('myaddress');
         $query->andFilterWhere([
             'id' => $this->id,
             'myaddress_id' => $this->myaddress_id,
@@ -62,7 +63,8 @@ class MycommentSearch extends Mycomment
         ]);
 
         $query->andFilterWhere(['like', 'author', $this->author])
-            ->andFilterWhere(['like', 'body', $this->body]);
+            ->andFilterWhere(['like', 'body', $this->body])
+            ->andFilterWhere(['like', 'myaddress.lastname', $this->myaddress_id]);
 
         return $dataProvider;
     }

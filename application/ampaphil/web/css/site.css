@@ -89,3 +89,53 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+/*!
+* CSS FOR WEB PAGES OF AMPAPHIL WEB APPLICATION
+* The following code is manually coded by IT111 group 7
+* Software Development Class under
+* Mr. Eugenio "Joe Gene" Quesada
+* Members:
+* Binag, Deborah
+* Lino, Alyssa Jane
+* Parian, Danica Faith
+*!/
+
+/*navigation bar*/
+.navbar {
+  position: relative;
+  min-height: 70px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.navbar-inverse {
+  background-color: #BF1D1D;
+  border-color: #BF1D1D;
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 25px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+}
+
+/* Home page design */
+.col-lg-4 {
+    width: 24.33333333%;
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+  }
+.col-lg-4:hover {
+    opacity: 0.9;
+    filter: alpha(opacity=40);
+  }

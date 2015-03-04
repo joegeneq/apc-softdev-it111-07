@@ -21,12 +21,12 @@ $this->title = 'AMPAPhil';
 
         <div class="row">
             <div class="col-lg-4">
-                <p><a href="?r=transaction">
+                <p><a href="?r=payments">
                     <img src="../web/images/icons/transaction.png" height="340px" width="300px">
                 </a></p>
             </div>
             <div class="col-lg-4">
-                <p><a href="?r=events">
+                <p><a href="?r=event_details">
                     <img src="../web/images/icons/events.png" height="340px" width="300px">
                 </a></p>
             </div>

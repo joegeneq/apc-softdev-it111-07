@@ -172,10 +172,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `AMPAPhil`.`PAYMENTS` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `TRANS_Date` DATE NOT NULL ,
-  `TRANS_Time` TIME NOT NULL ,
-  `TRANS_Rate` DOUBLE NOT NULL ,
-  `REG_Percentage` DECIMAL NOT NULL ,
+  `PAYMENTS_Date` DATE NOT NULL ,
+  `PAYMENTS_Time` TIME NOT NULL ,
+  `Rate` DOUBLE NOT NULL ,
+  `TALENT_Percentage` DECIMAL NOT NULL ,
   `AGENCY_Percentage` DECIMAL NOT NULL ,
   PRIMARY KEY (`id`) )
 ENGINE = InnoDB;

@@ -31,12 +31,12 @@ $this->title = 'AMPAPhil';
                 </a></p>
             </div>
             <div class="col-lg-4">
-                <p><a href="?r=talents">
+                <p><a href="?r=talent">
                     <img src="../web/images/icons/talents.png" height="340px" width="300px">
                 </a></p>
             </div>
             <div class="col-lg-4">
-                <p><a href="?r=applicants">
+                <p><a href="?r=applicant">
                     <img src="../web/images/icons/applicants.png" height="340px" width="300px">
                 </a></p>
             </div>

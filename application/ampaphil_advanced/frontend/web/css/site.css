@@ -111,8 +111,8 @@ a.desc:after {
   border: 1px solid transparent;
 }
 .navbar-inverse {
-  background-color: #AD2B2B;
-  border-color: #BF1D1D;
+  background-color: #b5251d;
+  border-color: #b5251d;
 }
 .navbar-brand {
   float: left;
@@ -133,7 +133,7 @@ a.desc:after {
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #242424;
+  color: #c9af50;
   background-color: transparent;
   font-size: 18px;
   text-decoration: bold;
@@ -141,7 +141,7 @@ a.desc:after {
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #242424;
+  color: #c9af50;
   background-color: transparent;
   font-size: 18px;
   text-decoration: bold;
@@ -149,7 +149,7 @@ a.desc:after {
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
 .navbar-inverse .navbar-nav > .disabled > a:focus {
-  color: #242424;
+  color: #c9af50;
   background-color: transparent;
   font-size: 18px;
   text-decoration: bold;

@@ -12,34 +12,25 @@ $this->title = 'AMPAPhil';
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2><center><img src="../web/images/singer-icon.png" height="70px" width="70px"></img></center></h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p><b>Solo singer.</b> A performer who uses his or her voice to entertain on stage, in movies, on television or on recordings. We are accepting applicants for this field. <i>How to apply?</i> Click "more info" to know.</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+                <p><a class="btn btn-default" href="?r=site%2Fabout">More info &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2><center><img src="../web/images/band-icon.png" height="70px" width="70px"></img></center></h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p><b>Band.</b> Group of people working together, particularly in the field of music. We are accepting applicants for this field. <i>How to apply?</i> Click "more info" to know. </p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                <p><a class="btn btn-default" href="?r=site%2Fabout">More info &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2><center><img src="../web/images/dancer-icon.png" height="70px" width="70px"></img></center></h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p><b>Dancer. Contemporary, Jazz and Folk dancers.</b> A person who do a series of rhythmic and patterned bodily movements usually performed to music. We are accepting applicants for this field. <i>How to apply?</i> Click "more info" to know.</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                <p><a class="btn btn-default" href="?r=site%2Fabout">More info &raquo;</a></p>
             </div>
         </div>
 

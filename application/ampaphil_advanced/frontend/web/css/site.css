@@ -190,3 +190,6 @@ a.desc:after {
 .col-lg-6{
   padding-left: 60px;
 }
+h1, h2, h3, h4 {
+  color: #b5251d;
+}

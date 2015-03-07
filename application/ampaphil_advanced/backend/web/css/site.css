@@ -13,7 +13,7 @@ body {
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+    padding: 0px 15px 20px;
 }
 
 .footer {
@@ -92,7 +92,6 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
-
 /*!
 * CSS FOR WEB PAGES OF AMPAPHIL WEB APPLICATION
 * The following code is manually coded by IT111 group 7
@@ -107,7 +106,7 @@ a.desc:after {
 /*navigation bar*/
 .navbar {
   position: relative;
-  min-height: 70px;
+  min-height: 30px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -118,7 +117,7 @@ a.desc:after {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 25px 15px;
+  padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
   font-size: 22px;
@@ -130,14 +129,13 @@ a.desc:after {
 .navbar-inverse .navbar-nav > li > a {
   color: #fff;
   font-size: 18px;
-  padding-top: 25px;
+  padding-top: 15px;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
   color: #242424;
   background-color: transparent;
-  font-size: 22px;
-  text-decoration: underline;
+  font-size: 18px;
   text-decoration: bold;
 }
 .navbar-inverse .navbar-nav > .active > a,
@@ -145,8 +143,7 @@ a.desc:after {
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #242424;
   background-color: transparent;
-  font-size: 22px;
-  text-decoration: underline;
+  font-size: 18px;
   text-decoration: bold;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
@@ -154,14 +151,13 @@ a.desc:after {
 .navbar-inverse .navbar-nav > .disabled > a:focus {
   color: #242424;
   background-color: transparent;
-  font-size: 22px;
-  text-decoration: underline;
+  font-size: 18px;
   text-decoration: bold;
 }
 
 /* Home page design */
 .col-lg-4 {
-    width: 30.33333333%;
+    width: 24.33333333%;
     opacity: 0.5;
     filter: alpha(opacity=40);
     padding-left: 30px;
@@ -174,6 +170,5 @@ a.desc:after {
 .row {
   margin-right: -15px;
   margin-left: -15px;
-  padding-left: 80px;
   float: center; 
 }

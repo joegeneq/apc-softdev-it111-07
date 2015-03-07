@@ -22,32 +22,34 @@ $this->title = 'AMPAPhil';
         <div class="row">
             <div class="col-lg-4">
                 <p><a href="?r=payments">
-                    <img src="../web/images/icons/transaction.png" height="340px" width="300px">
+                    <img src="../web/images/icons/transaction.png" height="300px" width="280px">
                 </a></p>
             </div>
-            <div class="col-lg-4">
-                <p><a href="?r=event-details">
-                    <img src="../web/images/icons/events.png" height="340px" width="300px">
+           <div class="col-lg-4">
+                <p><a href="?r=applicant">
+                    <img src="../web/images/icons/employee.png" height="300px" width="280px">
                 </a></p>
             </div>
             <div class="col-lg-4">
                 <p><a href="?r=talent">
-                    <img src="../web/images/icons/talents.png" height="340px" width="300px">
+                    <img src="../web/images/icons/talents.png" height="300px" width="280px">
                 </a></p>
             </div>
             <div class="col-lg-4">
                 <p><a href="?r=applicant">
-                    <img src="../web/images/icons/applicants.png" height="340px" width="300px">
+                    <img src="../web/images/icons/applicants.png" height="300px" width="280px">
+                </a></p>
+            </div>
+             <div class="col-lg-4">
+            </div>
+             <div class="col-lg-4">
+                <p><a href="?r=event-details">
+                    <img src="../web/images/icons/events.png" height="300px" width="280px">
                 </a></p>
             </div>
             <div class="col-lg-4">
                 <p><a href="?r=applicant">
-                    <img src="../web/images/icons/employee.png" height="340px" width="300px">
-                </a></p>
-            </div>
-            <div class="col-lg-4">
-                <p><a href="?r=applicant">
-                    <img src="../web/images/icons/screening.png" height="340px" width="300px">
+                    <img src="../web/images/icons/screening.png" height="300px" width="280px">
                 </a></p>
             </div>
         </div>

@@ -6,15 +6,15 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema mydb
 -- -----------------------------------------------------
 -- -----------------------------------------------------
--- Schema ampaphil
+-- Schema ampaphil_bms
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `ampaphil` DEFAULT CHARACTER SET latin1 ;
-USE `ampaphil` ;
+CREATE SCHEMA IF NOT EXISTS `ampaphil_bms` DEFAULT CHARACTER SET latin1 ;
+USE `ampaphil_bms` ;
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`employee`
+-- Table `ampaphil_bms`.`employee`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`employee` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`employee` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `emp_lname` VARCHAR(45) NOT NULL,
   `emp_fname` VARCHAR(45) NOT NULL,
@@ -35,9 +35,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`screening_sched`
+-- Table `ampaphil_bms`.`screening_sched`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`screening_sched` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`screening_sched` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `scr_date` DATE NOT NULL,
   `scr_time` TIME NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `ampaphil`.`screening_sched` (
   INDEX `fk_SCREENING_SCHED_EMPLOYEE1` (`employee_id` ASC),
   CONSTRAINT `fk_SCREENING_SCHED_EMPLOYEE1`
     FOREIGN KEY (`employee_id`)
-    REFERENCES `ampaphil`.`employee` (`id`)
+    REFERENCES `ampaphil_bms`.`employee` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -56,9 +56,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`applicant`
+-- Table `ampaphil_bms`.`applicant`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`applicant` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`applicant` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `app_lname` VARCHAR(45) NOT NULL,
   `app_fname` VARCHAR(45) NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `ampaphil`.`applicant` (
   INDEX `fk_APPLICANT_SCREENING_SCHED1` (`screening_sched_id` ASC),
   CONSTRAINT `fk_APPLICANT_SCREENING_SCHED1`
     FOREIGN KEY (`screening_sched_id`)
-    REFERENCES `ampaphil`.`screening_sched` (`id`)
+    REFERENCES `ampaphil_bms`.`screening_sched` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -88,9 +88,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`client`
+-- Table `ampaphil_bms`.`client`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`client` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`client` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `client_lname` VARCHAR(45) NOT NULL,
   `client_fname` VARCHAR(45) NOT NULL,
@@ -107,9 +107,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`payments`
+-- Table `ampaphil_bms`.`payments`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`payments` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`payments` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `payments_date` DATE NOT NULL,
   `payments_time` TIME NOT NULL,
@@ -122,9 +122,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`event_details`
+-- Table `ampaphil_bms`.`event_details`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`event_details` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`event_details` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `event_name` VARCHAR(45) NOT NULL,
   `event_location` VARCHAR(45) NOT NULL,
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `ampaphil`.`event_details` (
   INDEX `fk_EVENTS_TRANSACTION1` (`transaction_id` ASC),
   CONSTRAINT `fk_EVENTS_TRANSACTION1`
     FOREIGN KEY (`transaction_id`)
-    REFERENCES `ampaphil`.`payments` (`id`)
+    REFERENCES `ampaphil_bms`.`payments` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -146,9 +146,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`manager`
+-- Table `ampaphil_bms`.`manager`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`manager` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`manager` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `mgr_lname` VARCHAR(45) NOT NULL,
   `mgr_fname` VARCHAR(45) NOT NULL,
@@ -169,9 +169,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`talent`
+-- Table `ampaphil_bms`.`talent`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`talent` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`talent` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `manager_id` INT(11) NOT NULL,
   `talent_managedstartdate` DATE NOT NULL,
@@ -184,17 +184,17 @@ CREATE TABLE IF NOT EXISTS `ampaphil`.`talent` (
   INDEX `fk_TALENT_APPLICANT1` (`applicant_id` ASC),
   CONSTRAINT `fk_TALENT_APPLICANT1`
     FOREIGN KEY (`applicant_id`)
-    REFERENCES `ampaphil`.`applicant` (`id`)
+    REFERENCES `ampaphil_bms`.`applicant` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TALENT_MANAGER1`
     FOREIGN KEY (`manager_id`)
-    REFERENCES `ampaphil`.`manager` (`id`)
+    REFERENCES `ampaphil_bms`.`manager` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TALENT_SCREENING_SCHED1`
     FOREIGN KEY (`screening_sched_id`)
-    REFERENCES `ampaphil`.`screening_sched` (`id`)
+    REFERENCES `ampaphil_bms`.`screening_sched` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -202,9 +202,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`events`
+-- Table `ampaphil_bms`.`events`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`events` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`events` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `TALENT_id` INT(11) NOT NULL,
   `TALENT_MANAGER_id` INT(11) NOT NULL,
@@ -216,17 +216,17 @@ CREATE TABLE IF NOT EXISTS `ampaphil`.`events` (
   INDEX `fk_EVENT_CLIENT1` (`CLIENT_id` ASC),
   CONSTRAINT `fk_EVENT_CLIENT1`
     FOREIGN KEY (`CLIENT_id`)
-    REFERENCES `ampaphil`.`client` (`id`)
+    REFERENCES `ampaphil_bms`.`client` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TALENT_has_EVENTS_DETAILS_EVENTS_DETAILS1`
     FOREIGN KEY (`EVENTS_DETAILS_id`)
-    REFERENCES `ampaphil`.`event_details` (`id`)
+    REFERENCES `ampaphil_bms`.`event_details` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TALENT_has_EVENTS_DETAILS_TALENT1`
     FOREIGN KEY (`TALENT_id` , `TALENT_MANAGER_id`)
-    REFERENCES `ampaphil`.`talent` (`id` , `manager_id`)
+    REFERENCES `ampaphil_bms`.`talent` (`id` , `manager_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -234,9 +234,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`migration`
+-- Table `ampaphil_bms`.`migration`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`migration` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`migration` (
   `version` VARCHAR(180) NOT NULL,
   `apply_time` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`version`))
@@ -245,9 +245,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`talent_line`
+-- Table `ampaphil_bms`.`talent_line`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`talent_line` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`talent_line` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `talent_type` VARCHAR(45) NOT NULL,
   `talent_specialization` VARCHAR(45) NOT NULL,
@@ -256,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `ampaphil`.`talent_line` (
   INDEX `fk_TALENT_LINE_APPLICANT1` (`applicant_id` ASC),
   CONSTRAINT `fk_TALENT_LINE_APPLICANT1`
     FOREIGN KEY (`applicant_id`)
-    REFERENCES `ampaphil`.`applicant` (`id`)
+    REFERENCES `ampaphil_bms`.`applicant` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -264,9 +264,9 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `ampaphil`.`user`
+-- Table `ampaphil_bms`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ampaphil`.`user` (
+CREATE TABLE IF NOT EXISTS `ampaphil_bms`.`user` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL,
   `auth_key` VARCHAR(32) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NOT NULL,

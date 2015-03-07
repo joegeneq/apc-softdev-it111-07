@@ -8,24 +8,24 @@ use Yii;
  * This is the model class for table "applicant".
  *
  * @property integer $id
- * @property string $APP_LName
- * @property string $APP_FName
- * @property string $APP_MName
- * @property string $APP_Gender
- * @property string $APP_BDate
- * @property string $APP_BlkOrAreaNo
- * @property string $APP_Street
- * @property string $APP_Brgy
- * @property string $APP_City
- * @property integer $APP_ZipCode
- * @property string $APP_ContactNo
- * @property string $APP_EmailAdd
- * @property string $APP_RegDate
- * @property string $APP_RegTime
- * @property string $APP_Talent
- * @property integer $SCREENING_SCHED_id
+ * @property string $app_lname
+ * @property string $app_fname
+ * @property string $app_mname
+ * @property string $app_gender
+ * @property string $app_bdate
+ * @property string $app_blockno
+ * @property string $app_street
+ * @property string $app_brgy
+ * @property string $app_city
+ * @property integer $app_zipcode
+ * @property string $app_contactno
+ * @property string $app_emailadd
+ * @property string $app_regdate
+ * @property string $app_regtime
+ * @property string $app_talent
+ * @property integer $screening_sched_id
  *
- * @property ScreeningSched $sCREENINGSCHED
+ * @property ScreeningSched $screeningSched
  * @property Talent[] $talents
  * @property TalentLine[] $talentLines
  */
@@ -45,12 +45,12 @@ class Applicant extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['APP_LName', 'APP_FName', 'APP_Gender', 'APP_BDate', 'APP_BlkOrAreaNo', 'APP_Street', 'APP_Brgy', 'APP_City', 'APP_ContactNo', 'APP_RegDate', 'APP_RegTime', 'APP_Talent'], 'required'],
-            [['APP_BDate', 'APP_RegDate', 'APP_RegTime'], 'safe'],
-            [['APP_ZipCode', 'SCREENING_SCHED_id'], 'integer'],
-            [['APP_LName', 'APP_FName', 'APP_MName', 'APP_Street', 'APP_Brgy', 'APP_City', 'APP_EmailAdd', 'APP_Talent'], 'string', 'max' => 45],
-            [['APP_Gender', 'APP_BlkOrAreaNo'], 'string', 'max' => 10],
-            [['APP_ContactNo'], 'string', 'max' => 20]
+            [['app_lname', 'app_fname', 'app_gender', 'app_bdate', 'app_blockno', 'app_street', 'app_brgy', 'app_city', 'app_contactno', 'app_regdate', 'app_regtime', 'app_talent'], 'required'],
+            [['app_bdate', 'app_regdate', 'app_regtime'], 'safe'],
+            [['app_zipcode', 'screening_sched_id'], 'integer'],
+            [['app_lname', 'app_fname', 'app_mname', 'app_street', 'app_brgy', 'app_city', 'app_emailadd', 'app_talent'], 'string', 'max' => 45],
+            [['app_gender', 'app_blockno'], 'string', 'max' => 10],
+            [['app_contactno'], 'string', 'max' => 20]
         ];
     }
 
@@ -61,31 +61,31 @@ class Applicant extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'APP_LName' => 'App  Lname',
-            'APP_FName' => 'App  Fname',
-            'APP_MName' => 'App  Mname',
-            'APP_Gender' => 'App  Gender',
-            'APP_BDate' => 'App  Bdate',
-            'APP_BlkOrAreaNo' => 'App  Blk Or Area No',
-            'APP_Street' => 'App  Street',
-            'APP_Brgy' => 'App  Brgy',
-            'APP_City' => 'App  City',
-            'APP_ZipCode' => 'App  Zip Code',
-            'APP_ContactNo' => 'App  Contact No',
-            'APP_EmailAdd' => 'App  Email Add',
-            'APP_RegDate' => 'App  Reg Date',
-            'APP_RegTime' => 'App  Reg Time',
-            'APP_Talent' => 'App  Talent',
-            'SCREENING_SCHED_id' => 'Screening  Sched ID',
+            'app_lname' => 'App Lname',
+            'app_fname' => 'App Fname',
+            'app_mname' => 'App Mname',
+            'app_gender' => 'App Gender',
+            'app_bdate' => 'App Bdate',
+            'app_blockno' => 'App Blockno',
+            'app_street' => 'App Street',
+            'app_brgy' => 'App Brgy',
+            'app_city' => 'App City',
+            'app_zipcode' => 'App Zipcode',
+            'app_contactno' => 'App Contactno',
+            'app_emailadd' => 'App Emailadd',
+            'app_regdate' => 'App Regdate',
+            'app_regtime' => 'App Regtime',
+            'app_talent' => 'App Talent',
+            'screening_sched_id' => 'Screening Sched ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSCREENINGSCHED()
+    public function getScreeningSched()
     {
-        return $this->hasOne(ScreeningSched::className(), ['id' => 'SCREENING_SCHED_id']);
+        return $this->hasOne(ScreeningSched::className(), ['id' => 'screening_sched_id']);
     }
 
     /**
@@ -93,7 +93,7 @@ class Applicant extends \yii\db\ActiveRecord
      */
     public function getTalents()
     {
-        return $this->hasMany(Talent::className(), ['APPLICANT_id' => 'id']);
+        return $this->hasMany(Talent::className(), ['applicant_id' => 'id']);
     }
 
     /**
@@ -101,6 +101,6 @@ class Applicant extends \yii\db\ActiveRecord
      */
     public function getTalentLines()
     {
-        return $this->hasMany(TalentLine::className(), ['APPLICANT_id' => 'id']);
+        return $this->hasMany(TalentLine::className(), ['applicant_id' => 'id']);
     }
 }

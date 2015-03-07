@@ -177,6 +177,11 @@ a.desc:after {
   border-radius: 4px;
 }
 
+/* contacts page design */
+.col-lg-5{
+  width: 50.33333333%;
+}
+
 /* About Page Design */
 
 .col-lg-3{

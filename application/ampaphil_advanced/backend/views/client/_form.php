@@ -12,23 +12,23 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'CLIENT_LName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'client_lname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'CLIENT_FName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'client_fname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'CLIENT_MName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'client_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'CLIENT_Company')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'client_company')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'CLIENT_CompanyBlkOrAreaNo')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'client_companyblockno')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'CLIENT_CompanyBrgy')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'client_companybrgy')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'CLIENT_ContactNo')->textInput(['maxlength' => 20]) ?>
+    <?= $form->field($model, 'client_contactno')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'CLIENT_CompanyCity')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'client_companycity')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'CLIENT_EmailAdd')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'client_emailadd')->textInput(['maxlength' => 45]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

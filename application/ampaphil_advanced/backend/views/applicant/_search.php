@@ -17,37 +17,37 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'APP_LName') ?>
+    <?= $form->field($model, 'app_lname') ?>
 
-    <?= $form->field($model, 'APP_FName') ?>
+    <?= $form->field($model, 'app_fname') ?>
 
-    <?= $form->field($model, 'APP_MName') ?>
+    <?= $form->field($model, 'app_mname') ?>
 
-    <?= $form->field($model, 'APP_Gender') ?>
+    <?= $form->field($model, 'app_gender') ?>
 
-    <?php // echo $form->field($model, 'APP_BDate') ?>
+    <?php // echo $form->field($model, 'app_bdate') ?>
 
-    <?php // echo $form->field($model, 'APP_BlkOrAreaNo') ?>
+    <?php // echo $form->field($model, 'app_blockno') ?>
 
-    <?php // echo $form->field($model, 'APP_Street') ?>
+    <?php // echo $form->field($model, 'app_street') ?>
 
-    <?php // echo $form->field($model, 'APP_Brgy') ?>
+    <?php // echo $form->field($model, 'app_brgy') ?>
 
-    <?php // echo $form->field($model, 'APP_City') ?>
+    <?php // echo $form->field($model, 'app_city') ?>
 
-    <?php // echo $form->field($model, 'APP_ZipCode') ?>
+    <?php // echo $form->field($model, 'app_zipcode') ?>
 
-    <?php // echo $form->field($model, 'APP_ContactNo') ?>
+    <?php // echo $form->field($model, 'app_contactno') ?>
 
-    <?php // echo $form->field($model, 'APP_EmailAdd') ?>
+    <?php // echo $form->field($model, 'app_emailadd') ?>
 
-    <?php // echo $form->field($model, 'APP_RegDate') ?>
+    <?php // echo $form->field($model, 'app_regdate') ?>
 
-    <?php // echo $form->field($model, 'APP_RegTime') ?>
+    <?php // echo $form->field($model, 'app_regtime') ?>
 
-    <?php // echo $form->field($model, 'APP_Talent') ?>
+    <?php // echo $form->field($model, 'app_talent') ?>
 
-    <?php // echo $form->field($model, 'SCREENING_SCHED_id') ?>
+    <?php // echo $form->field($model, 'screening_sched_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

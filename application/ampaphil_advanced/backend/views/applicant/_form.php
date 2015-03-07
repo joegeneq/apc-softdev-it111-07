@@ -12,37 +12,37 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'APP_LName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_lname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_FName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_fname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_MName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_Gender')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'app_gender')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'APP_BDate')->textInput() ?>
+    <?= $form->field($model, 'app_bdate')->textInput() ?>
 
-    <?= $form->field($model, 'APP_BlkOrAreaNo')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'app_blockno')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'APP_Street')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_street')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_Brgy')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_brgy')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_City')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_city')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_ZipCode')->textInput() ?>
+    <?= $form->field($model, 'app_zipcode')->textInput() ?>
 
-    <?= $form->field($model, 'APP_ContactNo')->textInput(['maxlength' => 20]) ?>
+    <?= $form->field($model, 'app_contactno')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'APP_EmailAdd')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_emailadd')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_RegDate')->textInput() ?>
+    <?= $form->field($model, 'app_regdate')->textInput() ?>
 
-    <?= $form->field($model, 'APP_RegTime')->textInput() ?>
+    <?= $form->field($model, 'app_regtime')->textInput() ?>
 
-    <?= $form->field($model, 'APP_Talent')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_talent')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'SCREENING_SCHED_id')->textInput() ?>
+    <?= $form->field($model, 'screening_sched_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

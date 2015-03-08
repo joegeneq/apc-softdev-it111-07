@@ -47,7 +47,7 @@ class Events extends \yii\db\ActiveRecord
             'id' => 'ID',
             'TALENT_id' => 'Talent ID',
             'TALENT_MANAGER_id' => 'Talent  Manager ID',
-            'EVENTS_DETAILS_id' => 'Events  Details ID',
+            'EVENTS_DETAILS_id' => 'Event  Details ID',
             'CLIENT_id' => 'Client ID',
         ];
     }

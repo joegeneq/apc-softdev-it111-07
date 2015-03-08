@@ -13,8 +13,9 @@ use Yii;
  * @property double $Rate
  * @property string $TALENT_Percentage
  * @property string $AGENCY_Percentage
+ * @property integer $EVENT_DETAILS_id
  *
- * @property EventDetails[] $eventDetails
+ * @property EventDetails $eVENTDETAILS
  */
 class Payments extends \yii\db\ActiveRecord
 {
@@ -32,9 +33,10 @@ class Payments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['PAYMENTS_Date', 'PAYMENTS_Time', 'Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'required'],
+            [['PAYMENTS_Date', 'PAYMENTS_Time', 'Rate', 'TALENT_Percentage', 'AGENCY_Percentage', 'EVENT_DETAILS_id'], 'required'],
             [['PAYMENTS_Date', 'PAYMENTS_Time'], 'safe'],
-            [['Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'number']
+            [['Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'number'],
+            [['EVENT_DETAILS_id'], 'integer']
         ];
     }
 
@@ -50,14 +52,15 @@ class Payments extends \yii\db\ActiveRecord
             'Rate' => 'Rate',
             'TALENT_Percentage' => 'Talent  Percentage',
             'AGENCY_Percentage' => 'Agency  Percentage',
+            'EVENT_DETAILS_id' => 'Event  Details ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEventDetails()
+    public function getEVENTDETAILS()
     {
-        return $this->hasMany(EventDetails::className(), ['PAYMENTS_id' => 'id']);
+        return $this->hasOne(EventDetails::className(), ['id' => 'EVENT_DETAILS_id']);
     }
 }

@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'Rate',
             'TALENT_Percentage',
             // 'AGENCY_Percentage',
+            // 'EVENT_DETAILS_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

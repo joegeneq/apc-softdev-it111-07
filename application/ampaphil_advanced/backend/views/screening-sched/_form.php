@@ -5,6 +5,7 @@ use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use app\models\Employee;
 use dosamigos\datepicker\DatePicker;
+use kartik\time\TimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ScreeningSched */
@@ -17,17 +18,23 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'SCR_Date')->widget(
         DatePicker::className(), [
-            // inline too, not bad
-            'inline' => false, 
-            // modify template for custom rendering
-            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+            'inline' => false,
             'clientOptions' => [
                 'autoclose' => true,
-                'format' => 'yyyy-M-dd'
+                'format' => 'yyyy-mm-dd'
             ]
     ]);?>
 
-    <?= $form->field($model, 'SCR_Time')->textInput() ?>
+    <?= $form->field($model, 'SCR_Time')->widget(
+        TimePicker::className(), [
+            'name' => 'time',
+            'pluginOptions' => [
+                'showSeconds' => false,
+                'showMeridian' => false,
+                'minuteStep' => 1,
+                'secondStep' => 5
+            ]
+    ]);?>
 
     <?= $form->field($model, 'APP_Status')->dropDownList(['' => 'Select Status', 'For Screening' => 'For Screening', 'Passed' => 'Passed', 'Failed' => 'Failed']) ?>
 

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use app\models\Employee;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ScreeningSched */
@@ -14,7 +15,17 @@ use app\models\Employee;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'SCR_Date')->textInput() ?>
+    <?= $form->field($model, 'SCR_Date')->widget(
+        DatePicker::className(), [
+            // inline too, not bad
+            'inline' => false, 
+            // modify template for custom rendering
+            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-M-dd'
+            ]
+    ]);?>
 
     <?= $form->field($model, 'SCR_Time')->textInput() ?>
 

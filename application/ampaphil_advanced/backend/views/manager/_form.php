@@ -12,31 +12,31 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'mgr_lname')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'MGR_LName')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_fname')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'MGR_FName')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_mname')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'MGR_MName')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_gender')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'MGR_Gender')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'mgr_bdate')->textInput() ?>
+    <?= $form->field($model, 'MGR_BDate')->textInput() ?>
 
-    <?= $form->field($model, 'mgr_blockno')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'MGR_BlkNo')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'mgr_street')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'MGR_Street')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_brgy')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'MGR_Brgy')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_city')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'MGR_City')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_zipcode')->textInput() ?>
+    <?= $form->field($model, 'MGR_ZipCode')->textInput() ?>
 
-    <?= $form->field($model, 'mgr_contactno')->textInput(['maxlength' => 20]) ?>
+    <?= $form->field($model, 'MGR_ContactNo')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'mgr_emailadd')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'MGR_EmailAdd')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_expertise')->textInput(['maxlength' => 20]) ?>
+    <?= $form->field($model, 'MGR_Expertise')->textInput(['maxlength' => 20]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -17,31 +17,31 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'mgr_lname') ?>
+    <?= $form->field($model, 'MGR_LName') ?>
 
-    <?= $form->field($model, 'mgr_fname') ?>
+    <?= $form->field($model, 'MGR_FName') ?>
 
-    <?= $form->field($model, 'mgr_mname') ?>
+    <?= $form->field($model, 'MGR_MName') ?>
 
-    <?= $form->field($model, 'mgr_gender') ?>
+    <?= $form->field($model, 'MGR_Gender') ?>
 
-    <?php // echo $form->field($model, 'mgr_bdate') ?>
+    <?php // echo $form->field($model, 'MGR_BDate') ?>
 
-    <?php // echo $form->field($model, 'mgr_blockno') ?>
+    <?php // echo $form->field($model, 'MGR_BlkNo') ?>
 
-    <?php // echo $form->field($model, 'mgr_street') ?>
+    <?php // echo $form->field($model, 'MGR_Street') ?>
 
-    <?php // echo $form->field($model, 'mgr_brgy') ?>
+    <?php // echo $form->field($model, 'MGR_Brgy') ?>
 
-    <?php // echo $form->field($model, 'mgr_city') ?>
+    <?php // echo $form->field($model, 'MGR_City') ?>
 
-    <?php // echo $form->field($model, 'mgr_zipcode') ?>
+    <?php // echo $form->field($model, 'MGR_ZipCode') ?>
 
-    <?php // echo $form->field($model, 'mgr_contactno') ?>
+    <?php // echo $form->field($model, 'MGR_ContactNo') ?>
 
-    <?php // echo $form->field($model, 'mgr_emailadd') ?>
+    <?php // echo $form->field($model, 'MGR_EmailAdd') ?>
 
-    <?php // echo $form->field($model, 'mgr_expertise') ?>
+    <?php // echo $form->field($model, 'MGR_Expertise') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

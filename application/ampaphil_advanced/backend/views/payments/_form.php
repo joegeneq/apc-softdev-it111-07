@@ -12,15 +12,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'payments_date')->textInput() ?>
+    <?= $form->field($model, 'PAYMENTS_Date')->textInput() ?>
 
-    <?= $form->field($model, 'payments_time')->textInput() ?>
+    <?= $form->field($model, 'PAYMENTS_Time')->textInput() ?>
 
-    <?= $form->field($model, 'payments_rate')->textInput() ?>
+    <?= $form->field($model, 'Rate')->textInput() ?>
 
-    <?= $form->field($model, 'talent_percentage')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'TALENT_Percentage')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'agency_percentage')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'AGENCY_Percentage')->textInput(['maxlength' => 10]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

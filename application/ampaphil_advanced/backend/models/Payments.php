@@ -8,11 +8,11 @@ use Yii;
  * This is the model class for table "payments".
  *
  * @property integer $id
- * @property string $payments_date
- * @property string $payments_time
- * @property double $payments_rate
- * @property string $talent_percentage
- * @property string $agency_percentage
+ * @property string $PAYMENTS_Date
+ * @property string $PAYMENTS_Time
+ * @property double $Rate
+ * @property string $TALENT_Percentage
+ * @property string $AGENCY_Percentage
  *
  * @property EventDetails[] $eventDetails
  */
@@ -32,9 +32,9 @@ class Payments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['payments_date', 'payments_time', 'payments_rate', 'talent_percentage', 'agency_percentage'], 'required'],
-            [['payments_date', 'payments_time'], 'safe'],
-            [['payments_rate', 'talent_percentage', 'agency_percentage'], 'number']
+            [['PAYMENTS_Date', 'PAYMENTS_Time', 'Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'required'],
+            [['PAYMENTS_Date', 'PAYMENTS_Time'], 'safe'],
+            [['Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'number']
         ];
     }
 
@@ -45,11 +45,11 @@ class Payments extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'payments_date' => 'Payments Date',
-            'payments_time' => 'Payments Time',
-            'payments_rate' => 'Payments Rate',
-            'talent_percentage' => 'Talent Percentage',
-            'agency_percentage' => 'Agency Percentage',
+            'PAYMENTS_Date' => 'Payments  Date',
+            'PAYMENTS_Time' => 'Payments  Time',
+            'Rate' => 'Rate',
+            'TALENT_Percentage' => 'Talent  Percentage',
+            'AGENCY_Percentage' => 'Agency  Percentage',
         ];
     }
 
@@ -58,6 +58,6 @@ class Payments extends \yii\db\ActiveRecord
      */
     public function getEventDetails()
     {
-        return $this->hasMany(EventDetails::className(), ['transaction_id' => 'id']);
+        return $this->hasMany(EventDetails::className(), ['PAYMENTS_id' => 'id']);
     }
 }

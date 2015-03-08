@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'payments_date',
-            'payments_time',
-            'payments_rate',
-            'talent_percentage',
-            'agency_percentage',
+            'PAYMENTS_Date',
+            'PAYMENTS_Time',
+            'Rate',
+            'TALENT_Percentage',
+            'AGENCY_Percentage',
         ],
     ]) ?>
 

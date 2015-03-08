@@ -19,8 +19,8 @@ class PaymentsSearch extends Payments
     {
         return [
             [['id'], 'integer'],
-            [['payments_date', 'payments_time'], 'safe'],
-            [['payments_rate', 'talent_percentage', 'agency_percentage'], 'number'],
+            [['PAYMENTS_Date', 'PAYMENTS_Time'], 'safe'],
+            [['Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'number'],
         ];
     }
 
@@ -58,11 +58,11 @@ class PaymentsSearch extends Payments
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'payments_date' => $this->payments_date,
-            'payments_time' => $this->payments_time,
-            'payments_rate' => $this->payments_rate,
-            'talent_percentage' => $this->talent_percentage,
-            'agency_percentage' => $this->agency_percentage,
+            'PAYMENTS_Date' => $this->PAYMENTS_Date,
+            'PAYMENTS_Time' => $this->PAYMENTS_Time,
+            'Rate' => $this->Rate,
+            'TALENT_Percentage' => $this->TALENT_Percentage,
+            'AGENCY_Percentage' => $this->AGENCY_Percentage,
         ]);
 
         return $dataProvider;

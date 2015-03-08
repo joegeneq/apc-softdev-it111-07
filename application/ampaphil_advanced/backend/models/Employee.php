@@ -56,19 +56,19 @@ class Employee extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'EMP_LName' => 'Emp  Lname',
-            'EMP_FName' => 'Emp  Fname',
-            'EMP_MName' => 'Emp  Mname',
-            'EMP_Gender' => 'Emp  Gender',
-            'EMP_BDate' => 'Emp  Bdate',
-            'EMP_BlkNo' => 'Emp  Blk No',
-            'EMP_Street' => 'Emp  Street',
-            'EMP_Brgy' => 'Emp  Brgy',
-            'EMP_City' => 'Emp  City',
-            'EMP_ZipCode' => 'Emp  Zip Code',
-            'EMP_ContactNo' => 'Emp  Contact No',
-            'EMP_EmailAdd' => 'Emp  Email Add',
-            'EMP_Position' => 'Emp  Position',
+            'EMP_LName' => 'Last Name',
+            'EMP_FName' => 'First Name',
+            'EMP_MName' => 'Middle Name',
+            'EMP_Gender' => 'Gender',
+            'EMP_BDate' => 'Birth Date',
+            'EMP_BlkNo' => 'Blk No',
+            'EMP_Street' => 'Street',
+            'EMP_Brgy' => 'Barangay',
+            'EMP_City' => 'City',
+            'EMP_ZipCode' => 'Zip Code',
+            'EMP_ContactNo' => 'Contact No',
+            'EMP_EmailAdd' => 'Email Add',
+            'EMP_Position' => 'Position',
         ];
     }
 

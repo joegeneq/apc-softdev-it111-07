@@ -51,7 +51,7 @@ class Talent extends \yii\db\ActiveRecord
             'MANAGER_id' => 'Manager ID',
             'TALENT_ManagedStartDate' => 'Talent  Managed Start Date',
             'TALENT_ManagedEndDate' => 'Talent  Managed End Date',
-            'SCREENING_SCHED_id' => 'Screening  Sched ID',
+            'SCREENING_SCHED_id' => 'Screening  Schedule ID',
             'APPLICANT_id' => 'Applicant ID',
         ];
     }

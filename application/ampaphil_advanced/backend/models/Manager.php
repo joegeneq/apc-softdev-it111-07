@@ -56,19 +56,19 @@ class Manager extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'MGR_LName' => 'Mgr  Lname',
-            'MGR_FName' => 'Mgr  Fname',
-            'MGR_MName' => 'Mgr  Mname',
-            'MGR_Gender' => 'Mgr  Gender',
-            'MGR_BDate' => 'Mgr  Bdate',
-            'MGR_BlkNo' => 'Mgr  Blk No',
-            'MGR_Street' => 'Mgr  Street',
-            'MGR_Brgy' => 'Mgr  Brgy',
-            'MGR_City' => 'Mgr  City',
-            'MGR_ZipCode' => 'Mgr  Zip Code',
-            'MGR_ContactNo' => 'Mgr  Contact No',
-            'MGR_EmailAdd' => 'Mgr  Email Add',
-            'MGR_Expertise' => 'Mgr  Expertise',
+            'MGR_LName' => 'Last Name',
+            'MGR_FName' => 'First Name',
+            'MGR_MName' => 'Middle Name',
+            'MGR_Gender' => 'Gender',
+            'MGR_BDate' => 'Birth Date',
+            'MGR_BlkNo' => 'Blk No',
+            'MGR_Street' => 'Street',
+            'MGR_Brgy' => 'Brgy',
+            'MGR_City' => 'City',
+            'MGR_ZipCode' => 'Zip Code',
+            'MGR_ContactNo' => 'Contact No',
+            'MGR_EmailAdd' => 'Email Add',
+            'MGR_Expertise' => 'Expertise',
         ];
     }
 

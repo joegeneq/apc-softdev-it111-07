@@ -8,13 +8,13 @@ use Yii;
  * This is the model class for table "screening_sched".
  *
  * @property integer $id
- * @property string $scr_date
- * @property string $scr_time
- * @property string $app_status
- * @property integer $employee_id
+ * @property string $SCR_Date
+ * @property string $SCR_Time
+ * @property string $APP_Status
+ * @property integer $EMPLOYEE_id
  *
  * @property Applicant[] $applicants
- * @property Employee $employee
+ * @property Employee $eMPLOYEE
  * @property Talent[] $talents
  */
 class ScreeningSched extends \yii\db\ActiveRecord
@@ -33,10 +33,10 @@ class ScreeningSched extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['scr_date', 'scr_time', 'app_status'], 'required'],
-            [['scr_date', 'scr_time'], 'safe'],
-            [['employee_id'], 'integer'],
-            [['app_status'], 'string', 'max' => 10]
+            [['SCR_Date', 'SCR_Time', 'APP_Status'], 'required'],
+            [['SCR_Date', 'SCR_Time'], 'safe'],
+            [['EMPLOYEE_id'], 'integer'],
+            [['APP_Status'], 'string', 'max' => 10]
         ];
     }
 
@@ -47,10 +47,10 @@ class ScreeningSched extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'scr_date' => 'Scr Date',
-            'scr_time' => 'Scr Time',
-            'app_status' => 'App Status',
-            'employee_id' => 'Employee ID',
+            'SCR_Date' => 'Scr  Date',
+            'SCR_Time' => 'Scr  Time',
+            'APP_Status' => 'App  Status',
+            'EMPLOYEE_id' => 'Employee ID',
         ];
     }
 
@@ -59,15 +59,15 @@ class ScreeningSched extends \yii\db\ActiveRecord
      */
     public function getApplicants()
     {
-        return $this->hasMany(Applicant::className(), ['screening_sched_id' => 'id']);
+        return $this->hasMany(Applicant::className(), ['SCREENING_SCHED_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEmployee()
+    public function getEMPLOYEE()
     {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
+        return $this->hasOne(Employee::className(), ['id' => 'EMPLOYEE_id']);
     }
 
     /**
@@ -75,6 +75,6 @@ class ScreeningSched extends \yii\db\ActiveRecord
      */
     public function getTalents()
     {
-        return $this->hasMany(Talent::className(), ['screening_sched_id' => 'id']);
+        return $this->hasMany(Talent::className(), ['SCREENING_SCHED_id' => 'id']);
     }
 }

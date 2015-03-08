@@ -12,13 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'scr_date')->textInput() ?>
+    <?= $form->field($model, 'SCR_Date')->textInput() ?>
 
-    <?= $form->field($model, 'scr_time')->textInput() ?>
+    <?= $form->field($model, 'SCR_Time')->textInput() ?>
 
-    <?= $form->field($model, 'app_status')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'APP_Status')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'employee_id')->textInput() ?>
+    <?= $form->field($model, 'EMPLOYEE_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

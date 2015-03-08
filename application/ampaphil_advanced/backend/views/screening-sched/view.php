@@ -29,10 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'scr_date',
-            'scr_time',
-            'app_status',
-            'employee_id',
+            'SCR_Date',
+            'SCR_Time',
+            'APP_Status',
+            'EMPLOYEE_id',
         ],
     ]) ?>
 

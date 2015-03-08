@@ -34,7 +34,6 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'EVENT_TimeFrom',
             // 'EVENT_TimeTo',
             // 'EVENT_Status',
-            // 'PAYMENTS_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

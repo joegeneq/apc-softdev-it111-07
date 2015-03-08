@@ -18,7 +18,7 @@ class EventDetailsSearch extends EventDetails
     public function rules()
     {
         return [
-            [['id', 'PAYMENTS_id'], 'integer'],
+            [['id'], 'integer'],
             [['EVENT_Name', 'EVENT_Location', 'EVENT_Type', 'EVENT_DateFrom', 'EVENT_DateTo', 'EVENT_TimeFrom', 'EVENT_TimeTo', 'EVENT_Status'], 'safe'],
         ];
     }
@@ -61,7 +61,6 @@ class EventDetailsSearch extends EventDetails
             'EVENT_DateTo' => $this->EVENT_DateTo,
             'EVENT_TimeFrom' => $this->EVENT_TimeFrom,
             'EVENT_TimeTo' => $this->EVENT_TimeTo,
-            'PAYMENTS_id' => $this->PAYMENTS_id,
         ]);
 
         $query->andFilterWhere(['like', 'EVENT_Name', $this->EVENT_Name])

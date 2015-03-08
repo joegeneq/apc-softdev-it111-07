@@ -16,10 +16,9 @@ use Yii;
  * @property string $EVENT_TimeFrom
  * @property string $EVENT_TimeTo
  * @property string $EVENT_Status
- * @property integer $PAYMENTS_id
  *
- * @property Payments $pAYMENTS
  * @property Events[] $events
+ * @property Payments[] $payments
  */
 class EventDetails extends \yii\db\ActiveRecord
 {
@@ -39,7 +38,6 @@ class EventDetails extends \yii\db\ActiveRecord
         return [
             [['EVENT_Name', 'EVENT_Location', 'EVENT_Type', 'EVENT_DateFrom', 'EVENT_DateTo', 'EVENT_TimeFrom', 'EVENT_TimeTo'], 'required'],
             [['EVENT_DateFrom', 'EVENT_DateTo', 'EVENT_TimeFrom', 'EVENT_TimeTo'], 'safe'],
-            [['PAYMENTS_id'], 'integer'],
             [['EVENT_Name', 'EVENT_Location', 'EVENT_Type'], 'string', 'max' => 45],
             [['EVENT_Status'], 'string', 'max' => 20]
         ];
@@ -60,16 +58,7 @@ class EventDetails extends \yii\db\ActiveRecord
             'EVENT_TimeFrom' => 'Event  Time From',
             'EVENT_TimeTo' => 'Event  Time To',
             'EVENT_Status' => 'Event  Status',
-            'PAYMENTS_id' => 'Payments ID',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPAYMENTS()
-    {
-        return $this->hasOne(Payments::className(), ['id' => 'PAYMENTS_id']);
     }
 
     /**
@@ -78,5 +67,13 @@ class EventDetails extends \yii\db\ActiveRecord
     public function getEvents()
     {
         return $this->hasMany(Events::className(), ['EVENTS_DETAILS_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPayments()
+    {
+        return $this->hasMany(Payments::className(), ['EVENT_DETAILS_id' => 'id']);
     }
 }

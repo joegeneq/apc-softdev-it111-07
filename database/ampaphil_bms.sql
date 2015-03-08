@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2015 at 04:38 AM
+-- Generation Time: Mar 08, 2015 at 08:24 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -128,9 +128,7 @@ CREATE TABLE IF NOT EXISTS `event_details` (
   `EVENT_TimeFrom` time NOT NULL,
   `EVENT_TimeTo` time NOT NULL,
   `EVENT_Status` varchar(20) DEFAULT NULL,
-  `PAYMENTS_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_EVENTS_TRANSACTION1` (`PAYMENTS_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -174,8 +172,8 @@ CREATE TABLE IF NOT EXISTS `migration` (
 --
 
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
-('m000000_000000_base', 1425785362),
-('m130524_201442_init', 1425785364);
+('m000000_000000_base', 1425798713),
+('m130524_201442_init', 1425798716);
 
 -- --------------------------------------------------------
 
@@ -190,7 +188,9 @@ CREATE TABLE IF NOT EXISTS `payments` (
   `Rate` double NOT NULL,
   `TALENT_Percentage` decimal(10,0) NOT NULL,
   `AGENCY_Percentage` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`id`)
+  `EVENT_DETAILS_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_PAYMENTS_EVENT_DETAILS1_idx` (`EVENT_DETAILS_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -267,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'k4pHklfnxM5J8QV5YMP3GkiKGaUxaz8u', '$2y$13$p3CRO6yCxPuLrC3pGE9B6Of6hQHGk0N/kZsX48uaidCu4jQiKeVGS', NULL, 'admin@ampaphil.com', 10, 1425785408, 1425785408);
+(1, 'admin', 'f6ewkbMOoV8AU3tY3qXLgsR17sG1NZwh', '$2y$13$L/8JVHuRj27rAN8GD7aYyOR3Cyuux4gukFv3DZ7.CA9sMz7ZJThuS', NULL, 'admin@ampaphil.com', 10, 1425798752, 1425798752);
 
 --
 -- Constraints for dumped tables
@@ -288,10 +288,10 @@ ALTER TABLE `events`
   ADD CONSTRAINT `fk_EVENT_CLIENT1` FOREIGN KEY (`CLIENT_id`) REFERENCES `client` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `event_details`
+-- Constraints for table `payments`
 --
-ALTER TABLE `event_details`
-  ADD CONSTRAINT `fk_EVENTS_TRANSACTION1` FOREIGN KEY (`PAYMENTS_id`) REFERENCES `payments` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `payments`
+  ADD CONSTRAINT `fk_PAYMENTS_EVENT_DETAILS1` FOREIGN KEY (`EVENT_DETAILS_id`) REFERENCES `event_details` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `screening_sched`

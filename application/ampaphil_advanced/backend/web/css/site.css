@@ -172,3 +172,8 @@ a.desc:after {
   margin-left: -15px;
   float: center; 
 }
+
+/* help page design */
+h1, h2, h3{
+  color: #b5251d;
+}

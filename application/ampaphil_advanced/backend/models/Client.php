@@ -50,15 +50,15 @@ class Client extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'CLIENT_LName' => 'Client  Lname',
-            'CLIENT_FName' => 'Client  Fname',
-            'CLIENT_MName' => 'Client  Mname',
+            'CLIENT_LName' => 'Last Name',
+            'CLIENT_FName' => 'First Name',
+            'CLIENT_MName' => 'Middle Name',
             'CLIENT_Company' => 'Client  Company',
-            'CLIENT_CompanyBlkNo' => 'Client  Company Blk No',
-            'CLIENT_CompanyBrgy' => 'Client  Company Brgy',
-            'CLIENT_ContactNo' => 'Client  Contact No',
-            'CLIENT_CompanyCity' => 'Client  Company City',
-            'CLIENT_EmailAdd' => 'Client  Email Add',
+            'CLIENT_CompanyBlkNo' => 'Blk No',
+            'CLIENT_CompanyBrgy' => 'Barangay',
+            'CLIENT_ContactNo' => 'Contact No',
+            'CLIENT_CompanyCity' => 'City',
+            'CLIENT_EmailAdd' => 'Email Add',
         ];
     }
 

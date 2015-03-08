@@ -2,7 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+//for widgets
 use dosamigos\datepicker\DatePicker;
+use kartik\time\TimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\EventDetails */
@@ -43,9 +45,29 @@ use dosamigos\datepicker\DatePicker;
             ]
     ]);?>
 
-    <?= $form->field($model, 'EVENT_TimeFrom')->textInput() ?>
+    <?= $form->field($model, 'EVENT_TimeFrom')->widget(
+        TimePicker::className(), [
+            'name' => 'time',
+            'pluginOptions' => [
+                'showSeconds' => false,
+                'showMeridian' => false,
+                'minuteStep' => 1,
+                'secondStep' => 5
+            ]
+    ]);?>
 
-    <?= $form->field($model, 'EVENT_TimeTo')->textInput() ?>
+    <?= $form->field($model, 'EVENT_TimeTo')->widget(
+        TimePicker::className(), [
+            'name' => 'time',
+            'pluginOptions' => [
+                'showSeconds' => false,
+                'showMeridian' => false,
+                'minuteStep' => 1,
+                'secondStep' => 5
+            ]
+    ]);?>
+
+
 
     <?= $form->field($model, 'EVENT_Status')->dropDownList(['' => 'Select Status', 'Upcoming' => 'Upcoming', 'On Going' => 'On Going', 'Done' => 'Done']) ?>
 

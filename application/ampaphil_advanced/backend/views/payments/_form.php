@@ -2,7 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+//for widgets
 use dosamigos\datepicker\DatePicker;
+use kartik\time\TimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Payments */
@@ -25,7 +27,16 @@ use dosamigos\datepicker\DatePicker;
             ]
     ]);?>
 
-    <?= $form->field($model, 'PAYMENTS_Time')->textInput() ?>
+    <?= $form->field($model, 'PAYMENTS_Time')->widget(
+        TimePicker::className(), [
+            'name' => 'time',
+            'pluginOptions' => [
+                'showSeconds' => false,
+                'showMeridian' => false,
+                'minuteStep' => 1,
+                'secondStep' => 5
+            ]
+    ]);?>
 
     <?= $form->field($model, 'Rate')->textInput() ?>
 

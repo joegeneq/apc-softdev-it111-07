@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Talent */
@@ -14,9 +15,29 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'MANAGER_id')->textInput() ?>
 
-    <?= $form->field($model, 'TALENT_ManagedStartDate')->textInput() ?>
+    <?= $form->field($model, 'TALENT_ManagedStartDate')->widget(
+        DatePicker::className(), [
+            // inline too, not bad
+            'inline' => false, 
+            // modify template for custom rendering
+            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-M-dd'
+            ]
+    ]);?>
 
-    <?= $form->field($model, 'TALENT_ManagedEndDate')->textInput() ?>
+    <?= $form->field($model, 'TALENT_ManagedEndDate')->widget(
+        DatePicker::className(), [
+            // inline too, not bad
+            'inline' => false, 
+            // modify template for custom rendering
+            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-M-dd'
+            ]
+    ]);?>
 
     <?= $form->field($model, 'SCREENING_SCHED_id')->textInput() ?>
 

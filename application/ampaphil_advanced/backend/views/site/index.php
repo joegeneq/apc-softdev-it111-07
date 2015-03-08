@@ -26,7 +26,7 @@ $this->title = 'AMPAPhil';
                 </a></p>
             </div>
            <div class="col-lg-4">
-                <p><a href="?r=applicant">
+                <p><a href="?r=employee">
                     <img src="../web/images/icons/employee.png" height="300px" width="280px">
                 </a></p>
             </div>
@@ -48,7 +48,7 @@ $this->title = 'AMPAPhil';
                 </a></p>
             </div>
             <div class="col-lg-4">
-                <p><a href="?r=applicant">
+                <p><a href="?r=screening-sched">
                     <img src="../web/images/icons/screening.png" height="300px" width="280px">
                 </a></p>
             </div>

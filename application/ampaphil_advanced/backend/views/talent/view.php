@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id, 'manager_id' => $model->manager_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id, 'manager_id' => $model->manager_id], [
+        <?= Html::a('Update', ['update', 'id' => $model->id, 'MANAGER_id' => $model->MANAGER_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id, 'MANAGER_id' => $model->MANAGER_id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'manager_id',
-            'talent_managedstartdate',
-            'talent_managedenddate',
-            'screening_sched_id',
-            'applicant_id',
+            'MANAGER_id',
+            'TALENT_ManagedStartDate',
+            'TALENT_ManagedEndDate',
+            'SCREENING_SCHED_id',
+            'APPLICANT_id',
         ],
     ]) ?>
 

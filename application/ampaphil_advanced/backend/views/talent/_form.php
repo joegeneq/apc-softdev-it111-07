@@ -12,15 +12,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'manager_id')->textInput() ?>
+    <?= $form->field($model, 'MANAGER_id')->textInput() ?>
 
-    <?= $form->field($model, 'talent_managedstartdate')->textInput() ?>
+    <?= $form->field($model, 'TALENT_ManagedStartDate')->textInput() ?>
 
-    <?= $form->field($model, 'talent_managedenddate')->textInput() ?>
+    <?= $form->field($model, 'TALENT_ManagedEndDate')->textInput() ?>
 
-    <?= $form->field($model, 'screening_sched_id')->textInput() ?>
+    <?= $form->field($model, 'SCREENING_SCHED_id')->textInput() ?>
 
-    <?= $form->field($model, 'applicant_id')->textInput() ?>
+    <?= $form->field($model, 'APPLICANT_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

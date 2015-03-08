@@ -18,8 +18,8 @@ class TalentSearch extends Talent
     public function rules()
     {
         return [
-            [['id', 'manager_id', 'screening_sched_id', 'applicant_id'], 'integer'],
-            [['talent_managedstartdate', 'talent_managedenddate'], 'safe'],
+            [['id', 'MANAGER_id', 'SCREENING_SCHED_id', 'APPLICANT_id'], 'integer'],
+            [['TALENT_ManagedStartDate', 'TALENT_ManagedEndDate'], 'safe'],
         ];
     }
 
@@ -57,11 +57,11 @@ class TalentSearch extends Talent
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'manager_id' => $this->manager_id,
-            'talent_managedstartdate' => $this->talent_managedstartdate,
-            'talent_managedenddate' => $this->talent_managedenddate,
-            'screening_sched_id' => $this->screening_sched_id,
-            'applicant_id' => $this->applicant_id,
+            'MANAGER_id' => $this->MANAGER_id,
+            'TALENT_ManagedStartDate' => $this->TALENT_ManagedStartDate,
+            'TALENT_ManagedEndDate' => $this->TALENT_ManagedEndDate,
+            'SCREENING_SCHED_id' => $this->SCREENING_SCHED_id,
+            'APPLICANT_id' => $this->APPLICANT_id,
         ]);
 
         return $dataProvider;

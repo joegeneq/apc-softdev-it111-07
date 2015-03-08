@@ -12,11 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'talent_type')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'TALENT_Type')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'talent_specialization')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'TALENT_Specialization')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'applicant_id')->textInput() ?>
+    <?= $form->field($model, 'APPLICANT_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -8,11 +8,11 @@ use Yii;
  * This is the model class for table "talent_line".
  *
  * @property integer $id
- * @property string $talent_type
- * @property string $talent_specialization
- * @property integer $applicant_id
+ * @property string $TALENT_Type
+ * @property string $TALENT_Specialization
+ * @property integer $APPLICANT_id
  *
- * @property Applicant $applicant
+ * @property Applicant $aPPLICANT
  */
 class TalentLine extends \yii\db\ActiveRecord
 {
@@ -30,9 +30,9 @@ class TalentLine extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['talent_type', 'talent_specialization'], 'required'],
-            [['applicant_id'], 'integer'],
-            [['talent_type', 'talent_specialization'], 'string', 'max' => 45]
+            [['TALENT_Type', 'TALENT_Specialization'], 'required'],
+            [['APPLICANT_id'], 'integer'],
+            [['TALENT_Type', 'TALENT_Specialization'], 'string', 'max' => 45]
         ];
     }
 
@@ -43,17 +43,17 @@ class TalentLine extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'talent_type' => 'Talent Type',
-            'talent_specialization' => 'Talent Specialization',
-            'applicant_id' => 'Applicant ID',
+            'TALENT_Type' => 'Talent  Type',
+            'TALENT_Specialization' => 'Talent  Specialization',
+            'APPLICANT_id' => 'Applicant ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getApplicant()
+    public function getAPPLICANT()
     {
-        return $this->hasOne(Applicant::className(), ['id' => 'applicant_id']);
+        return $this->hasOne(Applicant::className(), ['id' => 'APPLICANT_id']);
     }
 }

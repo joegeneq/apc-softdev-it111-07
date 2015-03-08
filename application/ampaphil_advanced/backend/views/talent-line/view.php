@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'talent_type',
-            'talent_specialization',
-            'applicant_id',
+            'TALENT_Type',
+            'TALENT_Specialization',
+            'APPLICANT_id',
         ],
     ]) ?>
 

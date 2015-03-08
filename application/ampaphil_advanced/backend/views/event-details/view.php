@@ -29,14 +29,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'event_name',
-            'event_location',
-            'event_type',
-            'event_datefrom',
-            'event_dateto',
-            'event_timefrom',
-            'event_timeto',
-            'transaction_id',
+            'EVENT_Name',
+            'EVENT_Location',
+            'EVENT_Type',
+            'EVENT_DateFrom',
+            'EVENT_DateTo',
+            'EVENT_TimeFrom',
+            'EVENT_TimeTo',
+            'EVENT_Status',
+            'PAYMENTS_id',
         ],
     ]) ?>
 

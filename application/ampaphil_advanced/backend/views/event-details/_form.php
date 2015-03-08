@@ -12,21 +12,23 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'event_name')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'EVENT_Name')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'event_location')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'EVENT_Location')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'event_type')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'EVENT_Type')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'event_datefrom')->textInput() ?>
+    <?= $form->field($model, 'EVENT_DateFrom')->textInput() ?>
 
-    <?= $form->field($model, 'event_dateto')->textInput() ?>
+    <?= $form->field($model, 'EVENT_DateTo')->textInput() ?>
 
-    <?= $form->field($model, 'event_timefrom')->textInput() ?>
+    <?= $form->field($model, 'EVENT_TimeFrom')->textInput() ?>
 
-    <?= $form->field($model, 'event_timeto')->textInput() ?>
+    <?= $form->field($model, 'EVENT_TimeTo')->textInput() ?>
 
-    <?= $form->field($model, 'transaction_id')->textInput() ?>
+    <?= $form->field($model, 'EVENT_Status')->textInput(['maxlength' => 20]) ?>
+
+    <?= $form->field($model, 'PAYMENTS_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

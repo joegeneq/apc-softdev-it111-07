@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'help'],
+                        'actions' => ['login', 'error', 'help', 'calendar'],
                         'allow' => true,
                     ],
                     [
@@ -61,6 +61,11 @@ class SiteController extends Controller
     public function actionHelp()
     {
         return $this->render('help');
+    }
+
+    public function actionCalendar()
+    {
+        return $this->render('calendar');
     }
 
     public function actionLogin()

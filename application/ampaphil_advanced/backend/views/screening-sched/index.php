@@ -29,7 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'SCR_Date',
             'SCR_Time',
             'APP_Status',
-            'EMPLOYEE_id',
+            //'EMPLOYEE_id',
+            [
+                'attribute'=>'EMPLOYEE_id',
+                'value'=>'eMPLOYEE.EMP_LName',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

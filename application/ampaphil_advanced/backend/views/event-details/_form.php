@@ -19,7 +19,14 @@ use kartik\time\TimePicker;
 
     <?= $form->field($model, 'EVENT_Location')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'EVENT_Type')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'EVENT_Type')->dropDownList(['' => 'Select Event Type',
+                                                          'Party' => 'Party',
+                                                          'Reunion' => 'Reunion',
+                                                          'Debut' => 'Debut',
+                                                          'Wedding' => 'Wedding',
+                                                          'Anniversary' => 'Anniversary',
+                                                          'School Activities' => 'School Activities'
+                                                        ]) ?>
 
     <?= $form->field($model, 'EVENT_DateFrom')->widget(
         DatePicker::className(), [

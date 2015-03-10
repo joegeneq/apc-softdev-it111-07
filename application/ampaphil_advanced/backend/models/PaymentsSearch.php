@@ -56,7 +56,6 @@ class PaymentsSearch extends Payments
             return $dataProvider;
         }
 
-        $query->joinWith('eVENTDETAILS');
         $query->andFilterWhere([
             'id' => $this->id,
             'PAYMENTS_Date' => $this->PAYMENTS_Date,

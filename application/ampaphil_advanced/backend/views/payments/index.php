@@ -32,6 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'TALENT_Share',
             // 'AGENCY_Share',
             // 'EVENT_DETAILS_id',
+            [
+                'attribute'=>'EVENT_DETAILS_id',
+                'value'=>'eVENTDETAILS.EVENT_Name',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

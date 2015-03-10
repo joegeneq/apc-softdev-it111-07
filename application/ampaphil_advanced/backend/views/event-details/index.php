@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'EVENT_Name',
             'EVENT_Location',
             'EVENT_Type',
-            'EVENT_DateFrom',
+            //'EVENT_DateFrom',
             // 'EVENT_DateTo',
             // 'EVENT_TimeFrom',
             // 'EVENT_TimeTo',
-            // 'EVENT_Status',
+            'EVENT_Status',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

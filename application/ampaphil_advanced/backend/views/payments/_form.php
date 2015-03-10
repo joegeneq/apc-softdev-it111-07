@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\EventDetails;
 //for widgets
 use dosamigos\datepicker\DatePicker;
 use kartik\time\TimePicker;
@@ -44,7 +46,10 @@ use kartik\time\TimePicker;
 
     <?= $form->field($model, 'AGENCY_Percentage')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'EVENT_DETAILS_id')->textInput() ?>
+    <?= $form->field($model, 'EVENT_DETAILS_id')->dropDownList(
+        ArrayHelper::map(EventDetails::find()->all(), 'id', 'EVENT_Name'),
+        ['prompt'=>'Select Event'] ) 
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

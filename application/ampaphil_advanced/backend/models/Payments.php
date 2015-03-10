@@ -47,12 +47,12 @@ class Payments extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'PAYMENTS_Date' => 'Payments  Date',
-            'PAYMENTS_Time' => 'Payments  Time',
+            'PAYMENTS_Date' => 'Payments Date',
+            'PAYMENTS_Time' => 'Payments Time',
             'Rate' => 'Rate',
-            'TALENT_Percentage' => 'Talent  Percentage',
-            'AGENCY_Percentage' => 'Agency  Percentage',
-            'EVENT_DETAILS_id' => 'Event  Details ID',
+            'TALENT_Percentage' => 'Talent Percentage',
+            'AGENCY_Percentage' => 'Agency Percentage',
+            'EVENT_DETAILS_id' => 'Event Details ID',
         ];
     }
 

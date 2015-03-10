@@ -14,9 +14,23 @@ use app\models\Applicant;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'TALENT_Type')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'TALENT_Type')->dropDownList([ '' => 'Select Talent Type',
+                                                            'Band' => 'Band',
+                                                            'Dancing' => 'Dancing',
+                                                            'Singing' => 'Singing'
+                                                        ]) ?>
 
-    <?= $form->field($model, 'TALENT_Specialization')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'TALENT_Specialization')->dropDownList(['' => 'Select Talent Specialization',
+                                                                     'Singing' => 'Singing',
+                                                                     'Base' => 'Base (Band)',
+                                                                     'Drums' => 'Drums (Band)',
+                                                                     'Vocals' => 'Vocals (Band)',
+                                                                     'Lead' => 'Lead (Band)',
+                                                                     'Rhythm' => 'Rhythm(Band)',
+                                                                     'Contemporary Dance' => 'Contemporary Dance',
+                                                                     'Folk Dance' => 'Folk Dance',
+                                                                     'Jazz Dance' => 'Jazz Dance'
+                                                                    ]) ?>
 
     <?php $form = ActiveForm::begin(); ?>
     <?= $form->field($model, 'APPLICANT_id')->dropDownList(

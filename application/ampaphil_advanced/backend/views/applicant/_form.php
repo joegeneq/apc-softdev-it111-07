@@ -23,7 +23,10 @@ use kartik\time\TimePicker;
 
     <?= $form->field($model, 'APP_MName')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_Gender')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'APP_Gender')->dropDownList(['' => 'Select Gender',
+                                                          'Male' => 'Male',
+                                                          'Female' => 'Female'
+                                                        ]) ?>
 
     <?= $form->field($model, 'APP_BDate')->widget(
         DatePicker::className(), [

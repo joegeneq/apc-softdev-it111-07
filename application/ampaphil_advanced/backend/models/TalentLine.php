@@ -52,7 +52,7 @@ class TalentLine extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAPPLICANT()
+    public function getaPPLICANT()
     {
         return $this->hasOne(Applicant::className(), ['id' => 'APPLICANT_id']);
     }

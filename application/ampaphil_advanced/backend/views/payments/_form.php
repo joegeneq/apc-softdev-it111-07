@@ -25,7 +25,7 @@ use kartik\time\TimePicker;
             //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
             'clientOptions' => [
                 'autoclose' => true,
-                'format' => 'yyyy-M-dd'
+                'format' => 'yyyy-mm-dd'
             ]
     ]);?>
 

@@ -50,14 +50,14 @@ class EventDetails extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'EVENT_Name' => 'Event  Name',
-            'EVENT_Location' => 'Event  Location',
-            'EVENT_Type' => 'Event  Type',
-            'EVENT_DateFrom' => 'Event  Date From',
-            'EVENT_DateTo' => 'Event  Date To',
-            'EVENT_TimeFrom' => 'Event  Time From',
-            'EVENT_TimeTo' => 'Event  Time To',
-            'EVENT_Status' => 'Event  Status',
+            'EVENT_Name' => 'Event Name',
+            'EVENT_Location' => 'Event Location',
+            'EVENT_Type' => 'Event Type',
+            'EVENT_DateFrom' => 'Event Date From',
+            'EVENT_DateTo' => 'Event Date To',
+            'EVENT_TimeFrom' => 'Event Time From',
+            'EVENT_TimeTo' => 'Event Time To',
+            'EVENT_Status' => 'Event Status',
         ];
     }
 

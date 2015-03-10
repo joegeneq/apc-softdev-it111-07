@@ -54,11 +54,11 @@ class Client extends \yii\db\ActiveRecord
             'CLIENT_FName' => 'First Name',
             'CLIENT_MName' => 'Middle Name',
             'CLIENT_Company' => 'Client  Company',
-            'CLIENT_CompanyBlkNo' => 'Blk No',
+            'CLIENT_CompanyBlkNo' => 'Block Number',
             'CLIENT_CompanyBrgy' => 'Barangay',
-            'CLIENT_ContactNo' => 'Contact No',
+            'CLIENT_ContactNo' => 'Contact Number',
             'CLIENT_CompanyCity' => 'City',
-            'CLIENT_EmailAdd' => 'Email Add',
+            'CLIENT_EmailAdd' => 'Email Address',
         ];
     }
 

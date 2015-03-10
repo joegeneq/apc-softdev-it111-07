@@ -61,13 +61,13 @@ class Employee extends \yii\db\ActiveRecord
             'EMP_MName' => 'Middle Name',
             'EMP_Gender' => 'Gender',
             'EMP_BDate' => 'Birth Date',
-            'EMP_BlkNo' => 'Blk No',
+            'EMP_BlkNo' => 'Block Number',
             'EMP_Street' => 'Street',
             'EMP_Brgy' => 'Barangay',
             'EMP_City' => 'City',
             'EMP_ZipCode' => 'Zip Code',
-            'EMP_ContactNo' => 'Contact No',
-            'EMP_EmailAdd' => 'Email Add',
+            'EMP_ContactNo' => 'Contact Number',
+            'EMP_EmailAdd' => 'Email Address',
             'EMP_Position' => 'Position',
         ];
     }

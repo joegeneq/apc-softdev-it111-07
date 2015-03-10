@@ -15,14 +15,19 @@ use app\models\Applicant;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'TALENT_Type')->dropDownList([ '' => 'Select Talent Type',
-                                                            'Band' => 'Band',
-                                                            'Dancing' => 'Dancing',
-                                                            'Singing' => 'Singing'
+                                                            'Solo' => 'Solo',
+                                                            'Duo' => 'Duo',
+                                                            'Group' => 'Group'
                                                         ]) ?>
 
     <?= $form->field($model, 'TALENT_Specialization')->dropDownList(['' => 'Select Talent Specialization',
-                                                                     'Singing' => 'Singing',
-                                                                     'Base' => 'Base (Band)',
+                                                                     'Acapella' => 'Acapella (Singing)',
+                                                                     'Acoustic' => 'Acoustic (Singing)',
+                                                                     'Mellow' => 'Mellow (Singing)',
+                                                                     'Rock' => 'Rock (Singing)',
+                                                                     'RNB' => 'RNB (Singing)',
+                                                                     'Pop' => 'Pop (Singing)',
+                                                                     'Bass' => 'Bass (Band)',
                                                                      'Drums' => 'Drums (Band)',
                                                                      'Vocals' => 'Vocals (Band)',
                                                                      'Lead' => 'Lead (Band)',

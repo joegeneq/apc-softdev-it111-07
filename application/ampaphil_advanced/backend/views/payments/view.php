@@ -32,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'PAYMENTS_Date',
             'PAYMENTS_Time',
             'Rate',
-            'TALENT_Percentage',
-            'AGENCY_Percentage',
+            'TALENT_Share',
+            'AGENCY_Share',
             'EVENT_DETAILS_id',
         ],
     ]) ?>

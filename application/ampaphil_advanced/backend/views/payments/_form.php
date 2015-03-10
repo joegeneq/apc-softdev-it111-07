@@ -42,9 +42,9 @@ use kartik\time\TimePicker;
 
     <?= $form->field($model, 'Rate')->textInput() ?>
 
-    <?= $form->field($model, 'TALENT_Percentage')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'TALENT_Share')->textInput() ?>
 
-    <?= $form->field($model, 'AGENCY_Percentage')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'AGENCY_Share')->textInput() ?>
 
     <?= $form->field($model, 'EVENT_DETAILS_id')->dropDownList(
         ArrayHelper::map(EventDetails::find()->all(), 'id', 'EVENT_Name'),

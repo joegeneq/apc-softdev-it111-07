@@ -20,7 +20,7 @@ class PaymentsSearch extends Payments
         return [
             [['id'], 'integer'],
             [['PAYMENTS_Date', 'PAYMENTS_Time', 'EVENT_DETAILS_id'], 'safe'],
-            [['Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'number'],
+            [['Rate', 'TALENT_Share', 'AGENCY_Share'], 'number'],
         ];
     }
 
@@ -62,8 +62,8 @@ class PaymentsSearch extends Payments
             'PAYMENTS_Date' => $this->PAYMENTS_Date,
             'PAYMENTS_Time' => $this->PAYMENTS_Time,
             'Rate' => $this->Rate,
-            'TALENT_Percentage' => $this->TALENT_Percentage,
-            'AGENCY_Percentage' => $this->AGENCY_Percentage,
+            'TALENT_Share' => $this->TALENT_Share,
+            'AGENCY_Share' => $this->AGENCY_Share,
             //'EVENT_DETAILS_id' => $this->EVENT_DETAILS_id,
         ]);
 

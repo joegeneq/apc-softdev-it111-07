@@ -40,7 +40,10 @@ $this->title = 'AMPAPhil';
                     <img src="../web/images/icons/applicants.png" height="300px" width="280px">
                 </a></p>
             </div>
-             <div class="col-lg-4">
+            <div class="col-lg-4">
+                <p><a href="?r=client">
+                    <img src="../web/images/icons/client.png" height="300px" width="280px">
+                </a></p>
             </div>
              <div class="col-lg-4">
                 <p><a href="?r=event-details">
@@ -50,6 +53,11 @@ $this->title = 'AMPAPhil';
             <div class="col-lg-4">
                 <p><a href="?r=screening-sched">
                     <img src="../web/images/icons/screening.png" height="300px" width="280px">
+                </a></p>
+            </div>
+            <div class="col-lg-4">
+                <p><a href="?r=manager">
+                    <img src="../web/images/icons/manager.png" height="300px" width="280px">
                 </a></p>
             </div>
         </div>

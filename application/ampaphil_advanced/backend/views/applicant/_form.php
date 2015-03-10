@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\ScreeningSched;
 //for widgets
 use dosamigos\datepicker\DatePicker;
 use kartik\time\TimePicker;
@@ -72,9 +74,15 @@ use kartik\time\TimePicker;
             ]
     ]);?>
 
-    <?= $form->field($model, 'APP_Talent')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'APP_Talent')->dropDownList(['' => 'Select Talent',
+                                                          'Dancing' => 'Dancing',
+                                                          'Singing' => 'Singing',
+                                                        ]) ?>
 
-    <?= $form->field($model, 'SCREENING_SCHED_id')->textInput() ?>
+    <?= $form->field($model, 'SCREENING_SCHED_id')->dropDownList(
+        ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'SCR_Time', 'SCR_Date'),
+        ['prompt'=>'Select Screening Schedule'] ) 
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

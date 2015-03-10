@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'APP_Status',
             //'EMPLOYEE_id',
             [
-                'attribute'=>'EMPLOYEE_id',
+                'attribute'=>'EMPLOYEE Last Name',
                 'value'=>'eMPLOYEE.EMP_LName',
             ],
 

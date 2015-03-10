@@ -41,8 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'APP_EmailAdd:email',
             // 'APP_RegDate',
             // 'APP_RegTime',
-            // 'APP_Talent',
-            // 'SCREENING_SCHED_id',
+            'APP_Talent',
+            'SCREENING_SCHED_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

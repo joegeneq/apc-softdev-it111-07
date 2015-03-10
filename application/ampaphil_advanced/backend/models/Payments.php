@@ -11,8 +11,8 @@ use Yii;
  * @property string $PAYMENTS_Date
  * @property string $PAYMENTS_Time
  * @property double $Rate
- * @property string $TALENT_Percentage
- * @property string $AGENCY_Percentage
+ * @property double $TALENT_Share
+ * @property double $AGENCY_Share
  * @property integer $EVENT_DETAILS_id
  *
  * @property EventDetails $eVENTDETAILS
@@ -33,9 +33,9 @@ class Payments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['PAYMENTS_Date', 'PAYMENTS_Time', 'Rate', 'TALENT_Percentage', 'AGENCY_Percentage', 'EVENT_DETAILS_id'], 'required'],
+            [['PAYMENTS_Date', 'PAYMENTS_Time', 'Rate', 'TALENT_Share', 'AGENCY_Share', 'EVENT_DETAILS_id'], 'required'],
             [['PAYMENTS_Date', 'PAYMENTS_Time'], 'safe'],
-            [['Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'number'],
+            [['Rate', 'TALENT_Share', 'AGENCY_Share'], 'number'],
             [['EVENT_DETAILS_id'], 'integer']
         ];
     }
@@ -50,8 +50,8 @@ class Payments extends \yii\db\ActiveRecord
             'PAYMENTS_Date' => 'Payments  Date',
             'PAYMENTS_Time' => 'Payments  Time',
             'Rate' => 'Rate',
-            'TALENT_Percentage' => 'Talent  Percentage',
-            'AGENCY_Percentage' => 'Agency  Percentage',
+            'TALENT_Share' => 'Talent  Share',
+            'AGENCY_Share' => 'Agency  Share',
             'EVENT_DETAILS_id' => 'Event  Details ID',
         ];
     }

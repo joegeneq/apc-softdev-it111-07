@@ -23,9 +23,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'Rate') ?>
 
-    <?= $form->field($model, 'TALENT_Percentage') ?>
+    <?= $form->field($model, 'TALENT_Share') ?>
 
-    <?php // echo $form->field($model, 'AGENCY_Percentage') ?>
+    <?php // echo $form->field($model, 'AGENCY_Share') ?>
 
     <?php // echo $form->field($model, 'EVENT_DETAILS_id') ?>
 

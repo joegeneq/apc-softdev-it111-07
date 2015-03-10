@@ -61,13 +61,13 @@ class Manager extends \yii\db\ActiveRecord
             'MGR_MName' => 'Middle Name',
             'MGR_Gender' => 'Gender',
             'MGR_BDate' => 'Birth Date',
-            'MGR_BlkNo' => 'Blk No',
+            'MGR_BlkNo' => 'Block Number',
             'MGR_Street' => 'Street',
-            'MGR_Brgy' => 'Brgy',
+            'MGR_Brgy' => 'Barangay',
             'MGR_City' => 'City',
             'MGR_ZipCode' => 'Zip Code',
-            'MGR_ContactNo' => 'Contact No',
-            'MGR_EmailAdd' => 'Email Add',
+            'MGR_ContactNo' => 'Contact Number',
+            'MGR_EmailAdd' => 'Email Address',
             'MGR_Expertise' => 'Expertise',
         ];
     }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2015 at 08:24 AM
+-- Generation Time: Mar 10, 2015 at 04:03 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -48,7 +48,14 @@ CREATE TABLE IF NOT EXISTS `applicant` (
   `SCREENING_SCHED_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_APPLICANT_SCREENING_SCHED1` (`SCREENING_SCHED_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `applicant`
+--
+
+INSERT INTO `applicant` (`id`, `APP_LName`, `APP_FName`, `APP_MName`, `APP_Gender`, `APP_BDate`, `APP_BlkNo`, `APP_Street`, `APP_Brgy`, `APP_City`, `APP_ZipCode`, `APP_ContactNo`, `APP_EmailAdd`, `APP_RegDate`, `APP_RegTime`, `APP_Talent`, `SCREENING_SCHED_id`) VALUES
+(1, 'Miranda', 'Gerard', '', 'Male', '1994-01-01', '1', 'Miranda', 'Malibay', 'Pasay', NULL, '2345678', '', '2015-03-10', '10:00:00', 'Singing', NULL);
 
 -- --------------------------------------------------------
 
@@ -92,7 +99,14 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `EMP_EmailAdd` varchar(45) NOT NULL,
   `EMP_Position` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`id`, `EMP_LName`, `EMP_FName`, `EMP_MName`, `EMP_Gender`, `EMP_BDate`, `EMP_BlkNo`, `EMP_Street`, `EMP_Brgy`, `EMP_City`, `EMP_ZipCode`, `EMP_ContactNo`, `EMP_EmailAdd`, `EMP_Position`) VALUES
+(1, 'Lino', 'Alyssa Jane', 'Briones', 'Female', '1994-12-17', '3', 'Cardones', 'Central Signal', 'Taguig', 1613, '987645678', 'alihjane.lino@gmail.com', 'Talent Manager');
 
 -- --------------------------------------------------------
 
@@ -129,7 +143,14 @@ CREATE TABLE IF NOT EXISTS `event_details` (
   `EVENT_TimeTo` time NOT NULL,
   `EVENT_Status` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `event_details`
+--
+
+INSERT INTO `event_details` (`id`, `EVENT_Name`, `EVENT_Location`, `EVENT_Type`, `EVENT_DateFrom`, `EVENT_DateTo`, `EVENT_TimeFrom`, `EVENT_TimeTo`, `EVENT_Status`) VALUES
+(1, 'Deb & Ger Anniversary', 'El Nido Palawan', 'Anniversary', '2015-03-11', '2015-03-12', '13:49:00', '19:49:00', 'Upcoming');
 
 -- --------------------------------------------------------
 
@@ -153,7 +174,14 @@ CREATE TABLE IF NOT EXISTS `manager` (
   `MGR_EmailAdd` varchar(45) NOT NULL,
   `MGR_Expertise` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `manager`
+--
+
+INSERT INTO `manager` (`id`, `MGR_LName`, `MGR_FName`, `MGR_MName`, `MGR_Gender`, `MGR_BDate`, `MGR_BlkNo`, `MGR_Street`, `MGR_Brgy`, `MGR_City`, `MGR_ZipCode`, `MGR_ContactNo`, `MGR_EmailAdd`, `MGR_Expertise`) VALUES
+(2, 'Lino', 'Alyssa Jane', 'Briones', 'Female', '0000-00-00', '3', 'Cardones', 'Central Signal', 'Taguig', 1613, '096456788', 'alihjane.lino@gmail.com', 'Band');
 
 -- --------------------------------------------------------
 
@@ -186,12 +214,12 @@ CREATE TABLE IF NOT EXISTS `payments` (
   `PAYMENTS_Date` date NOT NULL,
   `PAYMENTS_Time` time NOT NULL,
   `Rate` double NOT NULL,
-  `TALENT_Percentage` decimal(10,0) NOT NULL,
-  `AGENCY_Percentage` decimal(10,0) NOT NULL,
+  `TALENT_Share` double(10,0) NOT NULL,
+  `AGENCY_Share` double(10,0) NOT NULL,
   `EVENT_DETAILS_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_PAYMENTS_EVENT_DETAILS1_idx` (`EVENT_DETAILS_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -207,7 +235,14 @@ CREATE TABLE IF NOT EXISTS `screening_sched` (
   `EMPLOYEE_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_SCREENING_SCHED_EMPLOYEE1` (`EMPLOYEE_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `screening_sched`
+--
+
+INSERT INTO `screening_sched` (`id`, `SCR_Date`, `SCR_Time`, `APP_Status`, `EMPLOYEE_id`) VALUES
+(1, '2015-03-11', '01:00:00', 'Screening', 1);
 
 -- --------------------------------------------------------
 
@@ -226,7 +261,14 @@ CREATE TABLE IF NOT EXISTS `talent` (
   KEY `fk_TALENT_MANAGER1` (`MANAGER_id`),
   KEY `fk_TALENT_SCREENING_SCHED1` (`SCREENING_SCHED_id`),
   KEY `fk_TALENT_APPLICANT1` (`APPLICANT_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `talent`
+--
+
+INSERT INTO `talent` (`id`, `MANAGER_id`, `TALENT_ManagedStartDate`, `TALENT_ManagedEndDate`, `SCREENING_SCHED_id`, `APPLICANT_id`) VALUES
+(1, 2, '2015-03-09', '2015-04-09', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +283,14 @@ CREATE TABLE IF NOT EXISTS `talent_line` (
   `APPLICANT_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_TALENT_LINE_APPLICANT1` (`APPLICANT_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `talent_line`
+--
+
+INSERT INTO `talent_line` (`id`, `TALENT_Type`, `TALENT_Specialization`, `APPLICANT_id`) VALUES
+(1, 'Solo', 'Acoustic', 1);
 
 -- --------------------------------------------------------
 
@@ -283,9 +332,9 @@ ALTER TABLE `applicant`
 -- Constraints for table `events`
 --
 ALTER TABLE `events`
-  ADD CONSTRAINT `fk_TALENT_has_EVENTS_DETAILS_TALENT1` FOREIGN KEY (`TALENT_id`, `TALENT_MANAGER_id`) REFERENCES `talent` (`id`, `MANAGER_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_EVENT_CLIENT1` FOREIGN KEY (`CLIENT_id`) REFERENCES `client` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_TALENT_has_EVENTS_DETAILS_EVENTS_DETAILS1` FOREIGN KEY (`EVENTS_DETAILS_id`) REFERENCES `event_details` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_EVENT_CLIENT1` FOREIGN KEY (`CLIENT_id`) REFERENCES `client` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_TALENT_has_EVENTS_DETAILS_TALENT1` FOREIGN KEY (`TALENT_id`, `TALENT_MANAGER_id`) REFERENCES `talent` (`id`, `MANAGER_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `payments`
@@ -303,9 +352,9 @@ ALTER TABLE `screening_sched`
 -- Constraints for table `talent`
 --
 ALTER TABLE `talent`
+  ADD CONSTRAINT `fk_TALENT_APPLICANT1` FOREIGN KEY (`APPLICANT_id`) REFERENCES `applicant` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_TALENT_MANAGER1` FOREIGN KEY (`MANAGER_id`) REFERENCES `manager` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_TALENT_SCREENING_SCHED1` FOREIGN KEY (`SCREENING_SCHED_id`) REFERENCES `screening_sched` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_TALENT_APPLICANT1` FOREIGN KEY (`APPLICANT_id`) REFERENCES `applicant` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_TALENT_SCREENING_SCHED1` FOREIGN KEY (`SCREENING_SCHED_id`) REFERENCES `screening_sched` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `talent_line`

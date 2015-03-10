@@ -18,8 +18,8 @@ class PaymentsSearch extends Payments
     public function rules()
     {
         return [
-            [['id', 'EVENT_DETAILS_id'], 'integer'],
-            [['PAYMENTS_Date', 'PAYMENTS_Time'], 'safe'],
+            [['id'], 'integer'],
+            [['PAYMENTS_Date', 'PAYMENTS_Time', 'EVENT_DETAILS_id'], 'safe'],
             [['Rate', 'TALENT_Percentage', 'AGENCY_Percentage'], 'number'],
         ];
     }
@@ -56,6 +56,7 @@ class PaymentsSearch extends Payments
             return $dataProvider;
         }
 
+        $query->joinWith('eVENTDETAILS');
         $query->andFilterWhere([
             'id' => $this->id,
             'PAYMENTS_Date' => $this->PAYMENTS_Date,
@@ -63,8 +64,10 @@ class PaymentsSearch extends Payments
             'Rate' => $this->Rate,
             'TALENT_Percentage' => $this->TALENT_Percentage,
             'AGENCY_Percentage' => $this->AGENCY_Percentage,
-            'EVENT_DETAILS_id' => $this->EVENT_DETAILS_id,
+            //'EVENT_DETAILS_id' => $this->EVENT_DETAILS_id,
         ]);
+
+        $query->andFilterWhere(['like','EVENT_DETAILS.EVENT_Name', $this->EVENT_DETAILS_id]);
 
         return $dataProvider;
     }

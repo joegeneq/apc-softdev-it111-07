@@ -66,17 +66,17 @@ class Applicant extends \yii\db\ActiveRecord
             'APP_MName' => 'Middle Name',
             'APP_Gender' => 'Gender',
             'APP_BDate' => 'Birth Date',
-            'APP_BlkNo' => 'Blk No',
+            'APP_BlkNo' => 'Block Number',
             'APP_Street' => 'Street',
             'APP_Brgy' => 'Barangay',
             'APP_City' => 'City',
             'APP_ZipCode' => 'Zip Code',
-            'APP_ContactNo' => 'Contact No',
+            'APP_ContactNo' => 'Contact Number',
             'APP_EmailAdd' => 'Email Address',
             'APP_RegDate' => 'Registration Date',
             'APP_RegTime' => 'Registration Time',
             'APP_Talent' => 'Talent',
-            'SCREENING_SCHED_id' => 'Screening  Schedule ID',
+            'SCREENING_SCHED_id' => 'Screening Schedule ID',
         ];
     }
 

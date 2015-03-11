@@ -48,11 +48,11 @@ class Talent extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'MANAGER_id' => 'Manager ID',
+            'MANAGER_id' => 'Managers Last Name',
             'TALENT_ManagedStartDate' => 'Talent Managed Start Date',
             'TALENT_ManagedEndDate' => 'Talent Managed End Date',
             'SCREENING_SCHED_id' => 'Screening Schedule ID',
-            'APPLICANT_id' => 'Applicant ID',
+            'APPLICANT_id' => 'Applicant Last Name',
         ];
     }
 

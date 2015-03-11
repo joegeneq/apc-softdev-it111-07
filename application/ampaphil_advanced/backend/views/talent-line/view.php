@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'TALENT_Type',
             'TALENT_Specialization',
-            'APPLICANT_id',
+            'aPPLICANT.APP_LName',
         ],
     ]) ?>
 

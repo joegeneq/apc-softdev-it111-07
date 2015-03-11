@@ -1,0 +1,12 @@
+WEEK 6 (February 16-21, 2015)
+A. Tasks accomplished
+- Updated the repository
+
+B. Problems encountered
+- We have talked to our Project adviser and discussed to her our Entity-relationship diagram. She told us to revise it and improve and add more fields and entities.
+
+C. Possible solutions
+- We should be able to edit and update our ERD within this week.
+
+D. Next steps to accomplish
+- We should be able to finalize our ERD so we can start building our system

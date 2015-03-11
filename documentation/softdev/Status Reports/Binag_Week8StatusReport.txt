@@ -1,0 +1,12 @@
+WEEK 8 (April 2 - 7, 2015)
+A. Tasks accomplished
+- Generated model and CRUD for Client, Employee, Applicant and Events table
+
+B. Problems encountered
+- The group are still finalizing the database and still have minimal concern with the entities and fields
+
+C. Possible solutions
+- Database consultation with Project Adviser / subject Professor
+
+D. Next steps to accomplish
+- The group should accomplish the Iteration 0 requirements

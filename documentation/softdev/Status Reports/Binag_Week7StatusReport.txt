@@ -1,0 +1,12 @@
+WEEK 7 (February 23-28, 2015)
+A. Tasks accomplished
+- Updated the repository
+
+B. Problems encountered
+- We need to have our next consultation with our adviser but we've just emailed her our ERD and she had some questions regarding the talents that the company accommodated and the relationship between manager and talents. so she can tell us if we can continue working on our project with the finalized database
+
+C. Possible solutions
+- ERD are already revised according to the advise of our Project Adviser
+
+D. Next steps to accomplish
+- We should already generated the CRUD for each model and connect our database to Yii2.

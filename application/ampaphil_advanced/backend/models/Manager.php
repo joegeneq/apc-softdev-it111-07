@@ -56,7 +56,7 @@ class Manager extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'MGR_LName' => 'Last Name',
+            'MGR_LName' => 'Managers Last Name',
             'MGR_FName' => 'First Name',
             'MGR_MName' => 'Middle Name',
             'MGR_Gender' => 'Gender',

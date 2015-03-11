@@ -50,7 +50,7 @@ class ScreeningSched extends \yii\db\ActiveRecord
             'SCR_Date' => 'Screening Date',
             'SCR_Time' => 'Screening Time',
             'APP_Status' => 'Applicant Status',
-            'EMPLOYEE_id' => 'Employee ID',
+            'EMPLOYEE_id' => 'Employee Last Name',
         ];
     }
 

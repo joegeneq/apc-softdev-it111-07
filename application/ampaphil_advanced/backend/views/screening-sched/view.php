@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'SCR_Date',
             'SCR_Time',
             'APP_Status',
-            'EMPLOYEE_id',
+            'eMPLOYEE.EMP_LName',
         ],
     ]) ?>
 

@@ -61,7 +61,7 @@ class Applicant extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'APP_LName' => 'Last Name',
+            'APP_LName' => 'Applicants Last Name',
             'APP_FName' => 'First Name',
             'APP_MName' => 'Middle Name',
             'APP_Gender' => 'Gender',

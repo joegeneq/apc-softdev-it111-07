@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Client */
 
-$this->title = $model->id;
+$this->title = $model->CLIENT_Company;
 $this->params['breadcrumbs'][] = ['label' => 'Clients', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -35,8 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'CLIENT_Company',
             'CLIENT_CompanyBlkNo',
             'CLIENT_CompanyBrgy',
-            'CLIENT_ContactNo',
             'CLIENT_CompanyCity',
+			'CLIENT_ContactNo',
             'CLIENT_EmailAdd:email',
         ],
     ]) ?>

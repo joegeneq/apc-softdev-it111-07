@@ -1,0 +1,12 @@
+WEEK 9 (April 9-14, 2015)
+A. Tasks accomplished
+- Presented the Iteration 1 to our Client. Removed the gitignore files to run in host server.
+
+B. Problems encountered
+- On the client meeting, there are still some revisions in the system. There are some modules that needs to work on specifically the Calendar module.
+
+C. Possible solutions
+- Start working on the minor revisions and come up with a good research and application on how to run the Calendar module.
+
+D. Next steps to accomplish
+- Minor revisions in the system and Calendar module

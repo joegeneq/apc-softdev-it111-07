@@ -5,7 +5,7 @@ $this->title = 'AMPAPhil';
 <div class="site-index">
 
     <div class="jumbotron">
-       <img src="../images/ampaphil_logo.jpg" height="" width="800px"></img>
+       <img src="images/ampaphil_logo.jpg" height="" width="800px"></img>
     </div>
 
     <div class="body-content">

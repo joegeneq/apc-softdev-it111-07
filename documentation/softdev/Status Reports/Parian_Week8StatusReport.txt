@@ -1,0 +1,12 @@
+WEEK 8 (March 2-7, 2015)
+A. Tasks accomplished
+The group was able to complete Iteration 0 and incorporated advanced template in our project.
+
+B. Problems encountered
+Some extensions and functions in Yii 1.0 are still not available in Yii 2.0. There is limited documentation available for Yii 2.0.
+
+C. Possible solutions
+The group, especially our main developer searched for other ways we can still include the requirements from the client.
+
+D. Next steps to accomplish
+Iteration 1 should be completed.

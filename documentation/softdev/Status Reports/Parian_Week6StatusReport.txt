@@ -1,0 +1,12 @@
+WEEK 6 (February 16-21, 2015)
+A. Tasks accomplished
+We have discussed about the search and drop down list in Yii 2.0 in preparation for the midterm hands-on test. Also, I have successfully installed Yii 2.0 on my local.
+
+B. Problems encountered
+The ERD is not yet final and needs major revisions.
+
+C. Possible solutions
+Consistent coordination with our database adviser regarding the ERD and database itself.
+
+D. Next steps to accomplish
+The group should start working on the system and start importing the database.

@@ -1,0 +1,12 @@
+WEEK 7 (February 23-28, 2015)
+A. Tasks accomplished
+Hands-on midterm exam in SOFTDEV regarding the database, drop down list and search field in Yii 2.0.
+
+B. Problems encountered
+The exam is time pressured.
+
+C. Possible solutions
+I should study and master basic codes used in Yii 2.0.
+
+D. Next steps to accomplish
+The group should start working on Iteration 0.

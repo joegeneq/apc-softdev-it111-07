@@ -1,0 +1,12 @@
+WEEK 9 (March 9-14, 2015)
+A. Tasks accomplished
+Iteration 1 is already completed. We also met with the client and discussed the initial system.
+
+B. Problems encountered
+There were minor revisions that the client wants. The client also want us to focus more on the calendar and remove the transaction module.
+
+C. Possible solutions
+Focus more on the calendar function of the system.
+
+D. Next steps to accomplish
+Continue the development of the project and start working on Iteration 2.

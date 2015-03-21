@@ -13,9 +13,9 @@ use Yii;
  * @property integer $EVENTS_DETAILS_id
  * @property integer $CLIENT_id
  *
- * @property Talent $tALENT
- * @property EventDetails $eVENTSDETAILS
  * @property Client $cLIENT
+ * @property EventDetails $eVENTSDETAILS
+ * @property Talent $tALENT
  */
 class Events extends \yii\db\ActiveRecord
 {
@@ -46,8 +46,8 @@ class Events extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'TALENT_id' => 'Talent ID',
-            'TALENT_MANAGER_id' => 'Talent Manager ID',
-            'EVENTS_DETAILS_id' => 'Event Details ID',
+            'TALENT_MANAGER_id' => 'Talent  Manager ID',
+            'EVENTS_DETAILS_id' => 'Events  Details ID',
             'CLIENT_id' => 'Client ID',
         ];
     }
@@ -55,9 +55,9 @@ class Events extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTALENT()
+    public function getCLIENT()
     {
-        return $this->hasOne(Talent::className(), ['id' => 'TALENT_id', 'MANAGER_id' => 'TALENT_MANAGER_id']);
+        return $this->hasOne(Client::className(), ['id' => 'CLIENT_id']);
     }
 
     /**
@@ -71,8 +71,8 @@ class Events extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCLIENT()
+    public function getTALENT()
     {
-        return $this->hasOne(Client::className(), ['id' => 'CLIENT_id']);
+        return $this->hasOne(Talent::className(), ['id' => 'TALENT_id', 'manager_id' => 'TALENT_MANAGER_id']);
     }
 }

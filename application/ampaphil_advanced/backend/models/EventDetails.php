@@ -8,17 +8,17 @@ use Yii;
  * This is the model class for table "event_details".
  *
  * @property integer $id
- * @property string $EVENT_Name
- * @property string $EVENT_Location
- * @property string $EVENT_Type
- * @property string $EVENT_DateFrom
- * @property string $EVENT_DateTo
- * @property string $EVENT_TimeFrom
- * @property string $EVENT_TimeTo
- * @property string $EVENT_Status
+ * @property string $event_name
+ * @property string $event_location
+ * @property string $event_type
+ * @property string $event_datefrom
+ * @property string $event_dateto
+ * @property string $event_timefrom
+ * @property string $event_timeto
+ * @property integer $transaction_id
  *
+ * @property Payments $transaction
  * @property Events[] $events
- * @property Payments[] $payments
  */
 class EventDetails extends \yii\db\ActiveRecord
 {
@@ -36,10 +36,10 @@ class EventDetails extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['EVENT_Name', 'EVENT_Location', 'EVENT_Type', 'EVENT_DateFrom', 'EVENT_DateTo', 'EVENT_TimeFrom', 'EVENT_TimeTo'], 'required'],
-            [['EVENT_DateFrom', 'EVENT_DateTo', 'EVENT_TimeFrom', 'EVENT_TimeTo'], 'safe'],
-            [['EVENT_Name', 'EVENT_Location', 'EVENT_Type'], 'string', 'max' => 45],
-            [['EVENT_Status'], 'string', 'max' => 20]
+            [['event_name', 'event_location', 'event_type', 'event_datefrom', 'event_dateto', 'event_timefrom', 'event_timeto'], 'required'],
+            [['event_datefrom', 'event_dateto', 'event_timefrom', 'event_timeto'], 'safe'],
+            [['transaction_id'], 'integer'],
+            [['event_name', 'event_location', 'event_type'], 'string', 'max' => 45]
         ];
     }
 
@@ -50,15 +50,23 @@ class EventDetails extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'EVENT_Name' => 'Event Name',
-            'EVENT_Location' => 'Event Location',
-            'EVENT_Type' => 'Event Type',
-            'EVENT_DateFrom' => 'Event Date From',
-            'EVENT_DateTo' => 'Event Date To',
-            'EVENT_TimeFrom' => 'Event Time From',
-            'EVENT_TimeTo' => 'Event Time To',
-            'EVENT_Status' => 'Event Status',
+            'event_name' => 'Event Name',
+            'event_location' => 'Event Location',
+            'event_type' => 'Event Type',
+            'event_datefrom' => 'Event Datefrom',
+            'event_dateto' => 'Event Dateto',
+            'event_timefrom' => 'Event Timefrom',
+            'event_timeto' => 'Event Timeto',
+            'transaction_id' => 'Transaction ID',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTransaction()
+    {
+        return $this->hasOne(Payments::className(), ['id' => 'transaction_id']);
     }
 
     /**
@@ -67,13 +75,5 @@ class EventDetails extends \yii\db\ActiveRecord
     public function getEvents()
     {
         return $this->hasMany(Events::className(), ['EVENTS_DETAILS_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPayments()
-    {
-        return $this->hasMany(Payments::className(), ['EVENT_DETAILS_id' => 'id']);
     }
 }

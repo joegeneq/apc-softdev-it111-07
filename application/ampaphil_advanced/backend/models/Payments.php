@@ -8,14 +8,13 @@ use Yii;
  * This is the model class for table "payments".
  *
  * @property integer $id
- * @property string $PAYMENTS_Date
- * @property string $PAYMENTS_Time
- * @property double $Rate
- * @property double $TALENT_Share
- * @property double $AGENCY_Share
- * @property integer $EVENT_DETAILS_id
+ * @property string $payments_date
+ * @property string $payments_time
+ * @property double $payments_rate
+ * @property string $talent_percentage
+ * @property string $agency_percentage
  *
- * @property EventDetails $eVENTDETAILS
+ * @property EventDetails[] $eventDetails
  */
 class Payments extends \yii\db\ActiveRecord
 {
@@ -33,10 +32,9 @@ class Payments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['PAYMENTS_Date', 'PAYMENTS_Time', 'Rate', 'TALENT_Share', 'AGENCY_Share', 'EVENT_DETAILS_id'], 'required'],
-            [['PAYMENTS_Date', 'PAYMENTS_Time'], 'safe'],
-            [['Rate', 'TALENT_Share', 'AGENCY_Share'], 'number'],
-            [['EVENT_DETAILS_id'], 'integer']
+            [['payments_date', 'payments_time', 'payments_rate', 'talent_percentage', 'agency_percentage'], 'required'],
+            [['payments_date', 'payments_time'], 'safe'],
+            [['payments_rate', 'talent_percentage', 'agency_percentage'], 'number']
         ];
     }
 
@@ -47,20 +45,19 @@ class Payments extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'PAYMENTS_Date' => 'Payments  Date',
-            'PAYMENTS_Time' => 'Payments  Time',
-            'Rate' => 'Rate',
-            'TALENT_Share' => 'Talent  Share',
-            'AGENCY_Share' => 'Agency  Share',
-            'EVENT_DETAILS_id' => 'Event  Details ID',
+            'payments_date' => 'Payments Date',
+            'payments_time' => 'Payments Time',
+            'payments_rate' => 'Payments Rate',
+            'talent_percentage' => 'Talent Percentage',
+            'agency_percentage' => 'Agency Percentage',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEVENTDETAILS()
+    public function getEventDetails()
     {
-        return $this->hasOne(EventDetails::className(), ['id' => 'EVENT_DETAILS_id']);
+        return $this->hasMany(EventDetails::className(), ['transaction_id' => 'id']);
     }
 }

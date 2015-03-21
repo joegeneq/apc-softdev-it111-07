@@ -8,16 +8,16 @@ use Yii;
  * This is the model class for table "talent".
  *
  * @property integer $id
- * @property integer $MANAGER_id
- * @property string $TALENT_ManagedStartDate
- * @property string $TALENT_ManagedEndDate
- * @property integer $SCREENING_SCHED_id
- * @property integer $APPLICANT_id
+ * @property integer $manager_id
+ * @property string $talent_managedstartdate
+ * @property string $talent_managedenddate
+ * @property integer $screening_sched_id
+ * @property integer $applicant_id
  *
  * @property Events[] $events
- * @property Manager $mANAGER
- * @property ScreeningSched $sCREENINGSCHED
- * @property Applicant $aPPLICANT
+ * @property Applicant $applicant
+ * @property Manager $manager
+ * @property ScreeningSched $screeningSched
  */
 class Talent extends \yii\db\ActiveRecord
 {
@@ -35,9 +35,9 @@ class Talent extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['MANAGER_id', 'TALENT_ManagedStartDate', 'TALENT_ManagedEndDate'], 'required'],
-            [['MANAGER_id', 'SCREENING_SCHED_id', 'APPLICANT_id'], 'integer'],
-            [['TALENT_ManagedStartDate', 'TALENT_ManagedEndDate'], 'safe']
+            [['manager_id', 'talent_managedstartdate', 'talent_managedenddate'], 'required'],
+            [['manager_id', 'screening_sched_id', 'applicant_id'], 'integer'],
+            [['talent_managedstartdate', 'talent_managedenddate'], 'safe']
         ];
     }
 
@@ -48,11 +48,11 @@ class Talent extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'MANAGER_id' => 'Managers Last Name',
-            'TALENT_ManagedStartDate' => 'Talent Managed Start Date',
-            'TALENT_ManagedEndDate' => 'Talent Managed End Date',
-            'SCREENING_SCHED_id' => 'Screening Schedule ID',
-            'APPLICANT_id' => 'Applicant Last Name',
+            'manager_id' => 'Manager ID',
+            'talent_managedstartdate' => 'Start Date',
+            'talent_managedenddate' => 'End Date',
+            'screening_sched_id' => 'Screening Sched ID',
+            'applicant_id' => 'Applicant ID',
         ];
     }
 
@@ -61,30 +61,30 @@ class Talent extends \yii\db\ActiveRecord
      */
     public function getEvents()
     {
-        return $this->hasMany(Events::className(), ['TALENT_id' => 'id', 'TALENT_MANAGER_id' => 'MANAGER_id']);
+        return $this->hasMany(Events::className(), ['TALENT_id' => 'id', 'TALENT_MANAGER_id' => 'manager_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMANAGER()
+    public function getApplicant()
     {
-        return $this->hasOne(Manager::className(), ['id' => 'MANAGER_id']);
+        return $this->hasOne(Applicant::className(), ['id' => 'applicant_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSCREENINGSCHED()
+    public function getManager()
     {
-        return $this->hasOne(ScreeningSched::className(), ['id' => 'SCREENING_SCHED_id']);
+        return $this->hasOne(Manager::className(), ['id' => 'manager_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAPPLICANT()
+    public function getScreeningSched()
     {
-        return $this->hasOne(Applicant::className(), ['id' => 'APPLICANT_id']);
+        return $this->hasOne(ScreeningSched::className(), ['id' => 'screening_sched_id']);
     }
 }

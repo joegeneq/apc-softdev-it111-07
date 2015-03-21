@@ -8,15 +8,15 @@ use Yii;
  * This is the model class for table "client".
  *
  * @property integer $id
- * @property string $CLIENT_LName
- * @property string $CLIENT_FName
- * @property string $CLIENT_MName
- * @property string $CLIENT_Company
- * @property string $CLIENT_CompanyBlkNo
- * @property string $CLIENT_CompanyBrgy
- * @property string $CLIENT_ContactNo
- * @property string $CLIENT_CompanyCity
- * @property string $CLIENT_EmailAdd
+ * @property string $client_lname
+ * @property string $client_fname
+ * @property string $client_mname
+ * @property string $client_company
+ * @property string $client_companyblockno
+ * @property string $client_companybrgy
+ * @property string $client_contactno
+ * @property string $client_companycity
+ * @property string $client_emailadd
  *
  * @property Events[] $events
  */
@@ -36,10 +36,10 @@ class Client extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['CLIENT_LName', 'CLIENT_FName', 'CLIENT_CompanyBlkNo', 'CLIENT_CompanyBrgy', 'CLIENT_ContactNo', 'CLIENT_CompanyCity', 'CLIENT_EmailAdd'], 'required'],
-            [['CLIENT_LName', 'CLIENT_FName', 'CLIENT_MName', 'CLIENT_Company', 'CLIENT_CompanyBrgy', 'CLIENT_CompanyCity', 'CLIENT_EmailAdd'], 'string', 'max' => 45],
-            [['CLIENT_CompanyBlkNo'], 'string', 'max' => 10],
-            [['CLIENT_ContactNo'], 'string', 'max' => 20]
+            [['client_lname', 'client_fname', 'client_companyblockno', 'client_companybrgy', 'client_contactno', 'client_companycity', 'client_emailadd'], 'required'],
+            [['client_lname', 'client_fname', 'client_mname', 'client_company', 'client_companybrgy', 'client_companycity', 'client_emailadd'], 'string', 'max' => 45],
+            [['client_companyblockno'], 'string', 'max' => 10],
+            [['client_contactno'], 'string', 'max' => 20]
         ];
     }
 
@@ -50,15 +50,15 @@ class Client extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'CLIENT_LName' => 'Last Name',
-            'CLIENT_FName' => 'First Name',
-            'CLIENT_MName' => 'Middle Name',
-            'CLIENT_Company' => 'Client  Company',
-            'CLIENT_CompanyBlkNo' => 'Block Number',
-            'CLIENT_CompanyBrgy' => 'Barangay',
-            'CLIENT_ContactNo' => 'Contact Number',
-            'CLIENT_CompanyCity' => 'City',
-            'CLIENT_EmailAdd' => 'Email Address',
+            'client_lname' => 'Last Name',
+            'client_fname' => 'First Name',
+            'client_mname' => 'Middle Name',
+            'client_company' => 'Company',
+            'client_companyblockno' => 'Block/Lot Number',
+            'client_companybrgy' => 'Barangay',
+            'client_contactno' => 'Contact Number',
+            'client_companycity' => 'City',
+            'client_emailadd' => 'Email Address',
         ];
     }
 

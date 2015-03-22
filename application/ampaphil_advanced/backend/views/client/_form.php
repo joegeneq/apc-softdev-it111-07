@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'client_company')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'client_companyblockno')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'client_companyclkno')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'client_companybrgy')->textInput(['maxlength' => 45]) ?>
 

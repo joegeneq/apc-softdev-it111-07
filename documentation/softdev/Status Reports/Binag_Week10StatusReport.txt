@@ -1,0 +1,12 @@
+WEEK 10 (April 16-21, 2015)
+A. Tasks accomplished
+- Finalize the database - Created Github account and was able to use for push, commit and pull
+
+B. Problems encountered
+- Coordination with the group regarding the ERD.
+
+C. Possible solutions
+- On our SCRUM Meeting, the group were able to identify the possible solutions on the error regarding database entities and field names in the host server. With that, We've already changed and updated the database.
+
+D. Next steps to accomplish
+- The group needs to update all the revisions that were asked and made by the client

@@ -8,14 +8,14 @@ use Yii;
  * This is the model class for table "events".
  *
  * @property integer $id
- * @property integer $TALENT_id
- * @property integer $TALENT_MANAGER_id
- * @property integer $EVENTS_DETAILS_id
- * @property integer $CLIENT_id
+ * @property integer $talent_id
+ * @property integer $manager_id
+ * @property integer $event_details_id
+ * @property integer $client_id
  *
- * @property Client $cLIENT
- * @property EventDetails $eVENTSDETAILS
- * @property Talent $tALENT
+ * @property Talent $talent
+ * @property EventDetails $eventDetails
+ * @property Client $client
  */
 class Events extends \yii\db\ActiveRecord
 {
@@ -33,8 +33,8 @@ class Events extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['TALENT_id', 'TALENT_MANAGER_id', 'EVENTS_DETAILS_id', 'CLIENT_id'], 'required'],
-            [['TALENT_id', 'TALENT_MANAGER_id', 'EVENTS_DETAILS_id', 'CLIENT_id'], 'integer']
+            [['talent_id', 'manager_id', 'event_details_id', 'client_id'], 'required'],
+            [['talent_id', 'manager_id', 'event_details_id', 'client_id'], 'integer']
         ];
     }
 
@@ -45,34 +45,34 @@ class Events extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'TALENT_id' => 'Talent ID',
-            'TALENT_MANAGER_id' => 'Talent  Manager ID',
-            'EVENTS_DETAILS_id' => 'Events  Details ID',
-            'CLIENT_id' => 'Client ID',
+            'talent_id' => 'Talent ID',
+            'manager_id' => 'Manager ID',
+            'event_details_id' => 'Event Details ID',
+            'client_id' => 'Client ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCLIENT()
+    public function getTalent()
     {
-        return $this->hasOne(Client::className(), ['id' => 'CLIENT_id']);
+        return $this->hasOne(Talent::className(), ['id' => 'talent_id', 'manager_id' => 'manager_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEVENTSDETAILS()
+    public function getEventDetails()
     {
-        return $this->hasOne(EventDetails::className(), ['id' => 'EVENTS_DETAILS_id']);
+        return $this->hasOne(EventDetails::className(), ['id' => 'event_details_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTALENT()
+    public function getClient()
     {
-        return $this->hasOne(Talent::className(), ['id' => 'TALENT_id', 'manager_id' => 'TALENT_MANAGER_id']);
+        return $this->hasOne(Client::className(), ['id' => 'client_id']);
     }
 }

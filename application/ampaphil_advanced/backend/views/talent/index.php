@@ -26,19 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            //'MANAGER_id',
-            [
-                'attribute'=>'MANAGER_id',
-                'value'=>'mANAGER.MGR_LName',
-            ],
-            //'TALENT_ManagedStartDate',
-            //'TALENT_ManagedEndDate',
-            //'SCREENING_SCHED_id',
-            //'APPLICANT_id',
-            [
-                'attribute'=>'APPLICANT_id',
-                'value'=>'aPPLICANT.APP_LName',
-            ],
+            'manager_id',
+            'talent_managedstartdate',
+            'talent_managedenddate',
+            'screening_sched_id',
+            // 'applicant_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

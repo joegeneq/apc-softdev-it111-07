@@ -17,15 +17,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'MANAGER_id') ?>
+    <?= $form->field($model, 'manager_id') ?>
 
-    <?= $form->field($model, 'TALENT_ManagedStartDate') ?>
+    <?= $form->field($model, 'talent_managedstartdate') ?>
 
-    <?= $form->field($model, 'TALENT_ManagedEndDate') ?>
+    <?= $form->field($model, 'talent_managedenddate') ?>
 
-    <?= $form->field($model, 'SCREENING_SCHED_id') ?>
+    <?= $form->field($model, 'screening_sched_id') ?>
 
-    <?php // echo $form->field($model, 'APPLICANT_id') ?>
+    <?php // echo $form->field($model, 'applicant_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

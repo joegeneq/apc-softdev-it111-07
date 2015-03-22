@@ -17,18 +17,21 @@ use kartik\time\TimePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'APP_LName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_lname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_FName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_fname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_MName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_Gender')->dropDownList(['' => 'Select Gender',
+    <?= $form->field($model, 'app_gender')->dropDownList(['' => 'Select Gender',
                                                           'Male' => 'Male',
-                                                          'Female' => 'Female'
+                                                          'Female' => 'Female',
+                                                          'Gay' => 'Gay',
+                                                          'Lesbian' => 'Lesbian',
                                                         ]) ?>
 
-    <?= $form->field($model, 'APP_BDate')->widget(
+
+    <?= $form->field($model, 'app_bdate')->widget(
         DatePicker::className(), [
             // inline too, not bad
             'inline' => false, 
@@ -40,21 +43,21 @@ use kartik\time\TimePicker;
             ]
     ]);?>
 
-    <?= $form->field($model, 'APP_BlkNo')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'app_blockno')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'APP_Street')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_street')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_Brgy')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_brgy')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_City')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_city')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_ZipCode')->textInput() ?>
+    <?= $form->field($model, 'app_zipcode')->textInput() ?>
 
-    <?= $form->field($model, 'APP_ContactNo')->textInput(['maxlength' => 20]) ?>
+    <?= $form->field($model, 'app_contactno')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'APP_EmailAdd')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'app_emailadd')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'APP_RegDate')->widget(
+    <?= $form->field($model, 'app_regdate')->widget(
         DatePicker::className(), [
             // inline too, not bad
             'inline' => false, 
@@ -66,7 +69,7 @@ use kartik\time\TimePicker;
             ]
     ]);?>
 
-    <?= $form->field($model, 'APP_RegTime')->widget(
+    <?= $form->field($model, 'app_regtime')->widget(
         TimePicker::className(), [
             'name' => 'time',
             'pluginOptions' => [
@@ -77,12 +80,12 @@ use kartik\time\TimePicker;
             ]
     ]);?>
 
-    <?= $form->field($model, 'APP_Talent')->dropDownList(['' => 'Select Talent',
+    <?= $form->field($model, 'app_talent')->dropDownList(['' => 'Select Talent',
                                                           'Dancing' => 'Dancing',
                                                           'Singing' => 'Singing',
                                                         ]) ?>
 
-    <?= $form->field($model, 'SCREENING_SCHED_id')->dropDownList(
+    <?= $form->field($model, 'screening_sched_id')->dropDownList(
         ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'SCR_Time', 'SCR_Date'),
         ['prompt'=>'Select Screening Schedule'] ) 
     ?>

@@ -18,8 +18,8 @@ class ApplicantSearch extends Applicant
     public function rules()
     {
         return [
-            [['id', 'APP_ZipCode', 'SCREENING_SCHED_id'], 'integer'],
-            [['APP_LName', 'APP_FName', 'APP_MName', 'APP_Gender', 'APP_BDate', 'APP_BlkNo', 'APP_Street', 'APP_Brgy', 'APP_City', 'APP_ContactNo', 'APP_EmailAdd', 'APP_RegDate', 'APP_RegTime', 'APP_Talent'], 'safe'],
+            [['id', 'app_zipcode', 'screening_sched_id'], 'integer'],
+            [['app_lname', 'app_fname', 'app_mname', 'app_gender', 'app_bdate', 'app_blockno', 'app_street', 'app_brgy', 'app_city', 'app_contactno', 'app_emailadd', 'app_regdate', 'app_regtime', 'app_talent'], 'safe'],
         ];
     }
 
@@ -57,24 +57,24 @@ class ApplicantSearch extends Applicant
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'APP_BDate' => $this->APP_BDate,
-            'APP_ZipCode' => $this->APP_ZipCode,
-            'APP_RegDate' => $this->APP_RegDate,
-            'APP_RegTime' => $this->APP_RegTime,
-            'SCREENING_SCHED_id' => $this->SCREENING_SCHED_id,
+            'app_bdate' => $this->app_bdate,
+            'app_zipcode' => $this->app_zipcode,
+            'app_regdate' => $this->app_regdate,
+            'app_regtime' => $this->app_regtime,
+            'screening_sched_id' => $this->screening_sched_id,
         ]);
 
-        $query->andFilterWhere(['like', 'APP_LName', $this->APP_LName])
-            ->andFilterWhere(['like', 'APP_FName', $this->APP_FName])
-            ->andFilterWhere(['like', 'APP_MName', $this->APP_MName])
-            ->andFilterWhere(['like', 'APP_Gender', $this->APP_Gender])
-            ->andFilterWhere(['like', 'APP_BlkNo', $this->APP_BlkNo])
-            ->andFilterWhere(['like', 'APP_Street', $this->APP_Street])
-            ->andFilterWhere(['like', 'APP_Brgy', $this->APP_Brgy])
-            ->andFilterWhere(['like', 'APP_City', $this->APP_City])
-            ->andFilterWhere(['like', 'APP_ContactNo', $this->APP_ContactNo])
-            ->andFilterWhere(['like', 'APP_EmailAdd', $this->APP_EmailAdd])
-            ->andFilterWhere(['like', 'APP_Talent', $this->APP_Talent]);
+        $query->andFilterWhere(['like', 'app_lname', $this->app_lname])
+            ->andFilterWhere(['like', 'app_fname', $this->app_fname])
+            ->andFilterWhere(['like', 'app_mname', $this->app_mname])
+            ->andFilterWhere(['like', 'app_gender', $this->app_gender])
+            ->andFilterWhere(['like', 'app_blockno', $this->app_blockno])
+            ->andFilterWhere(['like', 'app_street', $this->app_street])
+            ->andFilterWhere(['like', 'app_brgy', $this->app_brgy])
+            ->andFilterWhere(['like', 'app_city', $this->app_city])
+            ->andFilterWhere(['like', 'app_contactno', $this->app_contactno])
+            ->andFilterWhere(['like', 'app_emailadd', $this->app_emailadd])
+            ->andFilterWhere(['like', 'app_talent', $this->app_talent]);
 
         return $dataProvider;
     }

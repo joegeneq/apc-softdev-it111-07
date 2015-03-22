@@ -43,9 +43,9 @@ class TalentLine extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'talent_type' => 'Talent Type',
-            'talent_specialization' => 'Talent Specialization',
-            'applicant_id' => 'Applicant ID',
+            'talent_type' => 'Type',
+            'talent_specialization' => 'Specialization',
+            'applicant_id' => 'Last Name',
         ];
     }
 

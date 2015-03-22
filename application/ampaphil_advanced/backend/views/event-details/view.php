@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\EventDetails */
 
-$this->title = $model->EVENT_Name;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Event Details', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -29,14 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'EVENT_Name',
-            'EVENT_Location',
-            'EVENT_Type',
-            'EVENT_DateFrom',
-            'EVENT_DateTo',
-            'EVENT_TimeFrom',
-            'EVENT_TimeTo',
-            'EVENT_Status',
+            'event_name',
+            'event_location',
+            'event_type',
+            'event_datefrom',
+            'event_dateto',
+            'event_timefrom',
+            'event_timeto',
+            'transaction_id',
         ],
     ]) ?>
 

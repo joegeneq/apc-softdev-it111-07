@@ -18,8 +18,8 @@ class TalentLineSearch extends TalentLine
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['TALENT_Type','TALENT_Specialization','APPLICANT_id'], 'safe'],
+            [['id', 'applicant_id'], 'integer'],
+            [['talent_type', 'talent_specialization'], 'safe'],
         ];
     }
 
@@ -55,15 +55,13 @@ class TalentLineSearch extends TalentLine
             return $dataProvider;
         }
 
-        $query->joinWith('aPPLICANT');
         $query->andFilterWhere([
             'id' => $this->id,
-            //APPLICANT_id' => $this->APPLICANT_id,
+            'applicant_id' => $this->applicant_id,
         ]);
 
-        $query->andFilterWhere(['like','TALENT_Type', $this->TALENT_Type])
-              ->andFilterWhere(['like', 'TALENT_Specialization', $this->TALENT_Specialization])
-              ->andFilterWhere(['like', 'aPPLICANT.APP_LName', $this->APPLICANT_id]);
+        $query->andFilterWhere(['like', 'talent_type', $this->talent_type])
+            ->andFilterWhere(['like', 'talent_specialization', $this->talent_specialization]);
 
         return $dataProvider;
     }

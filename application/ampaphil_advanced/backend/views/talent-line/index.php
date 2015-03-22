@@ -26,12 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'TALENT_Type',
-            'TALENT_Specialization',
-            [
-                'attribute'=>'APPLICANT_id',
-                'value'=>'aPPLICANT.APP_LName',
-            ],
+            'talent_type',
+            'talent_specialization',
+            'applicant_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

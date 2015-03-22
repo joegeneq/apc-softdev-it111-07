@@ -47,10 +47,10 @@ class ScreeningSched extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'scr_date' => 'Scr Date',
-            'scr_time' => 'Scr Time',
-            'app_status' => 'App Status',
-            'employee_id' => 'Employee ID',
+            'scr_date' => 'Date',
+            'scr_time' => 'Time',
+            'app_status' => 'Status',
+            'employee_id' => 'Employee Last Name',
         ];
     }
 

@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'emp_mname',
             'emp_gender',
             'emp_bdate',
-            'emp_blockno',
+            'emp_blkno',
             'emp_street',
             'emp_brgy',
             'emp_city',

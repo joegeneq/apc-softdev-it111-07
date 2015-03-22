@@ -19,7 +19,7 @@ class EmployeeSearch extends Employee
     {
         return [
             [['id', 'emp_zipcode'], 'integer'],
-            [['emp_lname', 'emp_fname', 'emp_mname', 'emp_gender', 'emp_bdate', 'emp_blockno', 'emp_street', 'emp_brgy', 'emp_city', 'emp_contactno', 'emp_emailadd', 'emp_position'], 'safe'],
+            [['emp_lname', 'emp_fname', 'emp_mname', 'emp_gender', 'emp_bdate', 'emp_blkno', 'emp_street', 'emp_brgy', 'emp_city', 'emp_contactno', 'emp_emailadd', 'emp_position'], 'safe'],
         ];
     }
 
@@ -65,7 +65,7 @@ class EmployeeSearch extends Employee
             ->andFilterWhere(['like', 'emp_fname', $this->emp_fname])
             ->andFilterWhere(['like', 'emp_mname', $this->emp_mname])
             ->andFilterWhere(['like', 'emp_gender', $this->emp_gender])
-            ->andFilterWhere(['like', 'emp_blockno', $this->emp_blockno])
+            ->andFilterWhere(['like', 'emp_blkno', $this->emp_blkno])
             ->andFilterWhere(['like', 'emp_street', $this->emp_street])
             ->andFilterWhere(['like', 'emp_brgy', $this->emp_brgy])
             ->andFilterWhere(['like', 'emp_city', $this->emp_city])

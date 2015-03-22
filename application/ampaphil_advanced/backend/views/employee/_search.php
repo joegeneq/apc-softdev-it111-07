@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'emp_bdate') ?>
 
-    <?php // echo $form->field($model, 'emp_blockno') ?>
+    <?php // echo $form->field($model, 'emp_blkno') ?>
 
     <?php // echo $form->field($model, 'emp_street') ?>
 

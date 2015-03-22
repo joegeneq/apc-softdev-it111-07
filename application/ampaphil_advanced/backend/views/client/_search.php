@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'client_company') ?>
 
-    <?php // echo $form->field($model, 'client_companyclkno') ?>
+    <?php // echo $form->field($model, 'client_companyblkno') ?>
 
     <?php // echo $form->field($model, 'client_companybrgy') ?>
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2015 at 08:21 AM
+-- Generation Time: Mar 22, 2015 at 09:04 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `manager` (
   `mgr_lname` varchar(45) NOT NULL,
   `mgr_fname` varchar(45) NOT NULL,
   `mgr_mname` varchar(45) DEFAULT NULL,
-  `mge_gender` varchar(10) NOT NULL,
+  `mgr_gender` varchar(10) NOT NULL,
   `mgr_bdate` date NOT NULL,
   `mgr_blkno` varchar(10) NOT NULL,
   `mgr_street` varchar(45) NOT NULL,

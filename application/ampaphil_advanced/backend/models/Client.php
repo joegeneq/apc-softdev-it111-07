@@ -12,7 +12,7 @@ use Yii;
  * @property string $client_fname
  * @property string $client_mname
  * @property string $client_company
- * @property string $client_companyblockno
+ * @property string $client_companyclkno
  * @property string $client_companybrgy
  * @property string $client_contactno
  * @property string $client_companycity
@@ -36,9 +36,9 @@ class Client extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['client_lname', 'client_fname', 'client_companyblockno', 'client_companybrgy', 'client_contactno', 'client_companycity', 'client_emailadd'], 'required'],
+            [['client_lname', 'client_fname', 'client_companyclkno', 'client_companybrgy', 'client_contactno', 'client_companycity', 'client_emailadd'], 'required'],
             [['client_lname', 'client_fname', 'client_mname', 'client_company', 'client_companybrgy', 'client_companycity', 'client_emailadd'], 'string', 'max' => 45],
-            [['client_companyblockno'], 'string', 'max' => 10],
+            [['client_companyclkno'], 'string', 'max' => 10],
             [['client_contactno'], 'string', 'max' => 20]
         ];
     }
@@ -50,15 +50,15 @@ class Client extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'client_lname' => 'Last Name',
-            'client_fname' => 'First Name',
-            'client_mname' => 'Middle Name',
-            'client_company' => 'Company',
-            'client_companyblockno' => 'Block/Lot Number',
-            'client_companybrgy' => 'Barangay',
-            'client_contactno' => 'Contact Number',
-            'client_companycity' => 'City',
-            'client_emailadd' => 'Email Address',
+            'client_lname' => 'Client Lname',
+            'client_fname' => 'Client Fname',
+            'client_mname' => 'Client Mname',
+            'client_company' => 'Client Company',
+            'client_companyclkno' => 'Client Companyclkno',
+            'client_companybrgy' => 'Client Companybrgy',
+            'client_contactno' => 'Client Contactno',
+            'client_companycity' => 'Client Companycity',
+            'client_emailadd' => 'Client Emailadd',
         ];
     }
 
@@ -67,6 +67,6 @@ class Client extends \yii\db\ActiveRecord
      */
     public function getEvents()
     {
-        return $this->hasMany(Events::className(), ['CLIENT_id' => 'id']);
+        return $this->hasMany(Events::className(), ['client_id' => 'id']);
     }
 }

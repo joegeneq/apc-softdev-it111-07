@@ -18,8 +18,8 @@ class ManagerSearch extends Manager
     public function rules()
     {
         return [
-            [['id', 'MGR_ZipCode'], 'integer'],
-            [['MGR_LName', 'MGR_FName', 'MGR_MName', 'MGR_Gender', 'MGR_BDate', 'MGR_BlkNo', 'MGR_Street', 'MGR_Brgy', 'MGR_City', 'MGR_ContactNo', 'MGR_EmailAdd', 'MGR_Expertise'], 'safe'],
+            [['id', 'mgr_zipcode'], 'integer'],
+            [['mgr_lname', 'mgr_fname', 'mgr_mname', 'mgr_gender', 'mgr_bdate', 'mgr_blockno', 'mgr_street', 'mgr_brgy', 'mgr_city', 'mgr_contactno', 'mgr_emailadd', 'mgr_expertise'], 'safe'],
         ];
     }
 
@@ -57,21 +57,21 @@ class ManagerSearch extends Manager
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'MGR_BDate' => $this->MGR_BDate,
-            'MGR_ZipCode' => $this->MGR_ZipCode,
+            'mgr_bdate' => $this->mgr_bdate,
+            'mgr_zipcode' => $this->mgr_zipcode,
         ]);
 
-        $query->andFilterWhere(['like', 'MGR_LName', $this->MGR_LName])
-            ->andFilterWhere(['like', 'MGR_FName', $this->MGR_FName])
-            ->andFilterWhere(['like', 'MGR_MName', $this->MGR_MName])
-            ->andFilterWhere(['like', 'MGR_Gender', $this->MGR_Gender])
-            ->andFilterWhere(['like', 'MGR_BlkNo', $this->MGR_BlkNo])
-            ->andFilterWhere(['like', 'MGR_Street', $this->MGR_Street])
-            ->andFilterWhere(['like', 'MGR_Brgy', $this->MGR_Brgy])
-            ->andFilterWhere(['like', 'MGR_City', $this->MGR_City])
-            ->andFilterWhere(['like', 'MGR_ContactNo', $this->MGR_ContactNo])
-            ->andFilterWhere(['like', 'MGR_EmailAdd', $this->MGR_EmailAdd])
-            ->andFilterWhere(['like', 'MGR_Expertise', $this->MGR_Expertise]);
+        $query->andFilterWhere(['like', 'mgr_lname', $this->mgr_lname])
+            ->andFilterWhere(['like', 'mgr_fname', $this->mgr_fname])
+            ->andFilterWhere(['like', 'mgr_mname', $this->mgr_mname])
+            ->andFilterWhere(['like', 'mgr_gender', $this->mgr_gender])
+            ->andFilterWhere(['like', 'mgr_blockno', $this->mgr_blockno])
+            ->andFilterWhere(['like', 'mgr_street', $this->mgr_street])
+            ->andFilterWhere(['like', 'mgr_brgy', $this->mgr_brgy])
+            ->andFilterWhere(['like', 'mgr_city', $this->mgr_city])
+            ->andFilterWhere(['like', 'mgr_contactno', $this->mgr_contactno])
+            ->andFilterWhere(['like', 'mgr_emailadd', $this->mgr_emailadd])
+            ->andFilterWhere(['like', 'mgr_expertise', $this->mgr_expertise]);
 
         return $dataProvider;
     }

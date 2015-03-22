@@ -17,23 +17,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'CLIENT_LName') ?>
+    <?= $form->field($model, 'client_lname') ?>
 
-    <?= $form->field($model, 'CLIENT_FName') ?>
+    <?= $form->field($model, 'client_fname') ?>
 
-    <?= $form->field($model, 'CLIENT_MName') ?>
+    <?= $form->field($model, 'client_mname') ?>
 
-    <?= $form->field($model, 'CLIENT_Company') ?>
+    <?= $form->field($model, 'client_company') ?>
 
-    <?php // echo $form->field($model, 'CLIENT_CompanyBlkNo') ?>
+    <?php // echo $form->field($model, 'client_companyblockno') ?>
 
-    <?php // echo $form->field($model, 'CLIENT_CompanyBrgy') ?>
+    <?php // echo $form->field($model, 'client_companybrgy') ?>
 
-    <?php // echo $form->field($model, 'CLIENT_ContactNo') ?>
+    <?php // echo $form->field($model, 'client_contactno') ?>
 
-    <?php // echo $form->field($model, 'CLIENT_CompanyCity') ?>
+    <?php // echo $form->field($model, 'client_companycity') ?>
 
-    <?php // echo $form->field($model, 'CLIENT_EmailAdd') ?>
+    <?php // echo $form->field($model, 'client_emailadd') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -19,7 +19,7 @@ class ClientSearch extends Client
     {
         return [
             [['id'], 'integer'],
-            [['CLIENT_LName', 'CLIENT_FName', 'CLIENT_MName', 'CLIENT_Company', 'CLIENT_CompanyBlkNo', 'CLIENT_CompanyBrgy', 'CLIENT_ContactNo', 'CLIENT_CompanyCity', 'CLIENT_EmailAdd'], 'safe'],
+            [['client_lname', 'client_fname', 'client_mname', 'client_company', 'client_companyblockno', 'client_companybrgy', 'client_contactno', 'client_companycity', 'client_emailadd'], 'safe'],
         ];
     }
 
@@ -59,15 +59,15 @@ class ClientSearch extends Client
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'CLIENT_LName', $this->CLIENT_LName])
-            ->andFilterWhere(['like', 'CLIENT_FName', $this->CLIENT_FName])
-            ->andFilterWhere(['like', 'CLIENT_MName', $this->CLIENT_MName])
-            ->andFilterWhere(['like', 'CLIENT_Company', $this->CLIENT_Company])
-            ->andFilterWhere(['like', 'CLIENT_CompanyBlkNo', $this->CLIENT_CompanyBlkNo])
-            ->andFilterWhere(['like', 'CLIENT_CompanyBrgy', $this->CLIENT_CompanyBrgy])
-            ->andFilterWhere(['like', 'CLIENT_ContactNo', $this->CLIENT_ContactNo])
-            ->andFilterWhere(['like', 'CLIENT_CompanyCity', $this->CLIENT_CompanyCity])
-            ->andFilterWhere(['like', 'CLIENT_EmailAdd', $this->CLIENT_EmailAdd]);
+        $query->andFilterWhere(['like', 'client_lname', $this->client_lname])
+            ->andFilterWhere(['like', 'client_fname', $this->client_fname])
+            ->andFilterWhere(['like', 'client_mname', $this->client_mname])
+            ->andFilterWhere(['like', 'client_company', $this->client_company])
+            ->andFilterWhere(['like', 'client_companyblockno', $this->client_companyblockno])
+            ->andFilterWhere(['like', 'client_companybrgy', $this->client_companybrgy])
+            ->andFilterWhere(['like', 'client_contactno', $this->client_contactno])
+            ->andFilterWhere(['like', 'client_companycity', $this->client_companycity])
+            ->andFilterWhere(['like', 'client_emailadd', $this->client_emailadd]);
 
         return $dataProvider;
     }

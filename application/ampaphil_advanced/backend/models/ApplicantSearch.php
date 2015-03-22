@@ -19,7 +19,7 @@ class ApplicantSearch extends Applicant
     {
         return [
             [['id', 'app_zipcode', 'screening_sched_id'], 'integer'],
-            [['app_lname', 'app_fname', 'app_mname', 'app_gender', 'app_bdate', 'app_blockno', 'app_street', 'app_brgy', 'app_city', 'app_contactno', 'app_emailadd', 'app_regdate', 'app_regtime', 'app_talent'], 'safe'],
+            [['app_lname', 'app_fname', 'app_mname', 'app_gender', 'app_bdate', 'app_blkno', 'app_street', 'app_brgy', 'app_city', 'app_contactno', 'app_emailadd', 'app_regdate', 'app_regtime', 'app_talent'], 'safe'],
         ];
     }
 
@@ -68,7 +68,7 @@ class ApplicantSearch extends Applicant
             ->andFilterWhere(['like', 'app_fname', $this->app_fname])
             ->andFilterWhere(['like', 'app_mname', $this->app_mname])
             ->andFilterWhere(['like', 'app_gender', $this->app_gender])
-            ->andFilterWhere(['like', 'app_blockno', $this->app_blockno])
+            ->andFilterWhere(['like', 'app_blkno', $this->app_blkno])
             ->andFilterWhere(['like', 'app_street', $this->app_street])
             ->andFilterWhere(['like', 'app_brgy', $this->app_brgy])
             ->andFilterWhere(['like', 'app_city', $this->app_city])

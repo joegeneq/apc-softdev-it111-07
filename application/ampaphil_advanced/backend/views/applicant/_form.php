@@ -2,11 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\helpers\ArrayHelper;
-use app\models\ScreeningSched;
-//for widgets
-use dosamigos\datepicker\DatePicker;
-use kartik\time\TimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Applicant */
@@ -23,27 +18,11 @@ use kartik\time\TimePicker;
 
     <?= $form->field($model, 'app_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'app_gender')->dropDownList(['' => 'Select Gender',
-                                                          'Male' => 'Male',
-                                                          'Female' => 'Female',
-                                                          'Gay' => 'Gay',
-                                                          'Lesbian' => 'Lesbian',
-                                                        ]) ?>
+    <?= $form->field($model, 'app_gender')->textInput(['maxlength' => 10]) ?>
 
+    <?= $form->field($model, 'app_bdate')->textInput() ?>
 
-    <?= $form->field($model, 'app_bdate')->widget(
-        DatePicker::className(), [
-            // inline too, not bad
-            'inline' => false, 
-            // modify template for custom rendering
-            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
-            'clientOptions' => [
-                'autoclose' => true,
-                'format' => 'yyyy-mm-dd'
-            ]
-    ]);?>
-
-    <?= $form->field($model, 'app_blockno')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'app_blkno')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'app_street')->textInput(['maxlength' => 45]) ?>
 
@@ -57,38 +36,13 @@ use kartik\time\TimePicker;
 
     <?= $form->field($model, 'app_emailadd')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'app_regdate')->widget(
-        DatePicker::className(), [
-            // inline too, not bad
-            'inline' => false, 
-            // modify template for custom rendering
-            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
-            'clientOptions' => [
-                'autoclose' => true,
-                'format' => 'yyyy-mm-dd'
-            ]
-    ]);?>
+    <?= $form->field($model, 'app_regdate')->textInput() ?>
 
-    <?= $form->field($model, 'app_regtime')->widget(
-        TimePicker::className(), [
-            'name' => 'time',
-            'pluginOptions' => [
-                'showSeconds' => false,
-                'showMeridian' => false,
-                'minuteStep' => 1,
-                'secondStep' => 5
-            ]
-    ]);?>
+    <?= $form->field($model, 'app_regtime')->textInput() ?>
 
-    <?= $form->field($model, 'app_talent')->dropDownList(['' => 'Select Talent',
-                                                          'Dancing' => 'Dancing',
-                                                          'Singing' => 'Singing',
-                                                        ]) ?>
+    <?= $form->field($model, 'app_talent')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'screening_sched_id')->dropDownList(
-        ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'SCR_Time', 'SCR_Date'),
-        ['prompt'=>'Select Screening Schedule'] ) 
-    ?>
+    <?= $form->field($model, 'screening_sched_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

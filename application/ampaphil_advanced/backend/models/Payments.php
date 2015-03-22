@@ -10,11 +10,12 @@ use Yii;
  * @property integer $id
  * @property string $payments_date
  * @property string $payments_time
- * @property double $payments_rate
- * @property string $talent_percentage
- * @property string $agency_percentage
+ * @property double $rate
+ * @property double $talent_share
+ * @property double $agency_share
+ * @property integer $event_details_id
  *
- * @property EventDetails[] $eventDetails
+ * @property EventDetails $eventDetails
  */
 class Payments extends \yii\db\ActiveRecord
 {
@@ -32,9 +33,10 @@ class Payments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['payments_date', 'payments_time', 'payments_rate', 'talent_percentage', 'agency_percentage'], 'required'],
+            [['payments_date', 'payments_time', 'rate', 'talent_share', 'agency_share', 'event_details_id'], 'required'],
             [['payments_date', 'payments_time'], 'safe'],
-            [['payments_rate', 'talent_percentage', 'agency_percentage'], 'number']
+            [['rate', 'talent_share', 'agency_share'], 'number'],
+            [['event_details_id'], 'integer']
         ];
     }
 
@@ -45,11 +47,12 @@ class Payments extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'payments_date' => 'Payments Date',
-            'payments_time' => 'Payments Time',
-            'payments_rate' => 'Payments Rate',
-            'talent_percentage' => 'Talent Percentage',
-            'agency_percentage' => 'Agency Percentage',
+            'payments_date' => 'Date',
+            'payments_time' => 'Time',
+            'rate' => 'Rate',
+            'talent_share' => 'Talent Share',
+            'agency_share' => 'Agency Share',
+            'event_details_id' => 'Event Details ID',
         ];
     }
 
@@ -58,6 +61,6 @@ class Payments extends \yii\db\ActiveRecord
      */
     public function getEventDetails()
     {
-        return $this->hasMany(EventDetails::className(), ['transaction_id' => 'id']);
+        return $this->hasOne(EventDetails::className(), ['id' => 'event_details_id']);
     }
 }

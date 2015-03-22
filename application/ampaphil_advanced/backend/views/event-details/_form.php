@@ -16,15 +16,60 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'event_location')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'event_type')->textInput(['maxlength' => 45]) ?>
+     <?= $form->field($model, 'event_type')->dropDownList(['' => 'Select Event Type',
+                                                          'Party' => 'Party',
+                                                          'Reunion' => 'Reunion',
+                                                          'Debut' => 'Debut',
+                                                          'Wedding' => 'Wedding',
+                                                          'Anniversary' => 'Anniversary',
+                                                          'School Activities' => 'School Activities'
+                                                        ]) ?>
 
-    <?= $form->field($model, 'event_datefrom')->textInput() ?>
+    <?= $form->field($model, 'EVENT_DateFrom')->widget(
+        DatePicker::className(), [
+            // inline too, not bad
+            'inline' => false, 
+            // modify template for custom rendering
+            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-mm-dd'
+            ]
+    ]);?>
 
-    <?= $form->field($model, 'event_dateto')->textInput() ?>
+    <?= $form->field($model, 'EVENT_DateTo')->widget(
+        DatePicker::className(), [
+            // inline too, not bad
+            'inline' => false, 
+            // modify template for custom rendering
+            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-mm-dd'
+            ]
+    ]);?>
 
-    <?= $form->field($model, 'event_timefrom')->textInput() ?>
+    <?= $form->field($model, 'EVENT_TimeFrom')->widget(
+        TimePicker::className(), [
+            'name' => 'time',
+            'pluginOptions' => [
+                'showSeconds' => false,
+                'showMeridian' => false,
+                'minuteStep' => 1,
+                'secondStep' => 5
+            ]
+    ]);?>
 
-    <?= $form->field($model, 'event_timeto')->textInput() ?>
+    <?= $form->field($model, 'EVENT_TimeTo')->widget(
+        TimePicker::className(), [
+            'name' => 'time',
+            'pluginOptions' => [
+                'showSeconds' => false,
+                'showMeridian' => false,
+                'minuteStep' => 1,
+                'secondStep' => 5
+            ]
+    ]);?>
 
     <?= $form->field($model, 'transaction_id')->textInput() ?>
 

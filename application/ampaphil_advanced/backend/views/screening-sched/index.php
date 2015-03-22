@@ -26,14 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'SCR_Date',
-            'SCR_Time',
-            'APP_Status',
-            //'EMPLOYEE_id',
-            [
-                'attribute'=>'EMPLOYEE_id',
-                'value'=>'eMPLOYEE.EMP_LName',
-            ],
+            'scr_date',
+            'scr_time',
+            'app_status',
+            'employee_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

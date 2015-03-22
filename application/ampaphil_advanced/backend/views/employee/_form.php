@@ -13,15 +13,18 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'EMP_LName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'emp_lname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'EMP_FName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'emp_fname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'EMP_MName')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'emp_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'EMP_Gender')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'emp_gender')->dropDownList(['' => 'Select Gender',
+                                                          'Male' => 'Male',
+                                                          'Female' => 'Female'
+                                                        ]) ?>
 
-    <?= $form->field($model, 'EMP_BDate')->widget(
+     <?= $form->field($model, 'emp_bdate')->widget(
         DatePicker::className(), [
             // inline too, not bad
             'inline' => false, 
@@ -33,21 +36,21 @@ use dosamigos\datepicker\DatePicker;
             ]
     ]);?>
 
-    <?= $form->field($model, 'EMP_BlkNo')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'emp_blockno')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'EMP_Street')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'emp_street')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'EMP_Brgy')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'emp_brgy')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'EMP_City')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'emp_city')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'EMP_ZipCode')->textInput() ?>
+    <?= $form->field($model, 'emp_zipcode')->textInput() ?>
 
-    <?= $form->field($model, 'EMP_ContactNo')->textInput(['maxlength' => 20]) ?>
+    <?= $form->field($model, 'emp_contactno')->textInput(['maxlength' => 20]) ?>
 
-    <?= $form->field($model, 'EMP_EmailAdd')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'emp_emailadd')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'EMP_Position')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'emp_position')->textInput(['maxlength' => 45]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

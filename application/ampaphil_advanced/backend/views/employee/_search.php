@@ -17,31 +17,31 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'EMP_LName') ?>
+    <?= $form->field($model, 'emp_lname') ?>
 
-    <?= $form->field($model, 'EMP_FName') ?>
+    <?= $form->field($model, 'emp_fname') ?>
 
-    <?= $form->field($model, 'EMP_MName') ?>
+    <?= $form->field($model, 'emp_mname') ?>
 
-    <?= $form->field($model, 'EMP_Gender') ?>
+    <?= $form->field($model, 'emp_gender') ?>
 
-    <?php // echo $form->field($model, 'EMP_BDate') ?>
+    <?php // echo $form->field($model, 'emp_bdate') ?>
 
-    <?php // echo $form->field($model, 'EMP_BlkNo') ?>
+    <?php // echo $form->field($model, 'emp_blockno') ?>
 
-    <?php // echo $form->field($model, 'EMP_Street') ?>
+    <?php // echo $form->field($model, 'emp_street') ?>
 
-    <?php // echo $form->field($model, 'EMP_Brgy') ?>
+    <?php // echo $form->field($model, 'emp_brgy') ?>
 
-    <?php // echo $form->field($model, 'EMP_City') ?>
+    <?php // echo $form->field($model, 'emp_city') ?>
 
-    <?php // echo $form->field($model, 'EMP_ZipCode') ?>
+    <?php // echo $form->field($model, 'emp_zipcode') ?>
 
-    <?php // echo $form->field($model, 'EMP_ContactNo') ?>
+    <?php // echo $form->field($model, 'emp_contactno') ?>
 
-    <?php // echo $form->field($model, 'EMP_EmailAdd') ?>
+    <?php // echo $form->field($model, 'emp_emailadd') ?>
 
-    <?php // echo $form->field($model, 'EMP_Position') ?>
+    <?php // echo $form->field($model, 'emp_position') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

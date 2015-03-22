@@ -18,8 +18,8 @@ class EmployeeSearch extends Employee
     public function rules()
     {
         return [
-            [['id', 'EMP_ZipCode'], 'integer'],
-            [['EMP_LName', 'EMP_FName', 'EMP_MName', 'EMP_Gender', 'EMP_BDate', 'EMP_BlkNo', 'EMP_Street', 'EMP_Brgy', 'EMP_City', 'EMP_ContactNo', 'EMP_EmailAdd', 'EMP_Position'], 'safe'],
+            [['id', 'emp_zipcode'], 'integer'],
+            [['emp_lname', 'emp_fname', 'emp_mname', 'emp_gender', 'emp_bdate', 'emp_blockno', 'emp_street', 'emp_brgy', 'emp_city', 'emp_contactno', 'emp_emailadd', 'emp_position'], 'safe'],
         ];
     }
 
@@ -57,21 +57,21 @@ class EmployeeSearch extends Employee
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'EMP_BDate' => $this->EMP_BDate,
-            'EMP_ZipCode' => $this->EMP_ZipCode,
+            'emp_bdate' => $this->emp_bdate,
+            'emp_zipcode' => $this->emp_zipcode,
         ]);
 
-        $query->andFilterWhere(['like', 'EMP_LName', $this->EMP_LName])
-            ->andFilterWhere(['like', 'EMP_FName', $this->EMP_FName])
-            ->andFilterWhere(['like', 'EMP_MName', $this->EMP_MName])
-            ->andFilterWhere(['like', 'EMP_Gender', $this->EMP_Gender])
-            ->andFilterWhere(['like', 'EMP_BlkNo', $this->EMP_BlkNo])
-            ->andFilterWhere(['like', 'EMP_Street', $this->EMP_Street])
-            ->andFilterWhere(['like', 'EMP_Brgy', $this->EMP_Brgy])
-            ->andFilterWhere(['like', 'EMP_City', $this->EMP_City])
-            ->andFilterWhere(['like', 'EMP_ContactNo', $this->EMP_ContactNo])
-            ->andFilterWhere(['like', 'EMP_EmailAdd', $this->EMP_EmailAdd])
-            ->andFilterWhere(['like', 'EMP_Position', $this->EMP_Position]);
+        $query->andFilterWhere(['like', 'emp_lname', $this->emp_lname])
+            ->andFilterWhere(['like', 'emp_fname', $this->emp_fname])
+            ->andFilterWhere(['like', 'emp_mname', $this->emp_mname])
+            ->andFilterWhere(['like', 'emp_gender', $this->emp_gender])
+            ->andFilterWhere(['like', 'emp_blockno', $this->emp_blockno])
+            ->andFilterWhere(['like', 'emp_street', $this->emp_street])
+            ->andFilterWhere(['like', 'emp_brgy', $this->emp_brgy])
+            ->andFilterWhere(['like', 'emp_city', $this->emp_city])
+            ->andFilterWhere(['like', 'emp_contactno', $this->emp_contactno])
+            ->andFilterWhere(['like', 'emp_emailadd', $this->emp_emailadd])
+            ->andFilterWhere(['like', 'emp_position', $this->emp_position]);
 
         return $dataProvider;
     }

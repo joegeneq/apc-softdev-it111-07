@@ -26,16 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'PAYMENTS_Date',
-            'PAYMENTS_Time',
-            'Rate',
-            'TALENT_Share',
-            // 'AGENCY_Share',
-            // 'EVENT_DETAILS_id',
-            [
-                'attribute'=>'EVENT_DETAILS_id',
-                'value'=>'eVENTDETAILS.EVENT_Name',
-            ],
+            'payments_date',
+            'payments_time',
+            'payments_rate',
+            'talent_percentage',
+            // 'agency_percentage',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -17,17 +17,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'PAYMENTS_Date') ?>
+    <?= $form->field($model, 'payments_date') ?>
 
-    <?= $form->field($model, 'PAYMENTS_Time') ?>
+    <?= $form->field($model, 'payments_time') ?>
 
-    <?= $form->field($model, 'Rate') ?>
+    <?= $form->field($model, 'payments_rate') ?>
 
-    <?= $form->field($model, 'TALENT_Share') ?>
+    <?= $form->field($model, 'talent_percentage') ?>
 
-    <?php // echo $form->field($model, 'AGENCY_Share') ?>
-
-    <?php // echo $form->field($model, 'EVENT_DETAILS_id') ?>
+    <?php // echo $form->field($model, 'agency_percentage') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

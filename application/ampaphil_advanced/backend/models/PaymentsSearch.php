@@ -19,8 +19,8 @@ class PaymentsSearch extends Payments
     {
         return [
             [['id'], 'integer'],
-            [['PAYMENTS_Date', 'PAYMENTS_Time', 'EVENT_DETAILS_id'], 'safe'],
-            [['Rate', 'TALENT_Share', 'AGENCY_Share'], 'number'],
+            [['payments_date', 'payments_time'], 'safe'],
+            [['payments_rate', 'talent_percentage', 'agency_percentage'], 'number'],
         ];
     }
 
@@ -58,15 +58,12 @@ class PaymentsSearch extends Payments
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'PAYMENTS_Date' => $this->PAYMENTS_Date,
-            'PAYMENTS_Time' => $this->PAYMENTS_Time,
-            'Rate' => $this->Rate,
-            'TALENT_Share' => $this->TALENT_Share,
-            'AGENCY_Share' => $this->AGENCY_Share,
-            //'EVENT_DETAILS_id' => $this->EVENT_DETAILS_id,
+            'payments_date' => $this->payments_date,
+            'payments_time' => $this->payments_time,
+            'payments_rate' => $this->payments_rate,
+            'talent_percentage' => $this->talent_percentage,
+            'agency_percentage' => $this->agency_percentage,
         ]);
-
-        $query->andFilterWhere(['like','EVENT_DETAILS.EVENT_Name', $this->EVENT_DETAILS_id]);
 
         return $dataProvider;
     }

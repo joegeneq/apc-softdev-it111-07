@@ -18,9 +18,9 @@ class PaymentsSearch extends Payments
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'event_details_id'], 'integer'],
             [['payments_date', 'payments_time'], 'safe'],
-            [['payments_rate', 'talent_percentage', 'agency_percentage'], 'number'],
+            [['rate', 'talent_share', 'agency_share'], 'number'],
         ];
     }
 
@@ -60,9 +60,10 @@ class PaymentsSearch extends Payments
             'id' => $this->id,
             'payments_date' => $this->payments_date,
             'payments_time' => $this->payments_time,
-            'payments_rate' => $this->payments_rate,
-            'talent_percentage' => $this->talent_percentage,
-            'agency_percentage' => $this->agency_percentage,
+            'rate' => $this->rate,
+            'talent_share' => $this->talent_share,
+            'agency_share' => $this->agency_share,
+            'event_details_id' => $this->event_details_id,
         ]);
 
         return $dataProvider;

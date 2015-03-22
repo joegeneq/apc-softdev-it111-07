@@ -21,11 +21,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'payments_time') ?>
 
-    <?= $form->field($model, 'payments_rate') ?>
+    <?= $form->field($model, 'rate') ?>
 
-    <?= $form->field($model, 'talent_percentage') ?>
+    <?= $form->field($model, 'talent_share') ?>
 
-    <?php // echo $form->field($model, 'agency_percentage') ?>
+    <?php // echo $form->field($model, 'agency_share') ?>
+
+    <?php // echo $form->field($model, 'event_details_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -19,7 +19,10 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'emp_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'emp_gender')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'app_gender')->dropDownList(['' => 'Select Gender',
+                                                          'Male' => 'Male',
+                                                          'Female' => 'Female'
+                                                        ]) ?>
 
     <?= $form->field($model, 'emp_bdate')->widget(
         DatePicker::className(), [

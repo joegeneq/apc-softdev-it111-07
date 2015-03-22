@@ -23,11 +23,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'mgr_mname') ?>
 
-    <?= $form->field($model, 'mgr_gender') ?>
+    <?= $form->field($model, 'mge_gender') ?>
 
     <?php // echo $form->field($model, 'mgr_bdate') ?>
 
-    <?php // echo $form->field($model, 'mgr_blockno') ?>
+    <?php // echo $form->field($model, 'mgr_blkno') ?>
 
     <?php // echo $form->field($model, 'mgr_street') ?>
 

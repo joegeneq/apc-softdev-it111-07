@@ -18,11 +18,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'mgr_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_gender')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'mge_gender')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'mgr_bdate')->textInput() ?>
 
-    <?= $form->field($model, 'mgr_blockno')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'mgr_blkno')->textInput(['maxlength' => 10]) ?>
 
     <?= $form->field($model, 'mgr_street')->textInput(['maxlength' => 45]) ?>
 

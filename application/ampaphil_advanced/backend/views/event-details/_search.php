@@ -23,15 +23,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'event_type') ?>
 
-    <?= $form->field($model, 'event_datefrom') ?>
+    <?= $form->field($model, 'event_startdate') ?>
 
-    <?php // echo $form->field($model, 'event_dateto') ?>
+    <?php // echo $form->field($model, 'event_enddate') ?>
 
-    <?php // echo $form->field($model, 'event_timefrom') ?>
+    <?php // echo $form->field($model, 'event_starttime') ?>
 
-    <?php // echo $form->field($model, 'event_timeto') ?>
+    <?php // echo $form->field($model, 'event_endtime') ?>
 
-    <?php // echo $form->field($model, 'transaction_id') ?>
+    <?php // echo $form->field($model, 'event_status') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

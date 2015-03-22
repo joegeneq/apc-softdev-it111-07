@@ -18,8 +18,8 @@ class EventDetailsSearch extends EventDetails
     public function rules()
     {
         return [
-            [['id', 'transaction_id'], 'integer'],
-            [['event_name', 'event_location', 'event_type', 'event_datefrom', 'event_dateto', 'event_timefrom', 'event_timeto'], 'safe'],
+            [['id'], 'integer'],
+            [['event_name', 'event_location', 'event_type', 'event_startdate', 'event_enddate', 'event_starttime', 'event_endtime', 'event_status'], 'safe'],
         ];
     }
 
@@ -57,16 +57,16 @@ class EventDetailsSearch extends EventDetails
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'event_datefrom' => $this->event_datefrom,
-            'event_dateto' => $this->event_dateto,
-            'event_timefrom' => $this->event_timefrom,
-            'event_timeto' => $this->event_timeto,
-            'transaction_id' => $this->transaction_id,
+            'event_startdate' => $this->event_startdate,
+            'event_enddate' => $this->event_enddate,
+            'event_starttime' => $this->event_starttime,
+            'event_endtime' => $this->event_endtime,
         ]);
 
         $query->andFilterWhere(['like', 'event_name', $this->event_name])
             ->andFilterWhere(['like', 'event_location', $this->event_location])
-            ->andFilterWhere(['like', 'event_type', $this->event_type]);
+            ->andFilterWhere(['like', 'event_type', $this->event_type])
+            ->andFilterWhere(['like', 'event_status', $this->event_status]);
 
         return $dataProvider;
     }

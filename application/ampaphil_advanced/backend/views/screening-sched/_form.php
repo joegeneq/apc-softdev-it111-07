@@ -1,7 +1,12 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
+use app\models\Employee;
+//widgets
+use dosamigos\datepicker\DatePicker;
+use kartik\time\TimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ScreeningSched */
@@ -12,13 +17,37 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'scr_date')->textInput() ?>
+    <?= $form->field($model, 'scr_date')->widget(
+        DatePicker::className(), [
+            'inline' => false,
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-mm-dd'
+            ]
+    ]);?>
 
-    <?= $form->field($model, 'scr_time')->textInput() ?>
+    <?= $form->field($model, 'scr_time')->widget(
+        TimePicker::className(), [
+            'name' => 'time',
+            'pluginOptions' => [
+                'showSeconds' => false,
+                'showMeridian' => false,
+                'minuteStep' => 1,
+                'secondStep' => 5
+            ]
+    ]);?>
 
-    <?= $form->field($model, 'app_status')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'app_status')->dropDownList(['' => 'Select Status', 
+                                                          'Screening' => 'Screening', 
+                                                          'Passed' => 'Passed', 
+                                                          'Failed' => 'Failed']
+                                                        ) ?>
 
-    <?= $form->field($model, 'employee_id')->textInput() ?>
+    <?php $form = ActiveForm::begin(); ?>
+    <?= $form->field($model, 'employee_id')->dropDownList(
+        ArrayHelper::map(Employee::find()->all(), 'id', 'emp_lname'),
+        ['prompt'=>'Select Lastname'] ) 
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id, 'TALENT_id' => $model->TALENT_id, 'TALENT_MANAGER_id' => $model->TALENT_MANAGER_id, 'EVENTS_DETAILS_id' => $model->EVENTS_DETAILS_id, 'CLIENT_id' => $model->CLIENT_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id, 'TALENT_id' => $model->TALENT_id, 'TALENT_MANAGER_id' => $model->TALENT_MANAGER_id, 'EVENTS_DETAILS_id' => $model->EVENTS_DETAILS_id, 'CLIENT_id' => $model->CLIENT_id], [
+        <?= Html::a('Update', ['update', 'id' => $model->id, 'talent_id' => $model->talent_id, 'manager_id' => $model->manager_id, 'event_details_id' => $model->event_details_id, 'client_id' => $model->client_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id, 'talent_id' => $model->talent_id, 'manager_id' => $model->manager_id, 'event_details_id' => $model->event_details_id, 'client_id' => $model->client_id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,10 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'TALENT_id',
-            'TALENT_MANAGER_id',
-            'EVENTS_DETAILS_id',
-            'CLIENT_id',
+            'talent_id',
+            'manager_id',
+            'event_details_id',
+            'client_id',
         ],
     ]) ?>
 

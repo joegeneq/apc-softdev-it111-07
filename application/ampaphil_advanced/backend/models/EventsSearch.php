@@ -18,7 +18,7 @@ class EventsSearch extends Events
     public function rules()
     {
         return [
-            [['id', 'TALENT_id', 'TALENT_MANAGER_id', 'EVENTS_DETAILS_id', 'CLIENT_id'], 'integer'],
+            [['id', 'talent_id', 'manager_id', 'event_details_id', 'client_id'], 'integer'],
         ];
     }
 
@@ -56,10 +56,10 @@ class EventsSearch extends Events
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'TALENT_id' => $this->TALENT_id,
-            'TALENT_MANAGER_id' => $this->TALENT_MANAGER_id,
-            'EVENTS_DETAILS_id' => $this->EVENTS_DETAILS_id,
-            'CLIENT_id' => $this->CLIENT_id,
+            'talent_id' => $this->talent_id,
+            'manager_id' => $this->manager_id,
+            'event_details_id' => $this->event_details_id,
+            'client_id' => $this->client_id,
         ]);
 
         return $dataProvider;

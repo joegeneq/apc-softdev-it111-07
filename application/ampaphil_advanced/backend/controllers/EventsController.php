@@ -44,16 +44,16 @@ class EventsController extends Controller
     /**
      * Displays a single Events model.
      * @param integer $id
-     * @param integer $TALENT_id
-     * @param integer $TALENT_MANAGER_id
-     * @param integer $EVENTS_DETAILS_id
-     * @param integer $CLIENT_id
+     * @param integer $talent_id
+     * @param integer $manager_id
+     * @param integer $event_details_id
+     * @param integer $client_id
      * @return mixed
      */
-    public function actionView($id, $TALENT_id, $TALENT_MANAGER_id, $EVENTS_DETAILS_id, $CLIENT_id)
+    public function actionView($id, $talent_id, $manager_id, $event_details_id, $client_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id, $TALENT_id, $TALENT_MANAGER_id, $EVENTS_DETAILS_id, $CLIENT_id),
+            'model' => $this->findModel($id, $talent_id, $manager_id, $event_details_id, $client_id),
         ]);
     }
 
@@ -67,7 +67,7 @@ class EventsController extends Controller
         $model = new Events();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'TALENT_id' => $model->TALENT_id, 'TALENT_MANAGER_id' => $model->TALENT_MANAGER_id, 'EVENTS_DETAILS_id' => $model->EVENTS_DETAILS_id, 'CLIENT_id' => $model->CLIENT_id]);
+            return $this->redirect(['view', 'id' => $model->id, 'talent_id' => $model->talent_id, 'manager_id' => $model->manager_id, 'event_details_id' => $model->event_details_id, 'client_id' => $model->client_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -79,18 +79,18 @@ class EventsController extends Controller
      * Updates an existing Events model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
-     * @param integer $TALENT_id
-     * @param integer $TALENT_MANAGER_id
-     * @param integer $EVENTS_DETAILS_id
-     * @param integer $CLIENT_id
+     * @param integer $talent_id
+     * @param integer $manager_id
+     * @param integer $event_details_id
+     * @param integer $client_id
      * @return mixed
      */
-    public function actionUpdate($id, $TALENT_id, $TALENT_MANAGER_id, $EVENTS_DETAILS_id, $CLIENT_id)
+    public function actionUpdate($id, $talent_id, $manager_id, $event_details_id, $client_id)
     {
-        $model = $this->findModel($id, $TALENT_id, $TALENT_MANAGER_id, $EVENTS_DETAILS_id, $CLIENT_id);
+        $model = $this->findModel($id, $talent_id, $manager_id, $event_details_id, $client_id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'TALENT_id' => $model->TALENT_id, 'TALENT_MANAGER_id' => $model->TALENT_MANAGER_id, 'EVENTS_DETAILS_id' => $model->EVENTS_DETAILS_id, 'CLIENT_id' => $model->CLIENT_id]);
+            return $this->redirect(['view', 'id' => $model->id, 'talent_id' => $model->talent_id, 'manager_id' => $model->manager_id, 'event_details_id' => $model->event_details_id, 'client_id' => $model->client_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -102,15 +102,15 @@ class EventsController extends Controller
      * Deletes an existing Events model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @param integer $TALENT_id
-     * @param integer $TALENT_MANAGER_id
-     * @param integer $EVENTS_DETAILS_id
-     * @param integer $CLIENT_id
+     * @param integer $talent_id
+     * @param integer $manager_id
+     * @param integer $event_details_id
+     * @param integer $client_id
      * @return mixed
      */
-    public function actionDelete($id, $TALENT_id, $TALENT_MANAGER_id, $EVENTS_DETAILS_id, $CLIENT_id)
+    public function actionDelete($id, $talent_id, $manager_id, $event_details_id, $client_id)
     {
-        $this->findModel($id, $TALENT_id, $TALENT_MANAGER_id, $EVENTS_DETAILS_id, $CLIENT_id)->delete();
+        $this->findModel($id, $talent_id, $manager_id, $event_details_id, $client_id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -119,16 +119,16 @@ class EventsController extends Controller
      * Finds the Events model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @param integer $TALENT_id
-     * @param integer $TALENT_MANAGER_id
-     * @param integer $EVENTS_DETAILS_id
-     * @param integer $CLIENT_id
+     * @param integer $talent_id
+     * @param integer $manager_id
+     * @param integer $event_details_id
+     * @param integer $client_id
      * @return Events the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id, $TALENT_id, $TALENT_MANAGER_id, $EVENTS_DETAILS_id, $CLIENT_id)
+    protected function findModel($id, $talent_id, $manager_id, $event_details_id, $client_id)
     {
-        if (($model = Events::findOne(['id' => $id, 'TALENT_id' => $TALENT_id, 'TALENT_MANAGER_id' => $TALENT_MANAGER_id, 'EVENTS_DETAILS_id' => $EVENTS_DETAILS_id, 'CLIENT_id' => $CLIENT_id])) !== null) {
+        if (($model = Events::findOne(['id' => $id, 'talent_id' => $talent_id, 'manager_id' => $manager_id, 'event_details_id' => $event_details_id, 'client_id' => $client_id])) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

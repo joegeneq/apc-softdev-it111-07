@@ -17,6 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Create Applicant', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add Talent Line', ['talent-line/create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -40,8 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'app_emailadd:email',
             // 'app_regdate',
             // 'app_regtime',
-            // 'app_talent',
-            // 'screening_sched_id',
+            'app_talent',
+            'screening_sched_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

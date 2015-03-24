@@ -1,0 +1,16 @@
+Status Report: Week 8
+April 2-7, 2015
+
+A. Tasks Accomplished
+- Generated model and CRUD for some tables
+- Updated the admin homepage
+
+B. Problems encountered
+- seeing some minimal concern with the entities and fields
+
+C. Possible Solutions
+- Database consultation with prject adviser or professor
+
+D. Next steps to accomplish
+- The group should accomplish the Iteration 0 within the week
+- Should have at least basic function of the system for the Iteration 0

@@ -1,0 +1,16 @@
+Status Report: Week 6
+February 16-21, 2015
+
+A. Tasks Accomplished
+- Finalized the images that will be used for the UI of the system
+- Started the design in homepage of the admin
+
+
+B. Problems encountered
+- Our adviser wants us to revise the database design
+
+C. Possible Solutions
+- We should be able to understand more how our system works and update the database design
+
+D. Next steps to accomplish
+- Finalize the database 

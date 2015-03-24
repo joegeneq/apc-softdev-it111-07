@@ -1,0 +1,21 @@
+Status Report: Week 9
+April 9-14, 2015
+
+A. Tasks Accomplished
+- Created the basic functions of the system
+- Finalized the UI design of the system
+- Presented the system to our Client for the Iteration 1
+
+B. Problems encountered
+- There are still some minor revisions in the system
+- The client asked the group to focus more on calendar instead of transaction
+
+C. Possible Solutions
+- Start working on the minor revision
+- Research about the calendar extension for Yii framework
+
+D. Next steps to accomplish
+- Minor revisions in the system
+- Dropdown list of the fields
+- Datepicker and timepicker widget for Yii
+- Calendar

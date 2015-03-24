@@ -1,0 +1,15 @@
+Status Report: Week 7
+February 23-28, 2015
+
+A. Tasks Accomplished
+- Updated the admin homepage design
+
+
+B. Problems encountered
+- Doesn't have available schedule with our adviser for the databae consultation so we just sent the revised ERD via email and she sent us the list of corrections
+
+C. Possible Solutions
+- Set an appointment with our adviser for another consultation
+
+D. Next steps to accomplish
+- Use the finalized database approved by adviser to generate the model and CRUD

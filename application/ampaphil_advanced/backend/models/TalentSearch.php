@@ -18,8 +18,8 @@ class TalentSearch extends Talent
     public function rules()
     {
         return [
-            [['id', 'manager_id', 'screening_sched_id', 'applicant_id'], 'integer'],
-            [['talent_managedstartdate', 'talent_managedenddate'], 'safe'],
+            [['id', 'screening_sched_id'], 'integer'],
+            [['talent_managedstartdate', 'talent_managedenddate', 'manager_id', 'applicant_id'], 'safe'],
         ];
     }
 
@@ -55,14 +55,19 @@ class TalentSearch extends Talent
             return $dataProvider;
         }
 
+        $query->joinWith('manager');
+        $query->joinWith('applicant');
         $query->andFilterWhere([
             'id' => $this->id,
-            'manager_id' => $this->manager_id,
+            //'manager_id' => $this->manager_id,
             'talent_managedstartdate' => $this->talent_managedstartdate,
             'talent_managedenddate' => $this->talent_managedenddate,
             'screening_sched_id' => $this->screening_sched_id,
-            'applicant_id' => $this->applicant_id,
+            //'applicant_id' => $this->applicant_id,
         ]);
+
+        $query->andFilterWhere(['like','manager.mgr_lname', $this->manager_id])
+              ->andFilterWhere(['like','applicant.app_lname', $this->applicant_id]);
 
         return $dataProvider;
     }

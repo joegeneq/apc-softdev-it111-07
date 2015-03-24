@@ -1,0 +1,19 @@
+Status Report: Week 10
+April 16-21, 2015
+
+A. Tasks Accomplished
+- Started working on the minor revisions
+- Created the dropdown list for some fields
+- Implemented the datepicker and timepicker widget for Yii
+
+B. Problems encountered
+- Lack of coordination with the group regarding the database
+- Does not know how to display list of events in calendar extension
+
+C. Possible Solutions
+- Update groupmates from time to time to avoid conflicts
+- Research for more possible options in displaying the events in the calendar
+
+D. Next steps to accomplish
+- Finish the minor revisions in the system
+- External calendar that is linked in the system

@@ -1,0 +1,20 @@
+Status Report: Week 5
+February 9-14, 2015
+
+A. Tasks Accomplished
+- Started doing the UI of the system
+- Started doing the physical design for the documentation
+- We already Updated the database for the database consultation
+
+
+B. Problems encountered
+- Still not that familiar in using Yii functions
+- We just completed getting all files from the student who implement the existing project
+
+C. Possible Solutions
+- Explore and research more how to configure Yii framework
+- Understand the current process of the system and start translating it to Yii
+
+D. Next steps to accomplish
+- Start translating the system in Yii
+- Finalize the database

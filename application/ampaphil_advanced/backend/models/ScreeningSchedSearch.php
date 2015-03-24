@@ -18,8 +18,8 @@ class ScreeningSchedSearch extends ScreeningSched
     public function rules()
     {
         return [
-            [['id', 'employee_id'], 'integer'],
-            [['scr_date', 'scr_time', 'app_status'], 'safe'],
+            [['id'], 'integer'],
+            [['scr_date', 'scr_time', 'app_status', 'employee_id'], 'safe'],
         ];
     }
 
@@ -55,14 +55,16 @@ class ScreeningSchedSearch extends ScreeningSched
             return $dataProvider;
         }
 
+        $query->joinWith('employee');
         $query->andFilterWhere([
             'id' => $this->id,
             'scr_date' => $this->scr_date,
             'scr_time' => $this->scr_time,
-            'employee_id' => $this->employee_id,
+            //'employee_id' => $this->employee_id,
         ]);
 
-        $query->andFilterWhere(['like', 'app_status', $this->app_status]);
+        $query->andFilterWhere(['like', 'app_status', $this->app_status])
+              ->andFilterWhere(['like', 'employee.emp_lname', $this->employee_id]);;
 
         return $dataProvider;
     }

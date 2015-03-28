@@ -19,12 +19,9 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'mgr_mname')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_gender')->dropDownList(['' => 'Select Gender',
-                                                          'Male' => 'Male',
-                                                          'Female' => 'Female'
-                                                        ]) ?>
+    <?= $form->field($model, 'mgr_gender')->textInput(['maxlength' => 10]) ?>
 
-    <?= $form->field($model, 'mgr_bdate')->widget(
+     <?= $form->field($model, 'mgr_bdate')->widget(
         DatePicker::className(), [
             // inline too, not bad
             'inline' => false, 
@@ -50,7 +47,7 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'mgr_emailadd')->textInput(['maxlength' => 45]) ?>
 
-    <?= $form->field($model, 'mgr_expertise')->dropDownList([ '' => 'Select Expertise',
+   <?= $form->field($model, 'mgr_expertise')->dropDownList([ '' => 'Select Expertise',
                                                             'Dancing' => 'Dancing',
                                                             'Singing' => 'Singing',
                                                             'Band' => 'Band'

@@ -34,5 +34,5 @@ $this->params['breadcrumbs'][] = $this->title;
             'applicant_id',
         ],
     ]) ?>
-
+        <?= Html::a('Create Screening Schedule', ['screening-sched/create'], ['class' => 'btn btn-success']) ?>  
 </div>

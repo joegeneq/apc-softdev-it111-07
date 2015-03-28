@@ -28,7 +28,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'talent_type',
             'talent_specialization',
-            'applicant_id',
+            //'applicant_id',
+            [
+                'attribute' => 'applicant_id',
+                'value' => 'applicant.app_lname'
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

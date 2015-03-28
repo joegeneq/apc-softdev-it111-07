@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'mgr_mname') ?>
 
-    <?= $form->field($model, 'mge_gender') ?>
+    <?= $form->field($model, 'mgr_gender') ?>
 
     <?php // echo $form->field($model, 'mgr_bdate') ?>
 

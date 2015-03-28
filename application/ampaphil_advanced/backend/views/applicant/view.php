@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Create Talent Line', ['talent-line/create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= DetailView::widget([

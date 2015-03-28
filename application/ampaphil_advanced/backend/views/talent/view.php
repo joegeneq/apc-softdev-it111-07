@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+use models\Applicant;
+use models\Manager;
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Talent */
 
@@ -29,11 +32,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'manager_id',
+            'manager.mgr_lname',
             'talent_managedstartdate',
             'talent_managedenddate',
             //'screening_sched_id',
-            'applicant_id',
+            'applicant.app_lname',
         ],
     ]) ?>
 

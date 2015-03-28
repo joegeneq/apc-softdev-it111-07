@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use models\Manager;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\TalentSearch */
@@ -26,7 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'manager_id',
+            //'manager_id',
+            [
+                'attribute' => 'manager_id',
+                'value' => 'manager.mgr_lname'
+            ],
             'talent_managedstartdate',
             'talent_managedenddate',
             'screening_sched_id',

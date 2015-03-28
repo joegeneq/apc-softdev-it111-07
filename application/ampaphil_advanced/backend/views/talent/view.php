@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'manager_id',
             'talent_managedstartdate',
             'talent_managedenddate',
-            'screening_sched_id',
+            //'screening_sched_id',
             'applicant_id',
         ],
     ]) ?>

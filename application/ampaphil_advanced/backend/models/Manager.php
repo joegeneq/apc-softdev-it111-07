@@ -11,7 +11,7 @@ use Yii;
  * @property string $mgr_lname
  * @property string $mgr_fname
  * @property string $mgr_mname
- * @property string $mge_gender
+ * @property string $mgr_gender
  * @property string $mgr_bdate
  * @property string $mgr_blkno
  * @property string $mgr_street
@@ -40,11 +40,11 @@ class Manager extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['mgr_lname', 'mgr_fname', 'mge_gender', 'mgr_bdate', 'mgr_blkno', 'mgr_street', 'mgr_brgy', 'mgr_city', 'mgr_contactno', 'mgr_emailadd', 'mgr_expertise'], 'required'],
+            [['mgr_lname', 'mgr_fname', 'mgr_gender', 'mgr_bdate', 'mgr_blkno', 'mgr_street', 'mgr_brgy', 'mgr_city', 'mgr_contactno', 'mgr_emailadd', 'mgr_expertise'], 'required'],
             [['mgr_bdate'], 'safe'],
             [['mgr_zipcode'], 'integer'],
             [['mgr_lname', 'mgr_fname', 'mgr_mname', 'mgr_street', 'mgr_brgy', 'mgr_city', 'mgr_emailadd'], 'string', 'max' => 45],
-            [['mge_gender', 'mgr_blkno'], 'string', 'max' => 10],
+            [['mgr_gender', 'mgr_blkno'], 'string', 'max' => 10],
             [['mgr_contactno', 'mgr_expertise'], 'string', 'max' => 20]
         ];
     }
@@ -56,18 +56,18 @@ class Manager extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'mgr_lname' => 'Last Name',
+            'mgr_lname' => 'Managers Last Name',
             'mgr_fname' => 'First Name',
             'mgr_mname' => 'Middle Name',
-            'mge_gender' => 'Gender',
+            'mgr_gender' => 'Gender',
             'mgr_bdate' => 'Birth Date',
-            'mgr_blkno' => 'Block/Lot Number',
+            'mgr_blkno' => 'Block Number',
             'mgr_street' => 'Street',
             'mgr_brgy' => 'Barangay',
             'mgr_city' => 'City',
-            'mgr_zipcode' => 'Zip Code',
-            'mgr_contactno' => 'Contact No',
-            'mgr_emailadd' => 'E-mail Address',
+            'mgr_zipcode' => 'Zipcode',
+            'mgr_contactno' => 'Contact Number',
+            'mgr_emailadd' => 'Email Address',
             'mgr_expertise' => 'Expertise',
         ];
     }

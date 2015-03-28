@@ -20,7 +20,7 @@ use dosamigos\datepicker\DatePicker;
     <?php $form = ActiveForm::begin(); ?>
 
      <?= $form->field($model, 'manager_id')->dropDownList(
-        ArrayHelper::map(Manager::find()->all(), 'id', 'MGR_LName'),
+        ArrayHelper::map(Manager::find()->all(), 'id', 'mgr_lname'),
         ['prompt'=>'Select Lastname'] ) 
     ?>
 
@@ -49,12 +49,12 @@ use dosamigos\datepicker\DatePicker;
     ]);?>
 
      <?= $form->field($model, 'screening_sched_id')->dropDownList(
-        ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'SCR_Time', 'SCR_Date'),
+        ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'scr_time', 'scr_date'),
         ['prompt'=>'Select Schedule'] ) 
     ?>
 
     <?= $form->field($model, 'applicant_id')->dropDownList(
-        ArrayHelper::map(Applicant::find()->all(), 'id', 'APP_LName'),
+        ArrayHelper::map(Applicant::find()->all(), 'id', 'app_lname'),
         ['prompt'=>'Select Lastname'] ) 
     ?>
 

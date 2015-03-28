@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'mgr_lname',
             'mgr_fname',
             'mgr_mname',
-            'mge_gender',
+            'mgr_gender',
             // 'mgr_bdate',
             // 'mgr_blkno',
             // 'mgr_street',

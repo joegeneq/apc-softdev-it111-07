@@ -19,7 +19,7 @@ class ManagerSearch extends Manager
     {
         return [
             [['id', 'mgr_zipcode'], 'integer'],
-            [['mgr_lname', 'mgr_fname', 'mgr_mname', 'mge_gender', 'mgr_bdate', 'mgr_blkno', 'mgr_street', 'mgr_brgy', 'mgr_city', 'mgr_contactno', 'mgr_emailadd', 'mgr_expertise'], 'safe'],
+            [['mgr_lname', 'mgr_fname', 'mgr_mname', 'mgr_gender', 'mgr_bdate', 'mgr_blkno', 'mgr_street', 'mgr_brgy', 'mgr_city', 'mgr_contactno', 'mgr_emailadd', 'mgr_expertise'], 'safe'],
         ];
     }
 
@@ -64,7 +64,7 @@ class ManagerSearch extends Manager
         $query->andFilterWhere(['like', 'mgr_lname', $this->mgr_lname])
             ->andFilterWhere(['like', 'mgr_fname', $this->mgr_fname])
             ->andFilterWhere(['like', 'mgr_mname', $this->mgr_mname])
-            ->andFilterWhere(['like', 'mge_gender', $this->mge_gender])
+            ->andFilterWhere(['like', 'mgr_gender', $this->mgr_gender])
             ->andFilterWhere(['like', 'mgr_blkno', $this->mgr_blkno])
             ->andFilterWhere(['like', 'mgr_street', $this->mgr_street])
             ->andFilterWhere(['like', 'mgr_brgy', $this->mgr_brgy])

@@ -48,5 +48,5 @@ $this->params['breadcrumbs'][] = $this->title;
             'screening_sched_id',
         ],
     ]) ?>
-
+        <?= Html::a('Next', ['talent-line/create'], ['class' => 'btn btn-success']) ?>
 </div>

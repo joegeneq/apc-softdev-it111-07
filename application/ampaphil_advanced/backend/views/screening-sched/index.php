@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use model\Employee;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ScreeningSchedSearch */
@@ -29,7 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'scr_date',
             'scr_time',
             'app_status',
-            'employee_id',
+            [
+                'attribute'=>'employee_id',
+                'value'=>'employee.emp_lname',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

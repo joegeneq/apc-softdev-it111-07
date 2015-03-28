@@ -22,42 +22,42 @@ $this->title = 'AMPAPhil';
         <div class="row">
 			<div class="col-lg-4">
                 <p><a href="?r=employee">
-                    <img src="../web/images/icons/employee.png" height="300px" width="280px">
+                    <img src="images/icons/employee.png" height="300px" width="280px">
                 </a></p>
             </div>
 			<div class="col-lg-4">
                 <p><a href="?r=applicant">
-                    <img src="../web/images/icons/applicants.png" height="300px" width="280px">
+                    <img src="images/icons/applicants.png" height="300px" width="280px">
                 </a></p>
             </div>
 			<div class="col-lg-4">
                 <p><a href="?r=screening-sched">
-                    <img src="../web/images/icons/screening.png" height="300px" width="280px">
+                    <img src="images/icons/screening.png" height="300px" width="280px">
                 </a></p>
             </div>
 			<div class="col-lg-4">
                 <p><a href="?r=talent">
-                    <img src="../web/images/icons/talents.png" height="300px" width="280px">
+                    <img src="images/icons/talents.png" height="300px" width="280px">
                 </a></p>
             </div>
 			<div class="col-lg-4">
                 <p><a href="?r=manager">
-                    <img src="../web/images/icons/manager.png" height="300px" width="280px">
+                    <img src="images/icons/manager.png" height="300px" width="280px">
                 </a></p>
 			</div>
 			<div class="col-lg-4">
                 <p><a href="?r=client">
-					<img src="../web/images/icons/client.png" height="300px" width="280px">
+					<img src="images/icons/client.png" height="300px" width="280px">
                 </a></p>
             </div>
              <div class="col-lg-4">
                 <p><a href="?r=event-details">
-                    <img src="../web/images/icons/events.png" height="300px" width="280px">
+                    <img src="images/icons/events.png" height="300px" width="280px">
                 </a></p>
             </div>			
             <div class="col-lg-4">
                 <p><a href="?r=payments">
-                    <img src="../web/images/icons/transaction.png" height="300px" width="280px">
+                    <img src="images/icons/transaction.png" height="300px" width="280px">
                 </a></p>
             </div>
         </div>

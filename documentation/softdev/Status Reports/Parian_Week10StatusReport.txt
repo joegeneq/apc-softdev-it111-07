@@ -1,0 +1,13 @@
+WEEK 10 (March 16-21, 2015)
+
+A. Tasks accomplished
+Iteration 2 has started. The project is already in the process of being hosted.
+
+B. Problems encountered
+Some functionalities are not available when the application is accessed on the the server.
+
+C. Possible solutions
+Modify the database and make sure that the path inside the codes are correct.
+
+D. Next steps to accomplish
+Iteration 2 should be completed.

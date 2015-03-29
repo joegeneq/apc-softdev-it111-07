@@ -1,0 +1,12 @@
+WEEK 11 (March 23-28, 2015)
+A. Tasks accomplished
+- Updated some files in the revision on Iteration 1
+
+B. Problems encountered
+- Coordination with the client regarding the schedule of meeting for Iteration 2 - Calendar Module
+
+C. Possible solutions
+- Continue communicating to the Client for the 2nd meeting
+
+D. Next steps to accomplish
+- The group needs to meet with the Client within this week and should be able to start on the Calendar module

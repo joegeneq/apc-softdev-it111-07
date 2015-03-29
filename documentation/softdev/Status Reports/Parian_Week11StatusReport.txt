@@ -1,0 +1,13 @@
+WEEK 11 (March 23-28, 2015)
+
+A. Tasks accomplished
+Some of the requirements from iteration 1 are already completed. The project was already hosted.
+
+B. Problems encountered
+The calendar function of the application is not yet working since we will be using external links that are separated from Yii 2.0.
+
+C. Possible solutions
+Study the process and find for some alternatives if possible.
+
+D. Next steps to accomplish
+Meet with the client and start working on iteration 3.

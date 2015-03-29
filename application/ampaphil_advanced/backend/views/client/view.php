@@ -35,8 +35,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'client_company',
             'client_companyblkno',
             'client_companybrgy',
-            'client_contactno',
-            'client_companycity',
+			'client_companycity',
+            'client_contactno', 
             'client_emailadd:email',
         ],
     ]) ?>

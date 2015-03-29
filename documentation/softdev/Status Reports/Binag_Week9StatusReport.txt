@@ -1,4 +1,4 @@
-WEEK 9 (April 9-14, 2015)
+WEEK 9 (March 9-14, 2015)
 A. Tasks accomplished
 - Presented the Iteration 1 to our Client. Removed the gitignore files to run in host server.
 

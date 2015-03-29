@@ -74,7 +74,7 @@ use kartik\time\TimePicker;
             ]
     ]);?>
 
-    <?= $form->field($model, 'event_status')->textInput(['maxlength' => 20]) ?>
+    <?= $form->field($model, 'event_status')->textInput(['maxlength' => 20, 'disabled' => 'disabled', 'value' => 'Coming']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -1,4 +1,4 @@
-WEEK 10 (April 16-21, 2015)
+WEEK 10 (March 16-21, 2015)
 A. Tasks accomplished
 - Finalize the database - Created Github account and was able to use for push, commit and pull
 

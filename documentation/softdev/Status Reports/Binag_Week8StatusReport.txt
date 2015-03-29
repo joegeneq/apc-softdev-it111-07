@@ -1,4 +1,4 @@
-WEEK 8 (April 2 - 7, 2015)
+WEEK 8 (March 2 - 7, 2015)
 A. Tasks accomplished
 - Generated model and CRUD for Client, Employee, Applicant and Events table
 

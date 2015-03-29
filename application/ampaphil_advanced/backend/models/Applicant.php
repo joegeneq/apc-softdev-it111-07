@@ -76,7 +76,7 @@ class Applicant extends \yii\db\ActiveRecord
             'app_regdate' => 'Registration Date',
             'app_regtime' => 'Registration Time',
             'app_talent' => 'Talent',
-            'screening_sched_id' => 'Screening Schedule ID',
+            'screening_sched_id' => 'Screening Schedule',
         ];
     }
 

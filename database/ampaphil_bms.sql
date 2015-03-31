@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2015 at 04:56 AM
+-- Generation Time: Mar 31, 2015 at 06:00 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -48,14 +48,15 @@ CREATE TABLE IF NOT EXISTS `applicant` (
   `screening_sched_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_APPLICANT_SCREENING_SCHED1` (`screening_sched_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `applicant`
 --
 
 INSERT INTO `applicant` (`id`, `app_lname`, `app_fname`, `app_mname`, `app_gender`, `app_bdate`, `app_blkno`, `app_street`, `app_brgy`, `app_city`, `app_zipcode`, `app_contactno`, `app_emailadd`, `app_regdate`, `app_regtime`, `app_talent`, `screening_sched_id`) VALUES
-(1, 'Test', 'test', 'test', 'Female', '1994-03-18', '12', 'Lapu lapu', 'Magallanes', 'Makati', 1234, '098545678', 'test@test.com', '2015-03-11', '01:32:00', 'Singing', NULL);
+(1, 'Test', 'test', 'test', 'Female', '1994-03-18', '12', 'Lapu lapu', 'Magallanes', 'Makati', 1234, '098545678', 'test@test.com', '2015-03-11', '01:32:00', 'Singing', NULL),
+(2, 'picolo', 'goku', 'pogi', 'Gay', '2015-03-03', '24', 'weewee', 'pokpok', 'pusa', 1116, '12345', 'toytoy@ebak.vom', '2015-03-18', '08:54:00', 'Dancing', 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +144,15 @@ CREATE TABLE IF NOT EXISTS `event_details` (
   `event_endtime` time NOT NULL,
   `event_status` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `event_details`
+--
+
+INSERT INTO `event_details` (`id`, `event_name`, `event_location`, `event_type`, `event_startdate`, `event_enddate`, `event_starttime`, `event_endtime`, `event_status`) VALUES
+(1, 'Graduation Party', 'Taguig', 'Party', '2015-05-25', '2015-05-25', '22:00:00', '01:00:00', NULL),
+(2, 'fita', 'cr', 'Wedding', '2015-03-24', '2015-03-31', '23:03:00', '09:03:00', NULL);
 
 -- --------------------------------------------------------
 

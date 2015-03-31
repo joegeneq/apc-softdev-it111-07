@@ -2,11 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use models\Applicant;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ScreeningSched */
 
-$this->title = $model->id;
+$this->title = $model->scr_date. ', ' . $model->scr_time;
 $this->params['breadcrumbs'][] = ['label' => 'Screening Scheds', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -102,4 +102,13 @@ return array (
       '@talma' => $vendorDir . '/thiagotalma/yii2-fullcalendar',
     ),
   ),
+  'kartik-v/yii2-widget-select2' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-select2',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@kartik/select2' => $vendorDir . '/kartik-v/yii2-widget-select2',
+    ),
+  ),
 );

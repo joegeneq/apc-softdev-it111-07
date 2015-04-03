@@ -53,7 +53,10 @@ class EventsSearch extends Events
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        $query->joinWith('talent');
+        $query->joinWith('manager');
+        $query->joinWith('event_details');
+        $query->joinWith('client');
         $query->andFilterWhere([
             'id' => $this->id,
             'talent_id' => $this->talent_id,

@@ -7,5 +7,5 @@ $this->title = 'Calendar';
 ?>
 <div class="site-index">
 
-    <object data='calendar/events/calendar.php' style='width:100%;min-height: 965px;>
+    <object data='calendar/events/calendar.php' style='width:100%;min-height: 965px;'>
 </div>

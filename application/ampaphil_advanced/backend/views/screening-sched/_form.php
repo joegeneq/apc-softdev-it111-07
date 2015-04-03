@@ -7,6 +7,7 @@ use app\models\Employee;
 //widgets
 use dosamigos\datepicker\DatePicker;
 use kartik\time\TimePicker;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ScreeningSched */
@@ -43,10 +44,14 @@ use kartik\time\TimePicker;
                                                           'Failed' => 'Failed']
                                                         ) ?>
 
-    <?php $form = ActiveForm::begin(); ?>
-    <?= $form->field($model, 'employee_id')->dropDownList(
-        ArrayHelper::map(Employee::find()->all(), 'id', 'emp_lname'),
-        ['prompt'=>'Select Lastname'] ) 
+    <?= $form->field($model, 'employee_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(Employee::find()->all(), 'id', 'emp_lname'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Select Lastname'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+        ]);
     ?>
 
     <div class="form-group">

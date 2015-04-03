@@ -7,6 +7,7 @@ use app\models\ScreeningSched;
 //for widgets
 use dosamigos\datepicker\DatePicker;
 use kartik\time\TimePicker;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Applicant */
@@ -84,9 +85,14 @@ use kartik\time\TimePicker;
                                                           'Singing' => 'Singing',
                                                         ]) ?>
 
-    <?= $form->field($model, 'screening_sched_id')->dropDownList(
-        ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'scr_time', 'scr_date'),
-        ['prompt'=>'Select Screening Schedule'] ) 
+    <?= $form->field($model, 'screening_sched_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'scr_time', 'scr_date'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Select Screening Schedule'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+        ]);
     ?>
 
     <div class="form-group">

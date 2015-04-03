@@ -59,7 +59,6 @@ class EventsSearch extends Events
         }
         $query->joinWith('talent');
         $query->joinWith('client');
-        $query->joinWith('talent.manager');
         $query->joinWith('eventDetails');
         $query->andFilterWhere([
             'id' => $this->id,
@@ -68,6 +67,9 @@ class EventsSearch extends Events
             'event_details_id' => $this->event_details_id,
             'client_id' => $this->client_id,
         ]);
+
+        $query->andFilterWhere(['like','eventDetails.event_name', $this->event_details_id])
+              ->andFilterWhere(['like','client.client_lname', $this->client_id]);
 
         return $dataProvider;
     }

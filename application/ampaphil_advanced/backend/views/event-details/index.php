@@ -39,4 +39,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
+    <?= Html::a('Confirm Event', ['events/create'], ['class' => 'btn btn-success']) ?>
+
 </div>

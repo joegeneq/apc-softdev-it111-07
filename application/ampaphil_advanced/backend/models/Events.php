@@ -34,7 +34,7 @@ class Events extends \yii\db\ActiveRecord
     {
         return [
             [['talent_id', 'manager_id', 'event_details_id', 'client_id'], 'required'],
-            [['talent_id', 'manager_id', 'event_details_id', 'client_id'], 'integer']
+            [['talent_id', 'manager_id', 'event_details_id', 'client_id'], 'safe']
         ];
     }
 

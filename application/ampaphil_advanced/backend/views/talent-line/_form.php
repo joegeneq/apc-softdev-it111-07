@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use app\models\Applicant;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\TalentLine */
@@ -37,10 +38,14 @@ use app\models\Applicant;
                                                                      'Jazz Dance' => 'Jazz Dance'
                                                                     ]) ?>
 
-    <?php $form = ActiveForm::begin(); ?>
-    <?= $form->field($model, 'applicant_id')->dropDownList(
-        ArrayHelper::map(Applicant::find()->all(), 'id', 'app_lname'),
-        ['prompt'=>'Select Lastname'] ) 
+    <?= $form->field($model, 'applicant_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(Applicant::find()->all(), 'id', 'app_lname'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Select Lastname'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+        ]);
     ?>
 
     <div class="form-group">

@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'talent_id',
-            'manager_id',
+            //'manager_id',
             'event_details_id',
             'client_id',
 

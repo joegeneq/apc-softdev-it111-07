@@ -4,8 +4,8 @@
 try {
 
     $url = 'mysql:dbname=ampaphil_bms;host=localhost';
-    $username = 'ampaphil_bms';
-    $password = 'ampaphil_bms';
+    $username = 'root';
+    $password = '';
 
     // Connect to database
     $connection = new PDO($url, $username, $password);

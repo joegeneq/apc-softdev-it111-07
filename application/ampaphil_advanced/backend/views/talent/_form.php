@@ -9,6 +9,7 @@ use app\models\ScreeningSched;
 
 /* for widgets*/
 use dosamigos\datepicker\DatePicker;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Talent */
@@ -19,9 +20,14 @@ use dosamigos\datepicker\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-     <?= $form->field($model, 'manager_id')->dropDownList(
-        ArrayHelper::map(Manager::find()->all(), 'id', 'mgr_lname'),
-        ['prompt'=>'Select Lastname'] ) 
+    <?= $form->field($model, 'manager_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(Manager::find()->all(), 'id', 'mgr_lname'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Select Lastname'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+        ]);
     ?>
 
     <?= $form->field($model, 'talent_managedstartdate')->widget(
@@ -48,14 +54,24 @@ use dosamigos\datepicker\DatePicker;
             ]
     ]);?>
 
-     <?= $form->field($model, 'screening_sched_id')->dropDownList(
-        ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'scr_time', 'scr_date'),
-        ['prompt'=>'Select Schedule'] ) 
+    <?= $form->field($model, 'screening_sched_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'scr_time', 'scr_date'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Select Schedule'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+        ]);
     ?>
 
-    <?= $form->field($model, 'applicant_id')->dropDownList(
-        ArrayHelper::map(Applicant::find()->all(), 'id', 'app_lname'),
-        ['prompt'=>'Select Lastname'] ) 
+    <?= $form->field($model, 'applicant_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(Applicant::find()->all(), 'id', 'app_lname'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Select Lastname'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+        ]);
     ?>
 
     <div class="form-group">

@@ -18,7 +18,7 @@ class EventsSearch extends Events
     public function rules()
     {
         return [
-            [['id', 'talent_id', 'manager_id', 'event_details_id', 'client_id'], 'integer'],
+            [['id', 'talent_id', 'manager_id', 'event_details_id', 'client_id'], 'safe'],
         ];
     }
 

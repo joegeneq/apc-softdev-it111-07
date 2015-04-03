@@ -7,6 +7,7 @@ use app\models\EventDetails;
 //for widgets
 use dosamigos\datepicker\DatePicker;
 use kartik\time\TimePicker;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Payments */
@@ -46,9 +47,14 @@ use kartik\time\TimePicker;
 
     <?= $form->field($model, 'agency_share')->textInput() ?>
 
-    <?= $form->field($model, 'event_details_id')->dropDownList(
-        ArrayHelper::map(EventDetails::find()->all(), 'id', 'event_name'),
-        ['prompt'=>'Select Event'] ) 
+    <?= $form->field($model, 'event_details_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(EventDetails::find()->all(), 'id', 'event_name'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Select Event'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+        ]);
     ?>
 
     <div class="form-group">

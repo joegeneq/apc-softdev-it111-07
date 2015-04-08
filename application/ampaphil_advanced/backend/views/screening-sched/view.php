@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'scr_time',
             'app_status',
             'employee.emp_lname',
+            'employee.emp_fname'
         ],
     ]) ?>
 

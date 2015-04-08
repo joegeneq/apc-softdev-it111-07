@@ -39,7 +39,7 @@ use kartik\select2\Select2;
                                                                     ]) ?>
 
     <?= $form->field($model, 'applicant_id')->widget(Select2::classname(), [
-        'data' => ArrayHelper::map(Applicant::find()->all(), 'id', 'app_lname'),
+        'data' => ArrayHelper::map(Applicant::find()->all(), 'id','app_fname', 'app_lname'),
         'language' => 'en',
         'options' => ['placeholder' => 'Select Lastname'],
         'pluginOptions' => [

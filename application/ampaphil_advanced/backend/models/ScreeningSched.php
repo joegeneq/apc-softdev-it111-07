@@ -33,10 +33,11 @@ class ScreeningSched extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['scr_date', 'scr_time', 'app_status'], 'required'],
+            [['scr_date', 'scr_time'], 'required'],
             [['scr_date', 'scr_time'], 'safe'],
             [['employee_id'], 'integer'],
-            [['app_status'], 'string', 'max' => 10]
+            [['app_status'], 'string', 'max' => 10],
+            [['app_status'], 'default', 'value' => 'Screening']
         ];
     }
 

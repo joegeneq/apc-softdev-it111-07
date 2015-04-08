@@ -38,11 +38,19 @@ use kartik\select2\Select2;
             ]
     ]);?>
 
-    <?= $form->field($model, 'app_status')->dropDownList(['' => 'Select Status', 
-                                                          'Screening' => 'Screening', 
+    <?php 
+
+        if (($model->app_status) == 'Screening')
+        {
+            echo $form->field($model, 'app_status')->dropDownList(['' => 'Select Status', 
+                                                          //'Screening' => 'Screening', 
                                                           'Passed' => 'Passed', 
                                                           'Failed' => 'Failed']
-                                                        ) ?>
+                                                        );
+        }
+    ?>
+
+  
 
     <?= $form->field($model, 'employee_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(Employee::find()->all(), 'id', 'emp_lname'),

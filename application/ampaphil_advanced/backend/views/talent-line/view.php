@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'talent_type',
             'talent_specialization',
             'applicant.app_lname',
+            'applicant.app_fname'
         ],
     ]) ?>
         <?= Html::a('Create Screening Schedule', ['screening-sched/create'], ['class' => 'btn btn-success']) ?>  

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Talent;
+use app\models\Applicant;
 use app\models\Manager;
 use app\models\EventDetails;
 use app\models\Client;

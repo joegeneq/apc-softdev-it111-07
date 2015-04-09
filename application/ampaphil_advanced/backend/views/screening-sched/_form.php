@@ -42,8 +42,7 @@ use kartik\select2\Select2;
 
         if (($model->app_status) == 'Screening')
         {
-            echo $form->field($model, 'app_status')->dropDownList(['' => 'Select Status', 
-                                                          //'Screening' => 'Screening', 
+            echo $form->field($model, 'app_status')->dropDownList(['' => 'Select Status',
                                                           'Passed' => 'Passed', 
                                                           'Failed' => 'Failed']
                                                         );

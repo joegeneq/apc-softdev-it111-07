@@ -15,7 +15,6 @@ use Yii;
  * @property string $event_enddate
  * @property string $event_starttime
  * @property string $event_endtime
- * @property string $event_status
  *
  * @property Events[] $events
  * @property Payments[] $payments
@@ -38,8 +37,7 @@ class EventDetails extends \yii\db\ActiveRecord
         return [
             [['event_name', 'event_location', 'event_type', 'event_startdate', 'event_enddate', 'event_starttime', 'event_endtime'], 'required'],
             [['event_startdate', 'event_enddate', 'event_starttime', 'event_endtime'], 'safe'],
-            [['event_name', 'event_location', 'event_type'], 'string', 'max' => 45],
-            [['event_status'], 'string', 'max' => 20]
+            [['event_name', 'event_location', 'event_type'], 'string', 'max' => 45]
         ];
     }
 
@@ -57,7 +55,6 @@ class EventDetails extends \yii\db\ActiveRecord
             'event_enddate' => 'End Date',
             'event_starttime' => 'Start Time',
             'event_endtime' => 'End Time',
-            'event_status' => 'Status',
         ];
     }
 

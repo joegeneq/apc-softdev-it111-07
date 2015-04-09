@@ -19,7 +19,15 @@ use kartik\select2\Select2;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'talent_id')->textInput() ?>
+    <?= $form->field($model, 'talent_id')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(Talent::find()->all(), 'id', 'talent_fullname'),
+        'language' => 'en',
+        'options' => ['placeholder' => 'Select Name'],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+        ]);
+    ?>
 
     <?= $form->field($model, 'manager_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(Manager::find()->all(), 'id', 'mgr_lname'),

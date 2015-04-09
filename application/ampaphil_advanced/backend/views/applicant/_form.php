@@ -85,6 +85,18 @@ use kartik\select2\Select2;
                                                           'Singing' => 'Singing',
                                                         ]) ?>
 
+    <?php 
+
+        if (($model->app_status) == 'Screening')
+        {
+            echo $form->field($model, 'app_status')->dropDownList(['' => 'Select Status', 
+                                                          //'Screening' => 'Screening', 
+                                                          'Passed' => 'Passed', 
+                                                          'Failed' => 'Failed']
+                                                        );
+        }
+    ?>
+
     <?= $form->field($model, 'screening_sched_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(ScreeningSched::find()->all(), 'id', 'scr_time', 'scr_date'),
         'language' => 'en',

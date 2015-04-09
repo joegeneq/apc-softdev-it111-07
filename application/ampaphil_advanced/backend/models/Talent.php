@@ -35,7 +35,7 @@ class Talent extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['manager_id', 'talent_managedstartdate', 'talent_managedenddate'], 'required'],
+            //[['manager_id', 'talent_managedstartdate', 'talent_managedenddate'], 'required'],
             //[['manager_id', 'screening_sched_id', 'applicant_id'], 'integer'],
             [['manager_id', 'applicant_id'], 'integer'],
             [['talent_managedstartdate', 'talent_managedenddate', 'screening_sched_id'], 'safe']

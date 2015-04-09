@@ -10,6 +10,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use app\models\ScreeningSched;
+
 /**
  * TalentController implements the CRUD actions for Talent model.
  */
@@ -63,9 +65,18 @@ class TalentController extends Controller
     public function actionCreate()
     {
         $model = new Talent();
+       
+        if ($model->load(Yii::$app->request->post())) {
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'manager_id' => $model->manager_id]);
+            //$model->$screening_sched_id = $model->getScreeningID($model->$applicant_id);          
+
+            if ($model->save()) {
+
+                return $this->redirect(['view', 'id' => $model->id, 'manager_id' => $model->manager_id]);
+
+            }
+
+            
         } else {
             return $this->render('create', [
                 'model' => $model,

@@ -23,7 +23,6 @@ use Yii;
  * @property string $app_regdate
  * @property string $app_regtime
  * @property string $app_talent
- * @property string $app_status
  * @property integer $screening_sched_id
  *
  * @property ScreeningSched $screeningSched

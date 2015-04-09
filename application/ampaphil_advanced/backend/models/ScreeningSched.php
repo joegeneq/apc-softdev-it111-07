@@ -36,8 +36,7 @@ class ScreeningSched extends \yii\db\ActiveRecord
             [['scr_date', 'scr_time'], 'required'],
             [['scr_date', 'scr_time'], 'safe'],
             [['employee_id'], 'integer'],
-            [['app_status'], 'string', 'max' => 10],
-            [['app_status'], 'default', 'value' => 'Screening']
+            [['app_status'], 'string', 'max' => 10]
         ];
     }
 
@@ -50,7 +49,6 @@ class ScreeningSched extends \yii\db\ActiveRecord
             'id' => 'ID',
             'scr_date' => 'Date',
             'scr_time' => 'Time',
-            'app_status' => 'Status',
             'employee_id' => 'Employee Last Name',
         ];
     }

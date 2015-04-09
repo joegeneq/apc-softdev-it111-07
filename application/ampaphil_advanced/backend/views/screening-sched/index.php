@@ -29,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'scr_date',
             'scr_time',
-            'app_status',
             [
                 'attribute'=>'employee_id',
                 'value'=>'employee.emp_lname',

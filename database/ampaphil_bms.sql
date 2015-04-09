@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2015 at 11:56 AM
+-- Generation Time: Apr 09, 2015 at 04:29 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -49,19 +49,23 @@ CREATE TABLE IF NOT EXISTS `applicant` (
   `screening_sched_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_APPLICANT_SCREENING_SCHED1` (`screening_sched_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `applicant`
 --
 
 INSERT INTO `applicant` (`id`, `app_lname`, `app_fname`, `app_mname`, `app_gender`, `app_bdate`, `app_blkno`, `app_street`, `app_brgy`, `app_city`, `app_zipcode`, `app_contactno`, `app_emailadd`, `app_regdate`, `app_regtime`, `app_talent`, `app_status`, `screening_sched_id`) VALUES
-(1, 'Test', 'test', 'test', 'Female', '1994-03-18', '12', 'Lapu lapu', 'Magallanes', 'Makati', 1234, '098545678', 'test@test.com', '2015-03-11', '01:32:00', 'Singing', '', 4),
-(2, 'picolo', 'goku', 'pogi', 'Gay', '2015-03-03', '24', 'weewee', 'pokpok', 'pusa', 1116, '12345', 'toytoy@ebak.vom', '2015-03-18', '08:54:00', 'Dancing', '', 1),
-(3, 'Papna', 'Arianne Bianca', 'Ferrer', 'Female', '1995-07-17', '234', 'test', 'test', 'taguig', 34567, '345678', 'biapapna@gmail.com', '2015-04-14', '15:51:00', 'Singing', '', 3),
-(4, 'Papna', 'Bia', 'Bia', 'Female', '2015-04-14', '123', '123', '123', '123', 1999, '12345', 'biapapna@gmail.com', '2015-04-23', '16:11:00', 'Singing', '', 2),
-(5, 'Lino', 'Ace Bryan', 'Briones', 'Male', '2000-01-06', '3', 'cardones', 'Central Signal', 'Taguig', 1234, '345312', 'acelino@yahoo.com', '2015-04-08', '17:21:00', 'Singing', 'Failed', 5),
-(6, 'Sample', 'App', 'Test', 'Male', '2015-04-14', '3', 'cardones', 'Central Signal', 'Taguig', 1234, '345678', 'acelino@yahoo.com', '2015-04-23', '17:45:00', 'Singing', 'Screening', 6);
+(1, 'Test', 'test', 'test', 'Female', '1994-03-18', '12', 'Lapu lapu', 'Magallanes', 'Makati', 1234, '098545678', 'test@test.com', '2015-03-11', '01:32:00', 'Singing', 'Failed', 4),
+(2, 'picolo', 'goku', 'pogi', 'Gay', '2015-03-03', '24', 'weewee', 'pokpok', 'pusa', 1116, '12345', 'toytoy@ebak.vom', '2015-03-18', '08:54:00', 'Dancing', 'Passed', 1),
+(3, 'Papna', 'Arianne Bianca', 'Ferrer', 'Female', '1995-07-17', '234', 'test', 'test', 'taguig', 34567, '345678', 'biapapna@gmail.com', '2015-04-14', '15:51:00', 'Singing', 'Screening', 3),
+(4, 'Papna', 'Bia', 'Bia', 'Female', '2015-04-14', '123', '123', '123', '123', 1999, '12345', 'biapapna@gmail.com', '2015-04-23', '16:11:00', 'Singing', 'Screening', 2),
+(6, 'Sample', 'App', 'Test', 'Male', '2015-04-14', '3', 'cardones', 'Central Signal', 'Taguig', 1234, '345678', 'acelino@yahoo.com', '2015-04-23', '17:45:00', 'Singing', 'Screening', 6),
+(8, 'Dimapilis', 'Joshua', 'Coralde', 'Male', '2015-04-15', '234', 'srg', 'asg', 'asdfsaf', 2345, '2345', 'asdfsadf@test.test', '2015-04-15', '20:38:00', 'Dancing', 'Passed', 7),
+(9, 'Elizondo', 'Kimberly Mae', 'Belda', 'Female', '2015-04-23', '24', 'Lapu lapu', 'Magallanes', 'Makati', 1116, '2345', 'asdfsadf@test.test', '2015-04-16', '20:58:00', 'Singing', 'Talent', 8),
+(10, 'Urquiza', 'Trixia Marie', 'Ambagan', 'Female', '2015-04-30', '24', 'weewee', 'test', 'taguig', 1116, '345678', 'biapapna@gmail.com', '2015-04-29', '21:15:00', 'Singing', 'Passed', 9),
+(11, 'Hidalgo', 'Erika', '', 'Female', '2015-04-24', '24', 'weewee', 'Magallanes', 'Makati', 34567, '345678', 'biapapna@gmail.com', '2015-04-23', '21:23:00', 'Singing', 'Passed', 10),
+(12, 'Luangco', 'Roxanne Therese', 'test', 'Female', '2015-04-22', '234', 'test', 'test', 'taguig', 34567, '345312', 'acelino@yahoo.com', '2015-04-30', '21:26:00', 'Dancing', 'Talent', 11);
 
 -- --------------------------------------------------------
 
@@ -249,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `screening_sched` (
   `employee_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_SCREENING_SCHED_EMPLOYEE1` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `screening_sched`
@@ -261,7 +265,12 @@ INSERT INTO `screening_sched` (`id`, `scr_date`, `scr_time`, `employee_id`) VALU
 (3, '2015-04-13', '16:27:00', 1),
 (4, '2015-04-14', '16:30:00', 1),
 (5, '2015-04-16', '17:10:00', 1),
-(6, '2015-04-09', '17:26:00', 1);
+(6, '2015-04-09', '17:26:00', 1),
+(7, '2015-04-30', '19:40:00', 1),
+(8, '2015-04-23', '20:58:00', 1),
+(9, '2015-04-23', '21:14:00', 1),
+(10, '2015-04-17', '21:23:00', 1),
+(11, '2015-04-16', '21:25:00', 1);
 
 -- --------------------------------------------------------
 
@@ -276,29 +285,35 @@ CREATE TABLE IF NOT EXISTS `talent` (
   `talent_managedenddate` date NOT NULL,
   `screening_sched_id` int(11) DEFAULT NULL,
   `applicant_id` int(11) DEFAULT NULL,
+  `talent_fullname` varchar(65) NOT NULL,
   PRIMARY KEY (`id`,`manager_id`),
   KEY `fk_TALENT_MANAGER1` (`manager_id`),
   KEY `fk_TALENT_SCREENING_SCHED1` (`screening_sched_id`),
   KEY `fk_TALENT_APPLICANT1` (`applicant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `talent`
 --
 
-INSERT INTO `talent` (`id`, `manager_id`, `talent_managedstartdate`, `talent_managedenddate`, `screening_sched_id`, `applicant_id`) VALUES
-(1, 1, '2015-03-28', '2015-03-31', NULL, 1),
-(2, 1, '2015-04-15', '2015-04-28', NULL, 2),
-(3, 1, '2015-04-15', '2015-04-28', 3, 3),
-(4, 1, '2015-03-31', '2015-04-29', NULL, 2),
-(5, 1, '2015-04-14', '2015-04-28', NULL, 2),
-(6, 1, '2015-04-08', '2015-04-29', NULL, 2),
-(7, 1, '2015-04-07', '2015-04-29', NULL, 2),
-(8, 1, '2015-04-22', '2015-04-23', 3, 2),
-(9, 1, '2015-04-16', '2015-04-23', 3, 3),
-(10, 1, '2015-04-17', '2015-04-30', NULL, 1),
-(11, 1, '2015-04-07', '2015-04-15', 2, 2),
-(12, 1, '2015-04-29', '2015-04-30', 3, 3);
+INSERT INTO `talent` (`id`, `manager_id`, `talent_managedstartdate`, `talent_managedenddate`, `screening_sched_id`, `applicant_id`, `talent_fullname`) VALUES
+(1, 1, '2015-03-28', '2015-03-31', NULL, 1, ''),
+(2, 1, '2015-04-15', '2015-04-28', NULL, 2, ''),
+(3, 1, '2015-04-15', '2015-04-28', 3, 3, ''),
+(4, 1, '2015-03-31', '2015-04-29', NULL, 2, ''),
+(5, 1, '2015-04-14', '2015-04-28', NULL, 2, ''),
+(6, 1, '2015-04-08', '2015-04-29', NULL, 2, ''),
+(7, 1, '2015-04-07', '2015-04-29', NULL, 2, ''),
+(8, 1, '2015-04-22', '2015-04-23', 3, 2, ''),
+(9, 1, '2015-04-16', '2015-04-23', 3, 3, ''),
+(10, 1, '2015-04-17', '2015-04-30', NULL, 1, ''),
+(11, 1, '2015-04-07', '2015-04-15', 2, 2, ''),
+(12, 1, '2015-04-29', '2015-04-30', 3, 3, ''),
+(13, 1, '2015-03-03', '2015-03-03', 7, 8, 'Joshua Coralde Dimapilis'),
+(14, 1, '0000-00-00', '0000-00-00', 8, 9, 'Kimberly Mae Belda Elizondo'),
+(20, 1, '0000-00-00', '0000-00-00', 9, 10, 'Trixia Marie Ambagan Urquiza'),
+(21, 1, '0000-00-00', '0000-00-00', 10, 11, 'Erika  Hidalgo'),
+(23, 1, '0000-00-00', '0000-00-00', 11, 12, 'Roxanne Therese test Luangco');
 
 -- --------------------------------------------------------
 

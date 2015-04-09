@@ -37,6 +37,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'talent_managedenddate',
             //'screening_sched_id',
             'applicant.app_lname',
+            'applicant.app_fname',
+            //'applicant_id',
         ],
     ]) ?>
 

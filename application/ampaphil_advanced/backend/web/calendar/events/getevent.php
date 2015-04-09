@@ -22,7 +22,7 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
 
         $e = array();
-        $e['title'] = "Title: ". $row['event_name']."\n Start: ".$row['event_starttime']. "\n End:" . $row['event_endtime'];
+        $e['title'] = "Title: ". $row['event_name']."\n Start: ".$row['event_starttime']. "\n End: " . $row['event_endtime'];
         $e['start'] = $row['event_startdate'];
         $e['end'] = $row['event_enddate'];
 

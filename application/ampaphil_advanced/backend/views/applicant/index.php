@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'app_regtime',
             'app_talent',
             'app_status',
-            'screening_sched_id',
+            //'screening_sched_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

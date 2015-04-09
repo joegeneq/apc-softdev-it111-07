@@ -19,7 +19,7 @@ class ApplicantSearch extends Applicant
     {
         return [
             [['id', 'app_zipcode', 'screening_sched_id'], 'integer'],
-            [['app_lname', 'app_fname', 'app_mname', 'app_gender', 'app_bdate', 'app_blkno', 'app_street', 'app_brgy', 'app_city', 'app_contactno', 'app_emailadd', 'app_regdate', 'app_regtime', 'app_talent'], 'safe'],
+            [['app_lname', 'app_fname', 'app_mname', 'app_gender', 'app_bdate', 'app_blkno', 'app_street', 'app_brgy', 'app_city', 'app_contactno', 'app_emailadd', 'app_regdate', 'app_regtime', 'app_talent', 'app_status'], 'safe'],
         ];
     }
 
@@ -61,6 +61,7 @@ class ApplicantSearch extends Applicant
             'app_zipcode' => $this->app_zipcode,
             'app_regdate' => $this->app_regdate,
             'app_regtime' => $this->app_regtime,
+            'app_status' => $this->app_status,
             'screening_sched_id' => $this->screening_sched_id,
         ]);
 
@@ -74,6 +75,7 @@ class ApplicantSearch extends Applicant
             ->andFilterWhere(['like', 'app_city', $this->app_city])
             ->andFilterWhere(['like', 'app_contactno', $this->app_contactno])
             ->andFilterWhere(['like', 'app_emailadd', $this->app_emailadd])
+            ->andFilterWhere(['like', 'app_status', $this->app_status])
             ->andFilterWhere(['like', 'app_talent', $this->app_talent]);
 
         return $dataProvider;

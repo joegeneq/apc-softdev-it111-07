@@ -8,7 +8,7 @@ use model\Employee;
 /* @var $searchModel app\models\ScreeningSchedSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Screening Scheds';
+$this->title = 'Screening Schedule';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="screening-sched-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Screening Sched', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Screening Schedule', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -29,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'scr_date',
             'scr_time',
-            'app_status',
             [
                 'attribute'=>'employee_id',
                 'value'=>'employee.emp_lname',

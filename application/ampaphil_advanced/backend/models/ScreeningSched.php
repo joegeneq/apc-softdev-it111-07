@@ -10,7 +10,6 @@ use Yii;
  * @property integer $id
  * @property string $scr_date
  * @property string $scr_time
- * @property string $app_status
  * @property integer $employee_id
  *
  * @property Applicant[] $applicants
@@ -36,8 +35,6 @@ class ScreeningSched extends \yii\db\ActiveRecord
             [['scr_date', 'scr_time'], 'required'],
             [['scr_date', 'scr_time'], 'safe'],
             [['employee_id'], 'integer'],
-            [['app_status'], 'string', 'max' => 10],
-            [['app_status'], 'default', 'value' => 'Screening']
         ];
     }
 
@@ -50,7 +47,6 @@ class ScreeningSched extends \yii\db\ActiveRecord
             'id' => 'ID',
             'scr_date' => 'Date',
             'scr_time' => 'Time',
-            'app_status' => 'Status',
             'employee_id' => 'Employee Last Name',
         ];
     }

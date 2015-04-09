@@ -46,11 +46,13 @@ class Applicant extends \yii\db\ActiveRecord
     {
         return [
             [['app_lname', 'app_fname', 'app_gender', 'app_bdate', 'app_blkno', 'app_street', 'app_brgy', 'app_city', 'app_contactno', 'app_regdate', 'app_regtime', 'app_talent'], 'required'],
-            [['app_bdate', 'app_regdate', 'app_regtime'], 'safe'],
+            [['app_bdate', 'app_regdate', 'app_regtime', 'app_status'], 'safe'],
             [['app_zipcode', 'screening_sched_id'], 'integer'],
             [['app_lname', 'app_fname', 'app_mname', 'app_street', 'app_brgy', 'app_city', 'app_emailadd', 'app_talent'], 'string', 'max' => 45],
-            [['app_gender', 'app_blkno'], 'string', 'max' => 10],
-            [['app_contactno'], 'string', 'max' => 20]
+            [['app_gender', 'app_blkno', 'app_status'], 'string', 'max' => 10],
+            [['app_contactno'], 'string', 'max' => 20],
+            ['screening_sched_id', 'unique', 'targetClass' => '\app\models\Applicant', 'message' => 'This screening schedule is already taken.'],
+            [['app_status'], 'default', 'value' => 'Screening']
         ];
     }
 
@@ -63,7 +65,7 @@ class Applicant extends \yii\db\ActiveRecord
             'id' => 'ID',
             'app_lname' => 'Last Name',
             'app_fname' => 'First Name',
-            'app_mname' => 'Middle Name',
+            'app_mname' => 'Middle Name',   
             'app_gender' => 'Gender',
             'app_bdate' => 'Birth Date',
             'app_blkno' => 'Block/Lot Number',
@@ -76,6 +78,7 @@ class Applicant extends \yii\db\ActiveRecord
             'app_regdate' => 'Registration Date',
             'app_regtime' => 'Registration Time',
             'app_talent' => 'Talent',
+            'app_status' => 'Status',
             'screening_sched_id' => 'Screening Schedule',
         ];
     }

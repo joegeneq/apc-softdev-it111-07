@@ -47,6 +47,8 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'app_talent') ?>
 
+    <?php echo $form->field($model, 'app_status') ?>
+
     <?php // echo $form->field($model, 'screening_sched_id') ?>
 
     <div class="form-group">

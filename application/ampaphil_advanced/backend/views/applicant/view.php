@@ -16,14 +16,31 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+
+        <?php
+        if (($model->app_status) == "Failed"){
+        ?>
+            <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
         ]) ?>
-        <?= Html::a('Create Talent Line', ['talent-line/create'], ['class' => 'btn btn-success']) ?>
+        
+        <?php
+        }
+
+        if (($model->app_status) == "Passed"){  
+            
+        ?>
+        <form method="POST" action="function/try.php?id=<?= $model->id; ?>">
+        <button class="btn btn-success">Generate Talent</button>
+        </form>
+        <?php
+        }
+        ?>
+        
     </p>
 
     <?= DetailView::widget([
@@ -45,6 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'app_regdate',
             'app_regtime',
             'app_talent',
+            'app_status',
             'screening_sched_id',
         ],
     ]) ?>

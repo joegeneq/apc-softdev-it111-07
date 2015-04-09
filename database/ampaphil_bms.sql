@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2015 at 11:50 AM
+-- Generation Time: Apr 09, 2015 at 11:56 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -246,7 +246,6 @@ CREATE TABLE IF NOT EXISTS `screening_sched` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `scr_date` date NOT NULL,
   `scr_time` time NOT NULL,
-  `app_status` varchar(10) NOT NULL,
   `employee_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_SCREENING_SCHED_EMPLOYEE1` (`employee_id`)
@@ -256,13 +255,13 @@ CREATE TABLE IF NOT EXISTS `screening_sched` (
 -- Dumping data for table `screening_sched`
 --
 
-INSERT INTO `screening_sched` (`id`, `scr_date`, `scr_time`, `app_status`, `employee_id`) VALUES
-(1, '2015-03-19', '11:23:00', 'Passed', 1),
-(2, '2015-04-15', '15:48:00', 'Screening', 1),
-(3, '2015-04-13', '16:27:00', 'Screening', 1),
-(4, '2015-04-14', '16:30:00', 'Screening', 1),
-(5, '2015-04-16', '17:10:00', 'Screening', 1),
-(6, '2015-04-09', '17:26:00', 'Screening', 1);
+INSERT INTO `screening_sched` (`id`, `scr_date`, `scr_time`, `employee_id`) VALUES
+(1, '2015-03-19', '11:23:00', 1),
+(2, '2015-04-15', '15:48:00', 1),
+(3, '2015-04-13', '16:27:00', 1),
+(4, '2015-04-14', '16:30:00', 1),
+(5, '2015-04-16', '17:10:00', 1),
+(6, '2015-04-09', '17:26:00', 1);
 
 -- --------------------------------------------------------
 

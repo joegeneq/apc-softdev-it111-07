@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2015 at 06:00 PM
+-- Generation Time: Apr 09, 2015 at 11:50 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -45,18 +45,23 @@ CREATE TABLE IF NOT EXISTS `applicant` (
   `app_regdate` date NOT NULL,
   `app_regtime` time NOT NULL,
   `app_talent` varchar(45) NOT NULL,
+  `app_status` varchar(10) NOT NULL,
   `screening_sched_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_APPLICANT_SCREENING_SCHED1` (`screening_sched_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `applicant`
 --
 
-INSERT INTO `applicant` (`id`, `app_lname`, `app_fname`, `app_mname`, `app_gender`, `app_bdate`, `app_blkno`, `app_street`, `app_brgy`, `app_city`, `app_zipcode`, `app_contactno`, `app_emailadd`, `app_regdate`, `app_regtime`, `app_talent`, `screening_sched_id`) VALUES
-(1, 'Test', 'test', 'test', 'Female', '1994-03-18', '12', 'Lapu lapu', 'Magallanes', 'Makati', 1234, '098545678', 'test@test.com', '2015-03-11', '01:32:00', 'Singing', NULL),
-(2, 'picolo', 'goku', 'pogi', 'Gay', '2015-03-03', '24', 'weewee', 'pokpok', 'pusa', 1116, '12345', 'toytoy@ebak.vom', '2015-03-18', '08:54:00', 'Dancing', 1);
+INSERT INTO `applicant` (`id`, `app_lname`, `app_fname`, `app_mname`, `app_gender`, `app_bdate`, `app_blkno`, `app_street`, `app_brgy`, `app_city`, `app_zipcode`, `app_contactno`, `app_emailadd`, `app_regdate`, `app_regtime`, `app_talent`, `app_status`, `screening_sched_id`) VALUES
+(1, 'Test', 'test', 'test', 'Female', '1994-03-18', '12', 'Lapu lapu', 'Magallanes', 'Makati', 1234, '098545678', 'test@test.com', '2015-03-11', '01:32:00', 'Singing', '', 4),
+(2, 'picolo', 'goku', 'pogi', 'Gay', '2015-03-03', '24', 'weewee', 'pokpok', 'pusa', 1116, '12345', 'toytoy@ebak.vom', '2015-03-18', '08:54:00', 'Dancing', '', 1),
+(3, 'Papna', 'Arianne Bianca', 'Ferrer', 'Female', '1995-07-17', '234', 'test', 'test', 'taguig', 34567, '345678', 'biapapna@gmail.com', '2015-04-14', '15:51:00', 'Singing', '', 3),
+(4, 'Papna', 'Bia', 'Bia', 'Female', '2015-04-14', '123', '123', '123', '123', 1999, '12345', 'biapapna@gmail.com', '2015-04-23', '16:11:00', 'Singing', '', 2),
+(5, 'Lino', 'Ace Bryan', 'Briones', 'Male', '2000-01-06', '3', 'cardones', 'Central Signal', 'Taguig', 1234, '345312', 'acelino@yahoo.com', '2015-04-08', '17:21:00', 'Singing', 'Failed', 5),
+(6, 'Sample', 'App', 'Test', 'Male', '2015-04-14', '3', 'cardones', 'Central Signal', 'Taguig', 1234, '345678', 'acelino@yahoo.com', '2015-04-23', '17:45:00', 'Singing', 'Screening', 6);
 
 -- --------------------------------------------------------
 
@@ -76,7 +81,14 @@ CREATE TABLE IF NOT EXISTS `client` (
   `client_companycity` varchar(45) NOT NULL,
   `client_emailadd` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `client_lname`, `client_fname`, `client_mname`, `client_company`, `client_companyblkno`, `client_companybrgy`, `client_contactno`, `client_companycity`, `client_emailadd`) VALUES
+(1, 'Factuar', 'Stephanie', 'Campoy', 'Jollibee', '56', 'test', '9856789', 'paranaque', 'stephanie@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -144,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `event_details` (
   `event_endtime` time NOT NULL,
   `event_status` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `event_details`
@@ -152,7 +164,8 @@ CREATE TABLE IF NOT EXISTS `event_details` (
 
 INSERT INTO `event_details` (`id`, `event_name`, `event_location`, `event_type`, `event_startdate`, `event_enddate`, `event_starttime`, `event_endtime`, `event_status`) VALUES
 (1, 'Graduation Party', 'Taguig', 'Party', '2015-05-25', '2015-05-25', '22:00:00', '01:00:00', NULL),
-(2, 'fita', 'cr', 'Wedding', '2015-03-24', '2015-03-31', '23:03:00', '09:03:00', NULL);
+(2, 'fita', 'cr', 'Wedding', '2015-03-24', '2015-03-31', '23:03:00', '09:03:00', NULL),
+(3, 'ThisisTestingOnly', 'Makati', 'Reunion', '2015-04-01', '2015-04-02', '10:27:00', '10:27:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -237,14 +250,19 @@ CREATE TABLE IF NOT EXISTS `screening_sched` (
   `employee_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_SCREENING_SCHED_EMPLOYEE1` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `screening_sched`
 --
 
 INSERT INTO `screening_sched` (`id`, `scr_date`, `scr_time`, `app_status`, `employee_id`) VALUES
-(1, '2015-03-19', '11:23:00', 'Passed', 1);
+(1, '2015-03-19', '11:23:00', 'Passed', 1),
+(2, '2015-04-15', '15:48:00', 'Screening', 1),
+(3, '2015-04-13', '16:27:00', 'Screening', 1),
+(4, '2015-04-14', '16:30:00', 'Screening', 1),
+(5, '2015-04-16', '17:10:00', 'Screening', 1),
+(6, '2015-04-09', '17:26:00', 'Screening', 1);
 
 -- --------------------------------------------------------
 
@@ -263,14 +281,25 @@ CREATE TABLE IF NOT EXISTS `talent` (
   KEY `fk_TALENT_MANAGER1` (`manager_id`),
   KEY `fk_TALENT_SCREENING_SCHED1` (`screening_sched_id`),
   KEY `fk_TALENT_APPLICANT1` (`applicant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `talent`
 --
 
 INSERT INTO `talent` (`id`, `manager_id`, `talent_managedstartdate`, `talent_managedenddate`, `screening_sched_id`, `applicant_id`) VALUES
-(1, 1, '2015-03-28', '2015-03-31', NULL, 1);
+(1, 1, '2015-03-28', '2015-03-31', NULL, 1),
+(2, 1, '2015-04-15', '2015-04-28', NULL, 2),
+(3, 1, '2015-04-15', '2015-04-28', 3, 3),
+(4, 1, '2015-03-31', '2015-04-29', NULL, 2),
+(5, 1, '2015-04-14', '2015-04-28', NULL, 2),
+(6, 1, '2015-04-08', '2015-04-29', NULL, 2),
+(7, 1, '2015-04-07', '2015-04-29', NULL, 2),
+(8, 1, '2015-04-22', '2015-04-23', 3, 2),
+(9, 1, '2015-04-16', '2015-04-23', 3, 3),
+(10, 1, '2015-04-17', '2015-04-30', NULL, 1),
+(11, 1, '2015-04-07', '2015-04-15', 2, 2),
+(12, 1, '2015-04-29', '2015-04-30', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -285,14 +314,16 @@ CREATE TABLE IF NOT EXISTS `talent_line` (
   `applicant_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_TALENT_LINE_APPLICANT1` (`applicant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `talent_line`
 --
 
 INSERT INTO `talent_line` (`id`, `talent_type`, `talent_specialization`, `applicant_id`) VALUES
-(1, 'Duo', 'Acoustic', 1);
+(1, 'Duo', 'Acoustic', 1),
+(2, 'Solo', 'Acoustic', 3),
+(3, 'Solo', 'Mellow', 3);
 
 -- --------------------------------------------------------
 

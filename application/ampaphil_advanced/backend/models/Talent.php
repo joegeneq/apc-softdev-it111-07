@@ -36,8 +36,9 @@ class Talent extends \yii\db\ActiveRecord
     {
         return [
             [['manager_id', 'talent_managedstartdate', 'talent_managedenddate'], 'required'],
-            [['manager_id', 'screening_sched_id', 'applicant_id'], 'integer'],
-            [['talent_managedstartdate', 'talent_managedenddate'], 'safe']
+            //[['manager_id', 'screening_sched_id', 'applicant_id'], 'integer'],
+            [['manager_id', 'applicant_id'], 'integer'],
+            [['talent_managedstartdate', 'talent_managedenddate', 'screening_sched_id'], 'safe']
         ];
     }
 
@@ -87,4 +88,18 @@ class Talent extends \yii\db\ActiveRecord
     {
         return $this->hasOne(ScreeningSched::className(), ['id' => 'screening_sched_id']);
     }
+
+    public static function getScreening($applicant_id)
+    {
+        $connection = \Yii::$app->db;
+        $model = $connection
+                ->createCommand("SELECT CAST((b.id) AS CHAR)
+                            FROM applicant a
+                            LEFT JOIN screening_sched b
+                            ON a.screening_sched_id = b.id
+                            WHERE a.id = ".$applicant_id);
+        $data = $model->queryScalar();
+        return $data;
+    }
+
 }

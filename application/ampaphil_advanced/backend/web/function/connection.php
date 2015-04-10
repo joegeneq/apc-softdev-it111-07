@@ -1,5 +1,5 @@
 <?php
-function con($user='root', $pass='', $database='ampaphil_bms', $host='localhost')
+function con($user='ampaphil_bms', $pass='ampaphil_bms', $database='ampaphil_bms', $host='localhost')
 {
     $mysqli = new mysqli($host, $user, $pass, $database);
     if(mysqli_connect_errno())

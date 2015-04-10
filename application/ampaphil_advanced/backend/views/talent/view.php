@@ -9,7 +9,7 @@ use models\Manager;
 /* @var $this yii\web\View */
 /* @var $model app\models\Talent */
 
-$this->title = $model->id;
+$this->title = $model->talent_fullname;
 $this->params['breadcrumbs'][] = ['label' => 'Talents', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

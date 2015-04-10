@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Manager */
 
-$this->title = $model->id;
+$this->title = $model->mgr_fname . " " . $model->mgr_lname;
 $this->params['breadcrumbs'][] = ['label' => 'Managers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

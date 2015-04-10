@@ -45,7 +45,7 @@ class Events extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'talent_id' => 'Talent Name',
+            'talent_id' => 'Name',
             'manager_id' => 'Manager Name',
             'event_details_id' => 'Event Name',
             'client_id' => 'Client Name',

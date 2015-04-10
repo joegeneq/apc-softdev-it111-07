@@ -6,7 +6,7 @@ use yii\models\Applicant;
 /* @var $this yii\web\View */
 /* @var $model app\models\Talent */
 
-$this->title = 'Update Talent: ' . ' ' . $model->id;
+$this->title = 'Update Talent: ' . ' ' . $model->talent_fullname;
 $this->params['breadcrumbs'][] = ['label' => 'Talents', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id, 'manager_id' => $model->manager_id]];
 $this->params['breadcrumbs'][] = 'Update';

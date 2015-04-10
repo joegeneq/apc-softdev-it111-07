@@ -31,8 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'talent_id',
-            'manager_id',
+            'talent.talent_fullname',
+            //'manager_id',
             'event_details_id',
             'client_id',
         ],

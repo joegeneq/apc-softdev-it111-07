@@ -1,0 +1,13 @@
+WEEK 12 (April 6-11, 2015)
+
+A. Tasks accomplished
+We met with the client for the iteration 2. Few more minor changes in the front end were requested by the client.  
+
+B. Problems encountered
+We are still having minor problems with regards to the external links and functions that we will be using. 
+
+C. Possible solutions
+Continue working on the system since we are almost done with all the requirements that the client has posted.
+
+D. Next steps to accomplish
+Final Defense and meet with the client for the iteration 3 or final presentation.
